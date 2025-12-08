@@ -1,0 +1,44 @@
+.header {
+    padding: 16px 0;
+
+    &__inner {
+        display: flex;
+        gap: 40px;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    &__link {
+        border-bottom: 1px solid transparent;
+        transition: color 0.3s, text-shadow 0.3s, border-color 0.3s;
+
+        &:hover {
+            color: $light-900;
+        }
+
+        &:focus {
+            text-shadow: 0 0 11px $light-900;
+        }
+
+        &:active {
+            border-color: $light-900;
+            color: $light-900;
+        }
+    }
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &__cta {
+        font-size: 14px;
+        padding: 12px 12px 12px 20px;
+    }
+}

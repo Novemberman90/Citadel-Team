@@ -4,12 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <title>
+        Citadel VPN — Fast & Secure Internet Access
+    </title>
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Citadel VPN" />
+    <link rel="manifest" href="./images/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
-<body>
-    <script src="js/main.min.js"></script>
+<body> 
+    <header class="header">
+    <div class="container">
+        <nav class="menu">
+            <div class="header__inner">
+                <a class="logo" href="#">
+                    <img src="./images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+                </a>
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Features
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Pricing
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Support
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            News
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-menu">
+                <div class="switcher-lang">
+    <a class="switcher-lang__link" href="#">
+        <svg width="24" height="24">
+            <use href="./images/sprite.svg#en">
+            </use>
+        </svg>
+        En
+    </a>
+    <a class="switcher-lang__link" href="#">
+        <svg width="24" height="24">
+            <use href="./images/sprite.svg#ar">
+            </use>
+        </svg>
+        عر
+    </a>
+    <a class="switcher-lang__link" href="#">
+        <svg width="24" height="24">
+            <use href="./images/sprite.svg#ru">
+            </use>
+        </svg>
+        Ру
+    </a>
+</div>
+                <a class="cta user-menu__cta" href="#">
+                    Open VPN
+                    <svg width="24" height="24">
+                        <use href="./images/sprite.svg#telegram">
+                        </use>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+    <script src="./js/main.min.js"></script>
 </body>
 
 </html>
