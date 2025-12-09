@@ -7,6 +7,9 @@ body {
     letter-spacing: normal;
     background-color: $dark;
     font-style: normal;
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 .container {
@@ -87,4 +90,19 @@ body {
     &:active {
         outline: 1px solid $light-900;
     }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
   <title>
-    Citadel VPN
+    Citadel VPN — Fast & Secure Internet Access
   </title>
   <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
@@ -14,59 +13,106 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Citadel VPN" />
   <link rel="manifest" href="./images/favicon/site.webmanifest" />
-
-
-  <link rel="stylesheet" href="./css/styles.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body data-page="services">
+  @@include('../components/header.html')
   <header class="header" id="header" data-i18n-section="header">
     <div class="container">
-      <div class="header__inner">
-        <a class="logo" href="#header" aria-label="Citadel ">
-          <img src="./images/icon/logo-header-img.svg" alt="Citadel logo">
-          <img src="./images/icon/logo-header-title.svg" alt="Citadel logo vpn">
-        </a>
-        <nav class="menu" aria-label="Main menu">
-          <button class="menu__btn" type="button" aria-label="Button open / close menu">
-            <span></span>
-          </button>
-
-          <ul class="menu__list">
+      <nav class="menu">
+        <div class="header__inner">
+          <a class="logo" href="#">
+            <img src="./images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+          </a>
+          <ul class="menu">
             <li class="menu__item">
-              <a href="#" class="menu__link" data-i18n="nav_features" data-scroll>Features</a>
+              <a class="menu__link" href="#" data-i18n="nav_features" data-scroll>
+                Features
+              </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link" data-i18n="nav_pricing" data-scroll>Pricing</a>
+              <a class="menu__link" href="#" data-i18n="nav_pricing" data-scroll>
+                Pricing
+              </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link" data-i18n="nav_support" data-scroll>Support</a>
+              <a class="menu__link" href="#" data-i18n="nav_support" data-scroll>
+                Support
+              </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link" data-i18n="nav_blog" data-scroll>Blog</a>
+              <a class="menu__link" href="#" data-i18n="nav_blog" data-scroll>
+                Blog
+              </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link" data-i18n="nav_news" data-scroll>News</a>
+              <a class="menu__link" href="#" data-i18n="nav_news" data-scroll>
+                News
+              </a>
             </li>
           </ul>
-
-        </nav>
-        <ul class="lang">
-          <li class="lang__item">
-            <a href="#" class="lang__option lang__option--active" data-lang="en"
-              aria-label="Switch language to English">EN</a>
-          </li>
-          <li class="lang__item">
-            <a href="#" class="lang__option" data-lang="ar" aria-label="Switch language to Arabic">عر</a>
-          </li>
-          <li class="lang__item">
-            <a href="#" class="lang__option" data-lang="ru" aria-label="Switch language to Russian">RU</a>
-          </li>
-        </ul>
-      </div>
+        </div>
+        <div class="user-menu">
+          <div class="switcher-lang">
+            <a class="switcher-lang__link" href="#" data-lang="en">
+              <svg width="24" height="24">
+                <use href="./images/sprite.svg#en">
+                </use>
+              </svg>
+              En
+            </a>
+            <a class="switcher-lang__link" href="#" data-lang="ar">
+              <svg width="24" height="24">
+                <use href="./images/sprite.svg#ar">
+                </use>
+              </svg>
+              عر
+            </a>
+            <a class="switcher-lang__link" href="#" data-lang="ru">
+              <svg width="24" height="24">
+                <use href="./images/sprite.svg#ru">
+                </use>
+              </svg>
+              Ру
+            </a>
+          </div>
+          <a class="cta user-menu__cta" href="#">
+            Open VPN
+            <svg width="24" height="24">
+              <use href="./images/sprite.svg#telegram">
+              </use>
+            </svg>
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
   <main class="main">
+    <div class="top">
+      <div class="container">
+        <div class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="./home.html">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">
+                Terms and Conditions
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <section class="home">
       <div class="container">
         <div class="home__inner">
@@ -724,7 +770,108 @@
                     </p>
                   </section>
 
+                  <!-- 4. Our Values -->
+                  <section class="aboutUs__section">
+                    <h3 class="aboutUs__title" data-i18n="aboutUs.ourValues.title">
+                      Our Values
+                    </h3>
+                    <ul class="aboutUs__list">
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.ourValues.item1-bold" >Privacy:</span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.ourValues.item1-regular">
+                        Your privacy is our top priority. We have a strict no-logs policy, meaning we never track, store, or share your
+                        online activity.</span>
+                      </li>
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.ourValues.item2-bold">
+                          Security:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.ourValues.item2-regular">
+                         We use military-grade encryption and the latest VPN protocols to keep your data safe from prying eyes.
+                        </span>
+                      </li>
+                      <li class="refund__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.ourValues.item3-bold">
+                          Freedom:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.ourValues.item3-regular">
+                          We believe in an open internet for everyone. Our service helps you bypass censorship and access the content you want, wherever you are.
+                        </span>
+                      </li>
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.ourValues.item4-bold">
+                          Transparency:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.ourValues.item4-regular">
+                          We are committed to being open and honest with our users. We believe that trust is earned through
+                          transparency.
+                        </span>
+                      </li>
+                    </ul>
+                  </section>
 
+                  <!-- 5. Why Choose Citadel VPN? -->
+                  <section class="whyChoose__section">
+                    <h3 class="aboutUs__title" data-i18n="aboutUs.whyChoose.title">
+                      Why Choose Citadel VPN?
+                    </h3>
+                    <ul class="aboutUs__list">
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.whyChoose.item1-bold" >
+                          Modern Technology:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.whyChoose.item1-regular">
+                        We use the VLESS protocol, which is designed for performance and security.
+                      </span>
+                      </li>
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.whyChoose.item2-bold">
+                          Telegram-First:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.whyChoose.item2-regular">
+                          Manage your VPN directly from Telegram, one of the world's most popular and secure messaging apps.
+                        </span>
+                      </li>
+                      <li class="refund__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.whyChoose.item3-bold">
+                          Global Network:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.whyChoose.item3-regular">
+                          Access our network of high-speed servers in locations around the world.
+                        </span>
+                      </li>
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.whyChoose.item4-bold">
+                          No-Logs Policy:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.whyChoose.item4-regular">
+                          We never log your activity. Your privacy is guaranteed.
+                        </span>
+                      </li>
+                      <li class="aboutUs__item">
+                        <span class="aboutUs__text aboutUs__text--bold" data-i18n="aboutUs.whyChoose.item5-bold">
+                          24/7 Support:
+                        </span>
+                        <span class="aboutUs__text" data-i18n="aboutUs.whyChoose.item5-regular">
+                          Our dedicated support team is always here to help you.
+                        </span>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <!-- 6. Join Us -->
+                  <section class="aboutUs__section">
+                    <h3 class="aboutUs__title" data-i18n="aboutUs.joinUs.title">
+                      Join Us
+                    </h3>
+                  
+                    <p class="aboutUs__text" data-i18n="aboutUs.joinUs.text">
+                      Take control of your digital life. Join the Citadel VPN community and experience the internet without borders.
+                    </p>
+                    <a href="mailto:info@vpncitadel.com" class="privacy-link" data-i18n="privacy.joinUs.email">
+                      info@vpncitadel.com
+                    </a>
+                  </section>
                 </div>
 
               </div>
@@ -734,9 +881,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer" id="contact">
 
-  </footer>
 
 
 
