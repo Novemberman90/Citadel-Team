@@ -5,3 +5,23 @@ $light-900-opacity-75: rgba(61, 220, 132, 0.75);
 $light-900-opacity-64: rgba(61, 220, 132, 0.64);
 $light-900-opacity-34: rgba(61, 220, 132, 0.34);
 $dark: #0D1B2A;
+
+
+@mixin Inter-400 {
+  font-family: "Inter_18pt-Regular", sans-serif;
+  font-weight: 400;
+}
+
+@mixin Inter-700 {
+  font-family: "Inter_18pt-Bold", sans-serif;
+  font-weight: 700;
+}
+
+@mixin RobotoCondensed-600 {
+  font-family: "RobotoCondensed-SemiBold", sans-serif;
+  font-weight: 600;
+}
+@mixin RobotoCondensed-300 {
+  font-family: "RobotoCondensed-SemiBold", sans-serif;
+  font-weight: 300;
+}
