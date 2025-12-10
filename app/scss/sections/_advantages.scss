@@ -1,0 +1,64 @@
+.advantages {
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+        max-width: 279px;
+        width: 100%;
+        border-radius: 32px;
+        backdrop-filter: blur(6px);
+    }
+
+    &__item.blur-plate::after {
+        border-radius: 32px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: flex-start;
+    }
+
+    &__subtitle {
+        margin-bottom: 8px;
+        font-size: 24px;
+        font-weight: 600;
+        font-family: "Roboto Condensed", sans-serif;
+    }
+
+    &__descr {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+        padding: 0;
+        margin: 0 auto 16px;
+        order: -1;
+    }
+
+    &__box.blur-plate {
+
+        &::after {
+            padding: 1.5px;
+            border-radius: 20px;
+            background: linear-gradient(33.35deg, rgba(61, 220, 132, 0) 60.32%, #3DDC84 94.79%), linear-gradient(220.43deg, rgba(255, 255, 255, 0) 77.44%, rgba(255, 255, 255, 0.6) 100%);
+        }
+    }
+}

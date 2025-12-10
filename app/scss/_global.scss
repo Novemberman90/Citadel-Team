@@ -16,7 +16,7 @@ body {
 }
 
 .section {
-    padding: 120px 0;
+    padding-bottom: 120px;
 }
 
 .title {
@@ -28,84 +28,148 @@ body {
     margin-bottom: 32px;
 }
 
-.cta {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.wrapper {
     position: relative;
-    width: 132px;
-    height: 44px;
-    color: $dark;
-    font-weight: 700;
-    border-radius: 80px;
 
-    // можеш прибрати або ослабити, якщо забагато
-    box-shadow: 0 0 24px rgba(61, 220, 132, 0.7);
-
-    /* ТІЛЬКИ градієнтний бордер, як у Figma:
-       angle 70°, 0% #FFF 0%, 100% #FFF 60%
-    */
     &::before {
         content: "";
         position: absolute;
-        inset: -4px;          // наскільки бордер виходить назовні
-        padding: 2px;         // товщина кільця
-        border-radius: inherit;
-
-        background: linear-gradient(
-            70deg,
-            rgba(255, 255, 255, 0.0) 0%,
-            rgba(255, 255, 255, 0.6) 100%
-        );
-
-        -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-
-        pointer-events: none;
-        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 30%;
+        z-index: -1;
+        background-image: url(../images/hero-bg.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
-    /* твій “глянцевий” градієнт зверху */
     &::after {
         content: "";
         position: absolute;
         inset: 0;
-        border-radius: inherit;
-
-        background: linear-gradient(
-            198deg,
-            rgba(255, 255, 255, 0.18) 0%,
-            rgba(255, 255, 255, 0.05) 48%,
-            rgba(255, 255, 255, 0.12) 100%
-        );
-        opacity: 0.6;
-
         pointer-events: none;
-        z-index: 2;
-    }
-
-    &__inner {
-        position: relative;
-        z-index: 3; // контент вище за псевдоелементи
-
-        background-color: #3DDC84;   // ПОВНІСТЮ як у тебе було
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 6px 6px 6px 14px;
-        border-radius: 80px;
-        box-shadow:
-            0 -6px 10px $light-opacity-23 inset,
-            0 4px 34px $light-900-opacity-34;
+        background:
+            linear-gradient(to right,
+                rgba(#0D1B2A, 1) 0%,
+                rgba(#0D1B2A, 0) 35%,
+                rgba(#0D1B2A, 0) 65%,
+                rgba(#0D1B2A, 1) 100%),
+            linear-gradient(to bottom,
+                rgba(#0D1B2A, 1) 0%,
+                rgba(#0D1B2A, 0) 25%,
+                rgba(#0D1B2A, 0) 75%,
+                rgba(#0D1B2A, 1) 100%);
+        z-index: -1;
     }
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: $dark;
+    font-weight: 700;
+    font-size: 18px;
+    background: linear-gradient(198deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0.05) 48%,
+            rgba(255, 255, 255, 0.12) 100%);
+    border-radius: 80px;
+    padding: 20px 28px 20px 32px;
+    position: relative;
+    z-index: 2;
+    transition: box-shadow 0.3s;
 
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 80px;
+        padding: 1px;
+        background: linear-gradient(10.35deg, rgba(61, 220, 132, 0) 60.32%, #3DDC84 94.79%), linear-gradient(200.43deg, rgba(255, 255, 255, 0) 65.44%, rgba(255, 255, 255, 0.6) 100%);
+        z-index: -2;
+        mask:
+            linear-gradient(#fff, #fff) content-box,
+            linear-gradient(#fff, #fff);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: 80px;
+        width: 91%;
+        height: 75%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $light-900;
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+            0 4px 34px $light-900-opacity-34;
+        z-index: -1;
+        transition: box-shadow 0.3s, width 0.3s, height 0.3s;
+    }
+
+    &:hover::before {
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+            0 4px 34px $light-900-opacity-64;
+    }
+
+    &:focus {
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+            0 0 16px $light-900-opacity-75;
+    }
+
+    &:active::before {
+        width: 89%;
+        height: 73%;
+    }
+}
+
+.blur-plate {
+    background: linear-gradient(198deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0.05) 48%,
+            rgba(255, 255, 255, 0.12) 100%);
+    border-radius: 80px;
+    position: relative;
+    z-index: 2;
+    transition: box-shadow 0.3s;
+    padding: 24px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 80px;
+        padding: 1px;
+        background: linear-gradient(10.35deg, rgba(61, 220, 132, 0) 60.32%, #3DDC84 94.79%), linear-gradient(200.43deg, rgba(255, 255, 255, 0) 65.44%, rgba(255, 255, 255, 0.6) 100%);
+        z-index: -2;
+        mask:
+            linear-gradient(#fff, #fff) content-box,
+            linear-gradient(#fff, #fff);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+}
 
 .logo {
     border-radius: 11px;

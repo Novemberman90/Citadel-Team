@@ -3,5 +3,7 @@
 @import "global";
 
 
-@import "./sections/header";
+@import "./global/header";
+@import "./sections/hero";
+@import "./sections/advantages";
 @import "./global/switcherLang"
