@@ -1,0 +1,42 @@
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+.breadcrumbs {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      padding-right: 0;
+      padding-left: 32px;
+      position: relative;
+
+      &::after {
+        width: 16px;
+        height: 16px;
+        right: auto;
+        left: 8px;
+        transform: scale(-1,1) translateY(-50%);
+      }
+
+      &:last-child {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+  .terms,
+  .privacy,
+  .refund,
+  .aboutUs {
+    &__item {
+      padding-left: 0;
+      padding-right: 38px;
+      &::before {
+        left: auto;
+        right: 15px;
+      }
+    }
+  }
+}

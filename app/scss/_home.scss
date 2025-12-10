@@ -129,7 +129,6 @@
     color: $light;
     font-size: 16px;
     line-height: 1;
-    text-transform: capitalize;
     background-color: transparent;
     display: block;
     padding: 2px 0;
@@ -210,6 +209,9 @@
     font-size: 24px;
     line-height: 1;
     margin-bottom: 22px;
+    &--pt {
+      padding-top: 32px;
+    }
   }
   &__text {
     @include Inter-400;
@@ -222,6 +224,9 @@
     }
     &--bold {
       @include Inter-700;
+    }
+    &--mb0 {
+      margin-bottom: 0;
     }
     &:last-child {
       margin-bottom: 0;
@@ -309,9 +314,19 @@
     }
     &__subtitle {
       font-size: 24px;
+    &--pt {
+        padding-top: 24px;
+      }
     }
     &__text {
       font-size: 16px;
+    }
+    &__item {
+      &::before {
+        top: 0;
+        transform: translateY(0);
+        background-color: $light-900;
+      }
     }
   }
   .terms-link {
