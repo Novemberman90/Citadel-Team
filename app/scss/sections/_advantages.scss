@@ -51,14 +51,56 @@
         padding: 0;
         margin: 0 auto 16px;
         order: -1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            width: 40px;
+            height: 40px;
+            background-color: $light-900;
+            filter: blur(9px);
+            border-radius: 50%;
+            animation: pulseGlow 3.5s ease-in-out infinite;
+        }
+
+        &--small::before {
+            width: 28px;
+            height: 28px;
+        }
+
+        &--medium::before {
+            width: 38px;
+            height: 38px;
+        }
     }
 
     &__box.blur-plate {
 
         &::after {
-            padding: 1.5px;
+
             border-radius: 20px;
             background: linear-gradient(33.35deg, rgba(61, 220, 132, 0) 60.32%, #3DDC84 94.79%), linear-gradient(220.43deg, rgba(255, 255, 255, 0) 77.44%, rgba(255, 255, 255, 0.6) 100%);
+        }
+    }
+
+    @keyframes pulseGlow {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.85);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.85);
         }
     }
 }

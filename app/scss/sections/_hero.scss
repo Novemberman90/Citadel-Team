@@ -1,5 +1,88 @@
 .hero {
     padding: 58px 0 80px;
+    max-width: 1188px;
+    margin: 0 auto;
+    position: relative;
+
+    .hero__circles {
+        position: absolute;
+        top: 70%;
+        left: 71%;
+        width: 1px;
+        height: 1px;
+        pointer-events: none;
+    }
+
+    .hero__circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-20deg);
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+        opacity: 0;
+        animation: heroWave 3s ease-out infinite;
+    }
+
+    .hero__circle::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1.5px;
+
+        background: linear-gradient(65deg,
+                rgba(61, 220, 132, 0) 30%,
+                rgba(61, 220, 132, 1) 85%);
+
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    /* Розміри */
+    .hero__circle--small {
+        width: 596px;
+        height: 415px;
+        animation-delay: 0s;
+    }
+
+    .hero__circle--medium {
+        width: 743px;
+        height: 553px;
+        animation-delay: 0.5s;
+    }
+
+    .hero__circle--large {
+        width: 894px;
+        height: 679px;
+        animation-delay: 1s;
+    }
+
+    /* Легка, красива, GPU-анімація радіохвилі */
+    @keyframes heroWave {
+        0% {
+            transform: translate(-50%, -50%) rotate(-20deg) scale(0.85);
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 0.45;
+            /* раніше досягає піку видимості */
+        }
+
+        60% {
+            opacity: 0.15;
+            /* раніше починає зникати */
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(-20deg) scale(1.0);
+            opacity: 0;
+        }
+    }
 
     &__info {
         max-width: 440px;
