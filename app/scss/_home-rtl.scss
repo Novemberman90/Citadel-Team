@@ -27,7 +27,11 @@ html[dir="rtl"] {
       }
     }
   }
-
+  .tab-nav {
+    &__btn {
+      text-align: right;
+    }
+  }
   .terms,
   .privacy,
   .refund,

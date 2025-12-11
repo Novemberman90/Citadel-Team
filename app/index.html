@@ -18,12 +18,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="../css/style.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="header" id="header">
+        <header class="header" id="header" data-i18n-section="header">
     <div class="container">
         <nav class="menu">
             <div class="header__inner">
@@ -32,27 +32,27 @@
                 </a>
                 <ul class="menu">
                     <li class="menu__item">
-                        <a class="menu__link" href="#" data-scroll>
+                        <a class="menu__link" href="#" data-i18n="nav_features" data-scroll>
                             Features
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#" data-scroll>
+                        <a class="menu__link" href="#" data-i18n="nav_pricing" data-scroll>
                             Pricing
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#" data-scroll>
+                        <a class="menu__link" href="#" data-i18n="nav_support" data-scroll>
                             Support
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#" data-scroll>
+                        <a class="menu__link" href="#" data-i18n="nav_blog" data-scroll>
                             Blog
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#" data-scroll>
+                        <a class="menu__link" href="#" data-i18n="nav_news" data-scroll>
                             News
                         </a>
                     </li>
@@ -60,7 +60,7 @@
             </div>
             <div class="user-menu">
                 <div class="switcher-lang blur-plate">
-    <a class="switcher-lang__link" href="#" data-lang="en">
+    <a class="switcher-lang__link" href="./index.html">
         <div class="switcher-lang__box">
             <svg width="24" height="24">
                 <use href="./images/sprite.svg#en">
@@ -73,14 +73,14 @@
             </use>
         </svg>
     </a>
-    <!-- <a class="switcher-lang__link" href="#" data-lang="ar">
+<!--     <a class="switcher-lang__link" href="./ar/index.html">
         <svg width="24" height="24">
             <use href="./images/sprite.svg#ar">
             </use>
         </svg>
         عر
     </a>
-    <a class="switcher-lang__link" href="#" data-lang="ru">
+    <a class="switcher-lang__link" href="./ru/index.html">
         <svg width="24" height="24">
             <use href="./images/sprite.svg#ru">
             </use>
