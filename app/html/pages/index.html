@@ -22,157 +22,245 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        @@include('../components/header.html')
-        <main class="main">
-            <h1 class="visually-hidden">
-                CitadelVPN — Your Everyday Fast & Secure VPN
-            </h1>
-            <section class="hero">
-                <div class="container">
-                    <div class="hero__info">
-                        <div class="hero__badge blur-plate">
-                            Protected
-                            <svg width="40" height="19">
-                                <use href="./images/sprite.svg#badgeVPN"></use>
+  <div class="wrapper">
+    <header class="header" id="header" data-i18n-section="header">
+      <div class="container">
+        <nav class="menu">
+          <div class="header__inner">
+            <a class="logo" href="#">
+              <img src="./images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+            </a>
+            <ul class="menu">
+              <li class="menu__item">
+                <a class="menu__link" href="#" data-i18n="nav_features" data-scroll>
+                  Features
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#" data-i18n="nav_pricing" data-scroll>
+                  Pricing
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#" data-i18n="nav_support" data-scroll>
+                  Support
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#" data-i18n="nav_blog" data-scroll>
+                  Blog
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#" data-i18n="nav_news" data-scroll>
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- lang menu -->
+          <div class="user-menu">
+            <div class="switcher-lang">
+              <button class="switcher-lang__btn blur-plate" type="button">
+                <div class="switcher-lang__box">
+                  <svg width="24" height="24">
+                    <use href="./images/sprite.svg#en">
+                    </use>
+                  </svg>
+                  En
+                </div>
+                <svg class="icon" width="11" height="6">
+                  <use href="./images/sprite.svg#arrowBottom">
+                  </use>
+                </svg>
+              </button>
+              <div class="switcher-lang__dropdown blur-plate">
+                <a class="switcher-lang__link switcher-lang__link--active" href="./index.html">
+                  <div class="switcher-lang__box">
+                    <svg width="24" height="24">
+                      <use href="./images/sprite.svg#en">
+                      </use>
+                    </svg>
+                    En
+                  </div>
+                </a>
+                <a class="switcher-lang__link" href="./ar/index.html">
+                  <svg width="24" height="24">
+                    <use href="./images/sprite.svg#ar">
+                    </use>
+                  </svg>
+                  عر
+                </a>
+                <a class="switcher-lang__link" href="./ru/index.html">
+                  <svg width="24" height="24">
+                    <use href="./images/sprite.svg#ru">
+                    </use>
+                  </svg>
+                  Ру
+                </a>
+              </div>
+            </div>
+            <a class="cta user-menu__cta" href="#">
+              Open VPN
+              <svg class="icon" width="24" height="24">
+                <use href="./images/sprite.svg#telegram">
+                </use>
+              </svg>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+        <h1 class="visually-hidden">
+            CitadelVPN — Your Everyday Fast & Secure VPN
+        </h1>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__info">
+                    <div class="hero__badge blur-plate">
+                        Protected
+                        <svg width="40" height="19">
+                            <use href="./images/sprite.svg#badgeVPN"></use>
+                        </svg>
+                    </div>
+                    <h2 class="hero__title">
+                        Fast, Secure, Unrestricted.
+                    </h2>
+                    <p class="hero__subtitle">
+                        Your digital fortress for high-speed, ad-free internet access on all your devices.
+                    </p>
+                    <a class="cta" href="#">
+                        Get Started
+                        <svg class="icon" width="22" height="22">
+                            <use href="./images/sprite.svg#rocket"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="advantages section">
+            <div class="container">
+                <h2 class="visually-hidden">
+                    Advantages and Features of CitadelVPN
+                </h2>
+                <ul class="advantages__list">
+                    <li class="advantages__item blur-plate">
+                        <div class="advantages__info">
+                            <h3 class="advantages__subtitle">
+                                High speed
+                            </h3>
+                            <p class="advantages__descr">
+                                We provide a stable connection optimized for streaming, gaming, and fast content
+                                downloads.
+                            </p>
+                        </div>
+                        <div class="advantages__box blur-plate">
+                            <svg width="76" height="76">
+                                <use href="./images/sprite.svg#rocket3D"></use>
                             </svg>
                         </div>
-                        <h2 class="hero__title">
-                            Fast, Secure, Unrestricted.
-                        </h2>
-                        <p class="hero__subtitle">
-                            Your digital fortress for high-speed, ad-free internet access on all your devices.
-                        </p>
-                        <a class="cta" href="#">
-                            Get Started
-                            <svg class="icon" width="22" height="22">
-                                <use href="./images/sprite.svg#rocket"></use>
+                    </li>
+                    <li class="advantages__item blur-plate">
+                        <div class="advantages__info">
+                            <h3 class="advantages__subtitle">
+                                No ADS
+                            </h3>
+                            <p class="advantages__descr">
+                                We block intrusive ads and trackers, making your internet cleaner and safer.
+                            </p>
+                        </div>
+                        <div class="advantages__box blur-plate">
+                            <svg width="86" height="86">
+                                <use href="./images/sprite.svg#noAds"></use>
                             </svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section class="advantages section">
-                <div class="container">
-                    <h2 class="visually-hidden">
-                        Advantages and Features of CitadelVPN
-                    </h2>
-                    <ul class="advantages__list">
-                        <li class="advantages__item blur-plate">
-                            <div class="advantages__info">
-                                <h3 class="advantages__subtitle">
-                                    High speed
-                                </h3>
-                                <p class="advantages__descr">
-                                    We provide a stable connection optimized for streaming, gaming, and fast content
-                                    downloads.
-                                </p>
-                            </div>
-                            <div class="advantages__box blur-plate">
-                                <svg width="76" height="76">
-                                    <use href="./images/sprite.svg#rocket3D"></use>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="advantages__item blur-plate">
-                            <div class="advantages__info">
-                                <h3 class="advantages__subtitle">
-                                    No ADS
-                                </h3>
-                                <p class="advantages__descr">
-                                    We block intrusive ads and trackers, making your internet cleaner and safer.
-                                </p>
-                            </div>
-                            <div class="advantages__box blur-plate">
-                                <svg width="86" height="86">
-                                    <use href="./images/sprite.svg#noAds"></use>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="advantages__item blur-plate">
-                            <div class="advantages__info">
-                                <h3 class="advantages__subtitle">
-                                    Access to everything
-                                </h3>
-                                <p class="advantages__descr">
-                                    Get free access to any websites, services, and applications, bypassing all
-                                    restrictions.
-                                </p>
-                            </div>
-                            <div class="advantages__box blur-plate">
-                                <svg width="86" height="86">
-                                    <use href="./images/sprite.svg#globalAccess"></use>
-                                </svg>
-                            </div>
-                        </li>
-                        <li class="advantages__item blur-plate">
-                            <div class="advantages__info">
-                                <h3 class="advantages__subtitle">
-                                    Unlimited devices
-                                </h3>
-                                <p class="advantages__descr">
-                                    Use one subscription to protect all your devices: phone, laptop, tablet, and PC.
-                                </p>
-                            </div>
-                            <div class="advantages__box blur-plate">
-                                <svg width="86" height="86">
-                                    <use href="./images/sprite.svg#unlimited"></use>
-                                </svg>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="container">
-                <div class="footer__inner">
-                    <a class="logo" href="#">
-                        <img src="./images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
-                    </a>
-                    <ul class="menu">
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">
-                                Terms and Conditions
-                            </a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">
-                                Privacy Policy
-                            </a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">
-                                Refund Policy
-                            </a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">
-                                About Us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <address class="footer__address">
-                    <a class="footer__link" href="#">
-                        <svg width="22" height="17">
-                            <use href="./images/sprite.svg#email"></use>
-                        </svg>
-                        info@vpncitadel.com
-                    </a>
-                    <ul class="social">
-                        <li class="social__item">
-                            <a class="social__link" href="#">
-                                <svg>
-                                    <use href="./images/sprite.svg#"></use>
-                                </svg>
-                            </a> 
-                        </li>
-                    </ul>
-                </address>
+                        </div>
+                    </li>
+                    <li class="advantages__item blur-plate">
+                        <div class="advantages__info">
+                            <h3 class="advantages__subtitle">
+                                Access to everything
+                            </h3>
+                            <p class="advantages__descr">
+                                Get free access to any websites, services, and applications, bypassing all
+                                restrictions.
+                            </p>
+                        </div>
+                        <div class="advantages__box blur-plate">
+                            <svg width="86" height="86">
+                                <use href="./images/sprite.svg#globalAccess"></use>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="advantages__item blur-plate">
+                        <div class="advantages__info">
+                            <h3 class="advantages__subtitle">
+                                Unlimited devices
+                            </h3>
+                            <p class="advantages__descr">
+                                Use one subscription to protect all your devices: phone, laptop, tablet, and PC.
+                            </p>
+                        </div>
+                        <div class="advantages__box blur-plate">
+                            <svg width="86" height="86">
+                                <use href="./images/sprite.svg#unlimited"></use>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </footer>
-    </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a class="logo" href="#">
+                    <img src="./images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+                </a>
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Terms and Conditions
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            Refund Policy
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <address class="footer__address">
+                <a class="footer__link" href="#">
+                    <svg width="22" height="17">
+                        <use href="./images/sprite.svg#email"></use>
+                    </svg>
+                    info@vpncitadel.com
+                </a>
+                <ul class="social">
+                    <li class="social__item">
+                        <a class="social__link" href="#">
+                            <svg>
+                                <use href="./images/sprite.svg#"></use>
+                            </svg>
+                        </a> 
+                    </li>
+                </ul>
+            </address>
+        </div>
+    </footer>
+  </div>
     <script src="./js/main.min.js"></script>
 </body>
 

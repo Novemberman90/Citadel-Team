@@ -58,26 +58,36 @@
         </ul>
       </div>
       <div class="user-menu">
-        <div class="switcher-lang blur-plate">
-          <a class="switcher-lang__link blur-plate" href="./terms-and-conditions.html">
-            <div class="switcher-lang__box">
-              <svg width="24" height="24">
-                <use href="./images/sprite.svg#en">
-                </use>
-              </svg>
-              En
-            </div>
+        <div class="switcher-lang">
+          <button class="switcher-lang__btn blur-plate" type="button">
+              <div class="switcher-lang__box">
+                <svg width="24" height="24">
+                  <use href="./images/sprite.svg#en">
+                  </use>
+                </svg>
+                En
+              </div>
             <svg class="icon" width="11" height="6">
               <use href="./images/sprite.svg#arrowBottom">
               </use>
             </svg>
-          </a>
-         <!--  <a class="switcher-lang__link" href="./ar/terms-and-conditions.html">
+          </button>
+          <div class="switcher-lang__dropdown blur-plate">
+            <a class="switcher-lang__link switcher-lang__link--active" href="./terms-and-conditions.html">
+              <div class="switcher-lang__box">
                 <svg width="24" height="24">
-                    <use href="./images/sprite.svg#ar">
-                    </use>
+                  <use href="./images/sprite.svg#en">
+                  </use>
                 </svg>
-                عر
+                En
+              </div>
+            </a>
+            <a class="switcher-lang__link" href="./ar/terms-and-conditions.html">
+                  <svg width="24" height="24">
+                      <use href="./images/sprite.svg#ar">
+                      </use>
+                  </svg>
+                  عر
             </a>
             <a class="switcher-lang__link" href="./ru/terms-and-conditions.html">
                 <svg width="24" height="24">
@@ -85,7 +95,8 @@
                     </use>
                 </svg>
                 Ру
-            </a> -->
+            </a>
+          </div>
         </div>
         <a class="cta user-menu__cta" href="#">
           Open VPN

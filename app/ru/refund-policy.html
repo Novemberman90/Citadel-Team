@@ -7,12 +7,12 @@
   <title>
     Citadel VPN — Fast & Secure Internet Access
   </title>
-  <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Citadel VPN" />
-  <link rel="manifest" href="./images/favicon/site.webmanifest" />
+  <link rel="manifest" href="../images/favicon/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -59,33 +59,44 @@
         </div>
         <div class="user-menu">
           <div class="switcher-lang">
-            <a class="switcher-lang__link" href="/refund-policy.html">
+            <button class="switcher-lang__btn blur-plate" type="button">
               <div class="switcher-lang__box">
                 <svg width="24" height="24">
-                  <use href="../images/sprite.svg#en">
+                  <use href="../images/sprite.svg#ru">
                   </use>
                 </svg>
-                En
+                Ру
               </div>
               <svg class="icon" width="11" height="6">
                 <use href="../images/sprite.svg#arrowBottom">
                 </use>
               </svg>
-            </a>
-           <!--  <a class="switcher-lang__link" href="../ar/refund-policy.html">
-                <svg width="24" height="24">
-                    <use href="../images/sprite.svg#ar">
+            </button>
+            <div class="switcher-lang__dropdown blur-plate">
+              <a class="switcher-lang__link" href="/refund-policy.html">
+                <div class="switcher-lang__box">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#en">
                     </use>
+                  </svg>
+                  En
+                </div>
+              </a>
+              <a class="switcher-lang__link" href="../ar/refund-policy.html">
+                <svg width="24" height="24">
+                  <use href="../images/sprite.svg#ar">
+                  </use>
                 </svg>
                 عر
-            </a>
-            <a class="switcher-lang__link" href="../ru/refund-policy.html">
+              </a>
+              <a class="switcher-lang__link switcher-lang__link--active" href="../ru/refund-policy.html">
                 <svg width="24" height="24">
-                    <use href="../images/sprite.svg#ru">
-                    </use>
+                  <use href="../images/sprite.svg#ru">
+                  </use>
                 </svg>
                 Ру
-            </a> -->
+              </a>
+            </div>
           </div>
           <a class="cta user-menu__cta" href="#">
             Open VPN
@@ -246,7 +257,7 @@
 
 
 
-  <script src="./js/main.min.js"></script>
+  <script src="../js/main.min.js"></script>
 
 </body>
 
