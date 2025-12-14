@@ -41,8 +41,7 @@
   }
 
   &__item {
-    max-width: 108px;
-    width: 100%;
+    min-width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,18 +92,18 @@
   &--latency {
     max-width: 300px;
     width: 100%;
-    height: auto;
+    height: 300px;
   }
-
   &--download {
     max-width: 364px;
     width: 100%;
-    height: auto;
+    height: 364px;
   }
 
   &__circle {
-    aspect-ratio: 1 / 1;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .progress-ring {
@@ -126,6 +125,9 @@
     color: $light;
     font-size: 16px;
     margin-bottom: 5px;
+    &--download {
+      font-size: 18px;
+    }
   }
 
   &__info {
@@ -139,7 +141,7 @@
     align-items: center;
   }
 
-  &__icon.blur-plate {
+  &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,11 +161,11 @@
     font-size: 24px;
     color: $light-900;
     margin-bottom: 5px;
+    &--download {
+      font-size: 36px;
+    }
   }
 
-  &__value--upload {
-    font-size: 36px;
-  }
 
   &__note {
     @include Inter-400;
@@ -175,8 +177,12 @@
 }
 
 @media (max-width: 1080px) {
+  .metrics {
+    &__cards {
+      gap: 15px;
+    }
+  }
   .metric-card {
-
     &--upload,
     &--latency {
       width: 212px;
@@ -190,15 +196,18 @@
 
     &--download {
       width: 250px;
-      height: auto;
+      height: 250px;
 
       .progress-ring {
         width: 226px;
-        height: auto;
+        height: 226px;
       }
     }
-    &__icon.blur-plate {
-      margin-bottom: 10px;
+    &__icon {
+      &--latency,
+      &--upload {
+        margin-bottom: 10px;
+      }
       .icon--upload,
       .icon--latency {
         width: 24px;
@@ -220,9 +229,15 @@
     }
     &__label {
       font-size: 14px;
+      &--download {
+        font-size: 16px;
+      }
     }
     &__value {
       font-size: 20px;
+      &--download {
+        font-size: 28px;
+      }
     }
     &__note {
       font-size: 12px;
@@ -232,38 +247,120 @@
 
 @media (max-width: 767px) {
   .metrics {
+    &__badge {
+      margin-bottom: 22px;
+    }
     &__cards {
       flex-wrap: wrap;
       gap: 32px 20px;
+    }
+    &__cards-item {
 
+      &--upload,
+      &--latency {
+        order: 2;
+        width: 45%;
+      }
+      &--download {
+        order: 1;
+        width: 100%;
+      }
     }
   }
 
   .metric-card {
-    &.metric-card--upload {
-      order: 2;
-      width: 171px;
-      height: auto;
+    &--upload {
+      justify-self: end;
     }
+    &--download {
+      justify-self: center;
+    }
+  }
+}
 
-    &.metric-card--latency {
-      width: 171px;
-      height: auto;
-
-      .progress-ring {
-        width: 188px;
-        height: auto;
+@media (max-width: 576px) {
+  .metrics {
+    &__badge {
+      margin-bottom: 18px;
+    }
+    &__item-title {
+      font-size: 20px;
+    }
+    &__item-subtitle{
+      font-size: 14px;
+    }
+    &__list {
+      gap: 12px;
+    }
+    &__cards{
+      gap: 12px 24px;
+    }
+    &__item {
+      min-width: 80px;
+    }
+  }
+  .metric-card {
+    &__info {
+      max-width: 80px;
+    }
+    &__icon {
+      &--latency,
+      &--upload {
+        margin-bottom: 6px;
       }
     }
+    &__label {
+      &--download {
+        font-size: 16px;
+      }
+    }
+    &__note {
+      font-size: 10px;
+    }
+    &--upload,
+    &--latency {
+      max-width: 171px;
+      height: 171px;
+      &.blur-plate {
+        padding: 8px;
+      }
+    .progress-ring {
+        width: 155px;
+        height: 155px;
+      }
+      .metric-card__label {
+        margin-bottom: 0;
+      }
+      .metric-card__value {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
-    &.metric-card--download {
-      width: 250px;
-      height: auto;
-      margin: 0 auto;
-
+@media (max-width: 389px) {
+  .metrics {
+    &__cards {
+      gap: 12px 10px;
+    }
+    &__list {
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+  }
+  .metric-card {
+    &--upload,
+    &--latency {
+      max-width: 160px;
+      height: 160px;
+  
+      &.blur-plate {
+        padding: 6px;
+      }
+  
       .progress-ring {
-        width: 226px;
-        height: auto;
+        width: 145px;
+        height: 145px;
       }
     }
   }
