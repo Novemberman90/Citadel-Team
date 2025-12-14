@@ -289,6 +289,7 @@
                             </li>
                         </ul>
                         <div class="metrics__cards">
+                          <div class="metrics__cards-item metrics__cards-item--upload">
                             <div class="metric-card metric-card--upload blur-plate">
                                 <div class="metric-card__circle" data-progress="80">
                                     <svg class="progress-ring" viewBox="0 0 280 280" width="268" height="268"
@@ -302,8 +303,8 @@
                                     </svg>
                                 </div>
                                 <div class="metric-card__info">
-                                    <div class="metric-card__icon blur-plate">
-                                        <svg class="icon" width="36" height="36">
+                                    <div class="metric-card__icon blur-plate metric-card__icon--upload">
+                                        <svg class="icon icon--upload" width="36" height="36">
                                             <use href="./images/sprite.svg#upload"></use>
                                         </svg>
                                     </div>
@@ -311,9 +312,11 @@
                                     <p class="metric-card__value">
                                         <span data-activeNum data-count-num="420">420</span> Mbps
                                     </p>
-                                    <span class="metric-card__note">Peak: 500 Mbps</span>
+                                    <span class="metric-card__note">Peak: <span data-activeNum data-count-num="500">500</span> Mbps</span>
                                 </div>
                             </div>
+                          </div>
+                          <div class="metrics__cards-item metrics__cards-item--download">
                             <div class="metric-card metric-card--download blur-plate">
                                 <div class="metric-card__circle" data-progress="85">
                                     <svg class="progress-ring" viewBox="0 0 348.027 348.031" width="332" height="332"
@@ -328,17 +331,19 @@
                                 </div>
                                 <div class="metric-card__info">
                                     <div class="metric-card__icon blur-plate metric-card__icon--download">
-                                        <svg width="40" height="40">
+                                        <svg class="icon icon--download" width="40" height="40">
                                             <use href="./images/sprite.svg#download"></use>
                                         </svg>
                                     </div>
                                     <p class="metric-card__label">Download</p>
                                     <p class="metric-card__value metric-card__value--upload">
-                                        <span data-activeNum data-count-num="850">850</span> Mbps
+                                        <span data-activeNum data-count-num="850">850</span>Mbps
                                     </p>
-                                    <span class="metric-card__note">Peak: 1000 Mbps</span>
+                                    <span class="metric-card__note">Peak: <span data-activeNum data-count-num="1000">1000</span> Mbps</span>
                                 </div>
                             </div>
+                          </div>
+                          <div class="metrics__cards-item metrics__cards-item--latency">
                             <div class="metric-card metric-card--latency blur-plate">
                                 <div class="metric-card__circle" data-progress="90">
                                     <svg class="progress-ring" viewBox="0 0 268 268" width="268.000000"
@@ -353,8 +358,8 @@
                                     </svg>
                                 </div>
                                 <div class="metric-card__info">
-                                    <div class="metric-card__icon blur-plate">
-                                        <svg width="36" height="36">
+                                    <div class="metric-card__icon blur-plate  metric-card__icon--latency">
+                                        <svg class="icon icon--latency" width="36" height="36">
                                             <use href="./images/sprite.svg#wifi"></use>
                                         </svg>
                                     </div>
@@ -365,6 +370,7 @@
                                     <span class="metric-card__note">Excellent connection</span>
                                 </div>
                             </div>
+                          </div>
                         </div>
                     </div>
                 </section>
