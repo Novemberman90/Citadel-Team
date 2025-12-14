@@ -375,6 +375,137 @@
               
                 </div>
               </section>
+              <!--  -->
+              <section class="metrics">
+                <div class="container">
+              
+                  <div class="metrics__header">
+                    <div class="metrics__badge-box blur-plate">
+                      <svg class="icon" width="16" height="16">
+                        <use href="./images/sprite.svg#metricsBage"></use>
+                      </svg>
+                      <span class="metrics__badge">Real-Time</span>
+                    </div>
+                    <h2 class="metrics__title">Performance Metrics</h2>
+              
+                    <ul class="metrics__list">
+                      <li class="metrics__item">
+                        <h4 class="metrics__item-title">Unlimited</h4>
+                        <p class="metrics__item-subtitle">Bandwidth</p>
+                      </li>
+                      <li class="metrics__item">
+                        <h4 class="metrics__item-title">No</h4>
+                        <p class="metrics__item-subtitle">Throttling</p>
+                      </li>
+                      <li class="metrics__item">
+                        <h4 class="metrics__item-title metrics__item-num"><span data-activeNum data-count-num="99.9">99.9</span>%</h4>
+                        <p class="metrics__item-subtitle ">Uptime</p>
+                      </li>
+                      <li class="metrics__item">
+                        <h4 class="metrics__item-title">
+                          <span data-activeNum data-count-num="10"></span>Gbps</h4>
+                        <p class="metrics__item-subtitle">Max Speed</p>
+                      </li>
+                    </ul>
+                  </div>
+              
+                  <div class="metrics__cards">
+                    <div class="metric-card metric-card--upload blur-plate">
+                      <div class="metric-card__circle" data-progress="80">
+  <!--                       <div class="survey-results__wrap">
+                          <div class="survey-results__block">
+                            <div class="survey-results__chart">
+                              <svg viewBox="0 0 36 36" class="survey-results__circular survey-results__circular--accent">
+                                <path class="survey-results__circle" stroke-dasharray="98.7, 100"
+                                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div> -->
+                        <div class="metric-card__ring">
+                          <div class="progress-ring">
+                              <canvas class="metric-canvas" data-progress="80" data-color="#3DDC84">
+                              </canvas>
+                          </div>
+                        </div>
+                        
+<!--                         <div class="metric-card">
+                          <canvas class="metric-canvas" width="350" height="350" data-progress="90" data-color="#56c4fb">
+                          </canvas>
+                        </div>
+                        
+                        <div class="metric-card">
+                          <canvas class="metric-canvas" width="268" height="268" data-progress="100" data-color="#ffffff">
+                          </canvas>
+                        </div> -->
+
+  
+                      </div>
+         
+                      <div class="metric-card__info">
+                        <svg class="icon" width="36" height="36">
+                          <use href="./images/sprite.svg#upload"></use>
+                        </svg>
+                        <p class="metric-card__label">Upload</p>
+                        <p class="metric-card__value">
+                          <span data-activeNum data-count-num="420">420</span> Mbps</p>
+                        <span class="metric-card__note">Peak: 500 Mbps</span>
+                      </div>
+                    </div>
+              
+                    <div class="metric-card metric-card--download blur-plate">
+                      <div class="metric-card__circle" data-progress="85">
+                        <div class="metric-card__ring">
+                          <div class="progress-ring">
+                            <canvas class="metric-canvas" data-progress="95" data-color="#3DDC84">
+                            </canvas>
+                          </div>
+                        </div>
+  
+                <!--       <div class="circle">
+                      
+                        <svg class="svg1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                          width="332" height="332" viewBox="0 0 332 332">
+                      
+                          <circle id="circ" transform="rotate(-90 105 105)" cx="45" cy="166" r="160" />
+                        </svg>
+                      
+                      </div> -->
+                    </div>
+                      <div class="metric-card__info">
+                        <svg class="icon" width="40" height="40">
+                          <use href="./images/sprite.svg#download"></use>
+                        </svg>
+                        <p class="metric-card__label">Download</p>
+                        <p class="metric-card__value">
+                          <span data-activeNum data-count-num="850">850</span>Mbps</p>
+                        <p class="metric-card__note">Peak: 1000 Mbps</p>
+                      </div>
+                    </div>
+              
+                    <div class="metric-card metric-card--latency blur-plate">
+                      <div class="metric-card__circle" data-progress="90">
+                        <div class="metric-card__ring">
+                          <div class="progress-ring">
+                            <canvas class="metric-canvas" data-progress="99.99" data-color="#3DDC84">
+                            </canvas>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="metric-card__info">
+                        <svg class="icon" width="36" height="36">
+                          <use href="./images/sprite.svg#latency"></use>
+                        </svg>
+                        <p class="metric-card__label">Latency</p>
+                        <p class="metric-card__value">
+                          <span data-activeNum data-count-num="8">8</span> ms</p>
+                        <p class="metric-card__note">Excellent connection</p>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+              </section>
             </div>
 
             <section class="plan section">
