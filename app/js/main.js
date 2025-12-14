@@ -44,15 +44,14 @@ addEventListener('DOMContentLoaded', function () {
   });
 
 
-
+/* Счетчик */
   const startAddonNumber = (elements) => {
-    const time = 2000;  // Общее время анимации в миллисекундах
+    const time = 2000;  
 
     elements.forEach(item => {
-      const targetValue = item.dataset.countNum; // строка
+      const targetValue = item.dataset.countNum; 
       const num = parseFloat(targetValue);
 
-      // есть ли дробная часть
       const hasDecimal = targetValue.includes('.');
       const decimals = hasDecimal ? targetValue.split('.')[1].length : 0;
 
@@ -77,6 +76,7 @@ addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* Слежу когда он попадёт в поле видимости */
   const addonElement = document.querySelector('.metrics');
   if (addonElement) {
     const observer = new IntersectionObserver((entries, observer) => {
@@ -85,12 +85,36 @@ addEventListener('DOMContentLoaded', function () {
         if (entry.isIntersecting) {
           const elements = document.querySelectorAll('[data-activeNum]');
           startAddonNumber(elements);
-          observer.disconnect(); // Отключаем после первого срабатывания 
+          observer.disconnect();
         }
       });
 
     }, { threshold: 0.5 });
-    observer.observe(addonElement); // Слежу за нужным или любым другим элементом в конце страницы 
+    observer.observe(addonElement); 
 
   }
+
+// подсветка флага на карте
+  fetch('https://ipapi.co/json/')
+  .then(res => res.json())
+  .then(data => {
+    const countryCode = data.country_code;
+
+    const flag = document.querySelector(
+      `.map-flag[data-country="${countryCode}"]`
+    );
+
+    if (flag) {
+      flag.classList.add('is-active');
+    }
+
+    console.log('GeoIP data:', data);
+    console.log('Country:', data.country);
+    console.log('Country code:', data.country_code);
+  }).catch(err => {
+    console.error('GeoIP error', err);
+  });
+
+
+
 });
