@@ -270,10 +270,18 @@ body {
     .title {
         font-size: 48px;
     }
+
+    .section {
+        padding-bottom: 112px;
+    }
 }
 
 @media(max-width: 576px) {
     .title {
         font-size: 36px;
+    }
+
+    .section {
+        padding-bottom: 48px;
     }
 }

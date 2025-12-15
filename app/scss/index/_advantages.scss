@@ -110,7 +110,7 @@
 @media(max-width: 768px) {
     .advantages {
         &__item {
-            width: 47%;
+            max-width: 47%;
         }
     }
 }
