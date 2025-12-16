@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   /* =========================
      GEO IP MAP HIGHLIGHT
   ========================= */
@@ -6,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch('https://ipwho.is/')
     .then(res => res.json())
     .then(data => {
-      // ipwho.is повертає success = false у разі помилки
       if (!data.success) return;
 
       const countryCode = data.country_code;
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         flag.classList.add('is-active');
       }
 
-      // Debug (можеш прибрати після перевірки)
+      // Debug (можеш прибрати)
       console.log('GeoIP data:', data);
       console.log('Country:', data.country);
       console.log('Country code:', countryCode);
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isActive = button.classList.contains('active');
 
-      // Закрыть все
+      // Закрити всі
       accordionButtons.forEach(btn => {
         btn.classList.remove('active');
 
@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (icon) icon.style.transform = 'rotate(90deg)';
       });
 
-      // Если клик по уже открытому — просто закрываем
+      // Якщо вже відкритий — просто закриваємо
       if (isActive) return;
 
-      // Открыть текущий
+      // Відкрити поточний
       button.classList.add('active');
       answer.style.maxHeight = `${answer.scrollHeight}px`;
       title.style.marginBottom = '12px';
@@ -152,6 +152,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* =========================
+     REVIEWS SLIDER (SWIPER)
+  ========================= */
 
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.reviews-slider', {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      navigation: {
+        nextEl: '.reviews__nav--next',
+        prevEl: '.reviews__nav--prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.2,
+          spaceBetween: 16,
+        },
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1180: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
 
 });
