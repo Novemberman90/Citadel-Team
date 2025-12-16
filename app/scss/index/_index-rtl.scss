@@ -1,0 +1,25 @@
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+
+  .hero{
+    &__info {
+      margin-right: 0;
+      margin-left: auto;
+    }
+    .cta {
+      flex-direction: row-reverse;
+      padding: 12px 52px;
+      gap: 25px;
+    }
+  }
+
+  .faq__icon {
+    transform: rotate(180deg);
+  }
+  .faq__button.active{
+    .faq__icon {
+      transform: rotate(270deg);
+    }
+  }
+}

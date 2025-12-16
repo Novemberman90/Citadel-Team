@@ -7,22 +7,26 @@
     justify-content: center;
   }
 
-  &__badge {
-    order: -1;
-    display: flex;
-    align-self: center;
-    @include Inter-700;
-    font-size: 14px;
-    gap: 9px;
-    align-items: center;
-    padding: 6px 14px 6px 12px;
-    margin-bottom: 16px;
+  .metrics {
+    &__badge-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 16px;
+      padding: 6px 14px 6px 12px;
 
-    &.blur-plate {
-      &::after {
-        background: linear-gradient(10.35deg, rgba(255, 255, 255, 0) 60.32%, $light 94.79%), linear-gradient(200.43deg, rgba(255, 255, 255, 0) 65.44%, rgba(255, 255, 255, 0.6) 100%);
+      &.blur-plate {
+        &::after {
+          background: linear-gradient(10.35deg, rgba(255, 255, 255, 0) 60.32%, $light 94.79%), linear-gradient(200.43deg, rgba(255, 255, 255, 0) 65.44%, rgba(255, 255, 255, 0.6) 100%);
+        }
       }
     }
+  }
+
+  &__badge {
+    @include Inter-700;
+    font-size: 14px;
   }
 
   &__title {
@@ -67,6 +71,7 @@
     justify-content: center;
     gap: 32px;
   }
+
   &__cards-item {
     width: auto;
     height: auto;
@@ -90,23 +95,42 @@
 
   &--upload,
   &--latency {
-    max-width: 300px;
-    width: 100%;
+    width: 300px;
     height: 300px;
-  }
-  &--download {
-    max-width: 364px;
-    width: 100%;
-    height: 364px;
+
+    .progress-ring {
+      width: 268px;
+      height: 268px;
+    }
+
+    .metric-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 
-  &__circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &--download {
+    width: 364px;
+    height: 364px;
+
+    .progress-ring {
+      width: 332px;
+      height: 332px;
+    }
+
+    .metric-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 
   .progress-ring {
+    background-image: url('../images/download-bg.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &__bg {
       fill: rgba(255, 255, 255, 0.2);
@@ -125,6 +149,7 @@
     color: $light;
     font-size: 16px;
     margin-bottom: 5px;
+
     &--download {
       font-size: 18px;
     }
@@ -161,6 +186,7 @@
     font-size: 24px;
     color: $light-900;
     margin-bottom: 5px;
+
     &--download {
       font-size: 36px;
     }
@@ -182,15 +208,17 @@
       gap: 15px;
     }
   }
+
   .metric-card {
+
     &--upload,
     &--latency {
       width: 212px;
-      height: auto;
+      height: 212px;
 
       .progress-ring {
         width: 188px;
-        height: auto;
+        height: 188px;
       }
     }
 
@@ -203,42 +231,53 @@
         height: 226px;
       }
     }
+
     &__icon {
+
       &--latency,
       &--upload {
         margin-bottom: 10px;
       }
+
       .icon--upload,
       .icon--latency {
         width: 24px;
         height: 24px;
       }
+
       .icon--download {
         width: 32px;
         height: 32px;
       }
     }
+
     &__icon--upload.blur-plate,
     &__icon--latency.blur-plate {
       width: 40px;
       height: 40px;
     }
+
     &__icon--download.blur-plate {
       width: 56px;
       height: 56px;
     }
+
     &__label {
       font-size: 14px;
+
       &--download {
         font-size: 16px;
       }
     }
+
     &__value {
       font-size: 20px;
+
       &--download {
         font-size: 28px;
       }
     }
+
     &__note {
       font-size: 12px;
     }
@@ -250,10 +289,12 @@
     &__badge {
       margin-bottom: 22px;
     }
+
     &__cards {
       flex-wrap: wrap;
       gap: 32px 20px;
     }
+
     &__cards-item {
 
       &--upload,
@@ -261,6 +302,7 @@
         order: 2;
         width: 45%;
       }
+
       &--download {
         order: 1;
         width: 100%;
@@ -272,6 +314,7 @@
     &--upload {
       justify-self: end;
     }
+
     &--download {
       justify-self: center;
     }
@@ -283,54 +326,69 @@
     &__badge {
       margin-bottom: 18px;
     }
+
     &__item-title {
       font-size: 20px;
     }
-    &__item-subtitle{
+
+    &__item-subtitle {
       font-size: 14px;
     }
+
     &__list {
       gap: 12px;
     }
-    &__cards{
+
+    &__cards {
       gap: 12px 24px;
     }
+
     &__item {
       min-width: 80px;
     }
   }
+
   .metric-card {
     &__info {
       max-width: 80px;
     }
+
     &__icon {
+
       &--latency,
       &--upload {
         margin-bottom: 6px;
       }
     }
+
     &__label {
       &--download {
         font-size: 16px;
       }
     }
+
     &__note {
       font-size: 10px;
     }
+
     &--upload,
     &--latency {
       max-width: 171px;
       height: 171px;
+
       &.blur-plate {
         padding: 8px;
       }
-    .progress-ring {
+
+      .progress-ring {
         width: 155px;
         height: 155px;
       }
+
       .metric-card__label {
         margin-bottom: 0;
       }
+
       .metric-card__value {
         margin-bottom: 0;
       }
@@ -343,21 +401,24 @@
     &__cards {
       gap: 12px 10px;
     }
+
     &__list {
       gap: 5px;
       flex-wrap: wrap;
     }
   }
+
   .metric-card {
+
     &--upload,
     &--latency {
       max-width: 160px;
       height: 160px;
-  
+
       &.blur-plate {
         padding: 6px;
       }
-  
+
       .progress-ring {
         width: 145px;
         height: 145px;

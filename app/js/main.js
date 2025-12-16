@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         flag.classList.add('is-active');
       }
 
-      // Debug (можеш прибрати)
-      console.log('GeoIP data:', data);
-      console.log('Country:', data.country);
-      console.log('Country code:', countryCode);
+      console.log('GeoIP:', data.country, countryCode);
     })
     .catch(err => {
       console.error('GeoIP error:', err);
@@ -48,55 +45,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isActive = button.classList.contains('active');
 
-      // Закрити всі
       accordionButtons.forEach(btn => {
         btn.classList.remove('active');
 
         const block = btn.nextElementSibling;
         if (!block) return;
 
-        const text = block.querySelector('.faq__answer');
-        const subtitle = block.querySelector('.faq__subtitle');
-        const icon = btn.parentElement.querySelector('.faq__icon');
+        const a = block.querySelector('.faq__answer');
+        const t = block.querySelector('.faq__subtitle');
+        const i = btn.parentElement.querySelector('.faq__icon');
 
-        if (text) text.style.maxHeight = 0;
-        if (subtitle) subtitle.style.marginBottom = 0;
-        if (icon) icon.style.transform = 'rotate(90deg)';
+        if (a) a.style.maxHeight = 0;
+        if (t) t.style.marginBottom = 0;
+        if (i) i.style.transform = 'rotate(90deg)';
       });
 
-      // Якщо вже відкритий — просто закриваємо
       if (isActive) return;
 
-      // Відкрити поточний
       button.classList.add('active');
-      answer.style.maxHeight = `${answer.scrollHeight}px`;
+      answer.style.maxHeight = answer.scrollHeight + 'px';
       title.style.marginBottom = '12px';
       arrow.style.transform = 'rotate(0deg)';
     });
   });
 
   /* =========================
-     NUMBER COUNTER
+     METRICS — NUMBERS
   ========================= */
 
-  const animateNumbers = (elements) => {
+  function animateNumbers(elements) {
     const duration = 2000;
 
     elements.forEach(item => {
-      const targetValue = item.dataset.countNum;
-      const target = parseFloat(targetValue);
-
+      const value = item.dataset.countNum;
+      const target = parseFloat(value);
       if (isNaN(target)) return;
 
-      const hasDecimal = targetValue.includes('.');
-      const decimals = hasDecimal ? targetValue.split('.')[1].length : 0;
+      const hasDecimal = value.includes('.');
+      const decimals = hasDecimal ? value.split('.')[1].length : 0;
 
-      let startTime = null;
+      let start = null;
 
-      const update = (timeStamp) => {
-        if (!startTime) startTime = timeStamp;
+      function step(timestamp) {
+        if (!start) start = timestamp;
 
-        const progress = Math.min((timeStamp - startTime) / duration, 1);
+        const progress = Math.min((timestamp - start) / duration, 1);
         const current = target * progress;
 
         item.textContent = hasDecimal
@@ -104,33 +97,88 @@ document.addEventListener('DOMContentLoaded', () => {
           : Math.floor(current);
 
         if (progress < 1) {
-          requestAnimationFrame(update);
+          requestAnimationFrame(step);
         }
-      };
+      }
 
-      requestAnimationFrame(update);
+      requestAnimationFrame(step);
     });
-  };
+  }
 
   /* =========================
-     METRICS OBSERVER
+     METRICS — CANVAS RING
   ========================= */
 
-  const metricsBlock = document.querySelector('.metrics');
+  function drawAnimatedRing(canvas) {
+    const ctx = canvas.getContext('2d');
 
-  if (metricsBlock) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const numbers = document.querySelectorAll('[data-activeNum]');
-          animateNumbers(numbers);
-          obs.disconnect();
-        }
-      });
-    }, { threshold: 0.5 });
+    const percent = Number(canvas.dataset.progress) / 100;
+    const color = canvas.dataset.color || '#3DDC84';
 
-    observer.observe(metricsBlock);
+    const size = canvas.clientWidth;
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = size * dpr;
+    canvas.height = size * dpr;
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const center = size / 2;
+    const lineWidth = 12;
+    const radius = center - lineWidth / 2;
+
+    let current = 0;
+    const speed = 0.015;
+
+    function animate() {
+      ctx.clearRect(0, 0, size, size);
+
+      const start = -Math.PI / 2;
+      const end = start + Math.PI * 2 * current;
+
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = lineWidth;
+      ctx.lineCap = percent === 1 ? 'butt' : 'round';
+      ctx.arc(center, center, radius, start, end);
+      ctx.stroke();
+
+      if (current < percent) {
+        current += speed;
+        requestAnimationFrame(animate);
+      }
+    }
+
+    animate();
   }
+
+  /* =========================
+     METRICS — OBSERVER
+  ========================= */
+
+  const metricsObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const block = entry.target;
+
+      const canvases = block.querySelectorAll('.metric-canvas');
+      canvases.forEach(canvas => {
+        drawAnimatedRing(canvas);
+      });
+
+      const numbers = block.querySelectorAll('[data-activeNum]');
+      if (numbers.length) {
+        animateNumbers(numbers);
+      }
+
+      obs.unobserve(block);
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.metric-card, .metrics').forEach(el => {
+    metricsObserver.observe(el);
+  });
 
   /* =========================
      LANGUAGE SWITCHER
@@ -140,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.querySelector('.switcher-lang__btn');
 
   if (dropdown && langBtn) {
-    langBtn.addEventListener('click', (e) => {
+    langBtn.addEventListener('click', e => {
       e.stopPropagation();
       dropdown.classList.toggle('switcher-lang__dropdown--active');
       langBtn.classList.toggle('switcher-lang__btn--active');
@@ -168,18 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '.swiper-pagination',
       },
       breakpoints: {
-        320: {
-          slidesPerView: 1.2,
-          spaceBetween: 16,
-        },
-        767: {
-          slidesPerView: 2,
-          spaceBetween: 24,
-        },
-        1180: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-        },
+        320: { slidesPerView: 1.2, spaceBetween: 16 },
+        767: { slidesPerView: 2, spaceBetween: 24 },
+        1180: { slidesPerView: 3, spaceBetween: 24 },
       },
     });
   }
