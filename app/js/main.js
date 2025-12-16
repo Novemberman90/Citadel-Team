@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /* =========================
+     GEO IP MAP HIGHLIGHT
+  ========================= */
+
+  fetch('https://ipwho.is/')
+    .then(res => res.json())
+    .then(data => {
+      // ipwho.is повертає success = false у разі помилки
+      if (!data.success) return;
+
+      const countryCode = data.country_code;
+      if (!countryCode) return;
+
+      const flag = document.querySelector(
+        `.map-flag[data-country="${countryCode}"]`
+      );
+
+      if (flag) {
+        flag.classList.add('is-active');
+      }
+
+      // Debug (можеш прибрати після перевірки)
+      console.log('GeoIP data:', data);
+      console.log('Country:', data.country);
+      console.log('Country code:', countryCode);
+    })
+    .catch(err => {
+      console.error('GeoIP error:', err);
+    });
 
   /* =========================
      FAQ ACCORDION
@@ -23,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
       accordionButtons.forEach(btn => {
         btn.classList.remove('active');
 
-        const innerBlock = btn.nextElementSibling;
-        if (!innerBlock) return;
+        const block = btn.nextElementSibling;
+        if (!block) return;
 
-        const text = innerBlock.querySelector('.faq__answer');
-        const subtitle = innerBlock.querySelector('.faq__subtitle');
+        const text = block.querySelector('.faq__answer');
+        const subtitle = block.querySelector('.faq__subtitle');
         const icon = btn.parentElement.querySelector('.faq__icon');
 
         if (text) text.style.maxHeight = 0;
@@ -35,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (icon) icon.style.transform = 'rotate(90deg)';
       });
 
-      // Если был открыт — просто закрываем
+      // Если клик по уже открытому — просто закрываем
       if (isActive) return;
 
       // Открыть текущий
@@ -56,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.forEach(item => {
       const targetValue = item.dataset.countNum;
       const target = parseFloat(targetValue);
+
+      if (isNaN(target)) return;
 
       const hasDecimal = targetValue.includes('.');
       const decimals = hasDecimal ? targetValue.split('.')[1].length : 0;
@@ -80,6 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(update);
     });
   };
+
+  /* =========================
+     METRICS OBSERVER
+  ========================= */
 
   const metricsBlock = document.querySelector('.metrics');
 
@@ -116,5 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
       langBtn.classList.remove('switcher-lang__btn--active');
     });
   }
+
+
 
 });
