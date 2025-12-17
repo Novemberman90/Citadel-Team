@@ -157,6 +157,18 @@
         &__inner {
             justify-content: center;
         }
+        .menu {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 24px;
+          &__item {
+            flex: 0 0 45%;
+            &:nth-child(2n+1) {
+              text-align: right;
+            }
+          }
+        }
     }
 }
 
@@ -166,4 +178,15 @@
             font-size: 14px;
         }
     }
+}
+
+
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  .footer {
+    .menu__item:nth-child(2n+1) {
+      text-align: left;
+    }
+  }
 }

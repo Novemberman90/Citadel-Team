@@ -32,42 +32,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const accordionButtons = document.querySelectorAll('[data-button]');
 
-  accordionButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const inner = button.nextElementSibling;
-      if (!inner) return;
+accordionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq__item');
+    if (!item) return;
 
-      const answer = inner.querySelector('.faq__answer');
-      const title = inner.querySelector('.faq__subtitle');
-      const arrow = button.parentElement.querySelector('.faq__icon');
+    const inner = item.querySelector('.faq__inner');
+    const answer = item.querySelector('.faq__answer');
+    const icon = item.querySelector('.faq__icon');
 
-      if (!answer || !title || !arrow) return;
+    if (!inner || !answer || !icon) return;
 
-      const isActive = button.classList.contains('active');
+    const isOpen = item.classList.contains('is-open');
 
-      accordionButtons.forEach(btn => {
-        btn.classList.remove('active');
+    document.querySelectorAll('.faq__item.is-open').forEach(openItem => {
+      openItem.classList.remove('is-open');
 
-        const block = btn.nextElementSibling;
-        if (!block) return;
+      const a = openItem.querySelector('.faq__answer');
+      const i = openItem.querySelector('.faq__icon');
 
-        const a = block.querySelector('.faq__answer');
-        const t = block.querySelector('.faq__subtitle');
-        const i = btn.parentElement.querySelector('.faq__icon');
-
-        if (a) a.style.maxHeight = 0;
-        if (t) t.style.marginBottom = 0;
-        if (i) i.style.transform = 'rotate(90deg)';
-      });
-
-      if (isActive) return;
-
-      button.classList.add('active');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-      title.style.marginBottom = '12px';
-      arrow.style.transform = 'rotate(0deg)';
+      if (a) a.style.maxHeight = null;
+      if (i) i.classList.remove('faq__icon--open');
     });
+
+    if (isOpen) return;
+
+    item.classList.add('is-open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.classList.add('faq__icon--open');
   });
+});
+
 
   /* =========================
      METRICS — NUMBERS

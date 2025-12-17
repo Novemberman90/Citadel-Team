@@ -3,7 +3,7 @@
     max-width: 1188px;
     margin: 0 auto;
     position: relative;
-
+    overflow: hidden;
     &::after {
         content: "";
         position: absolute;

@@ -6,13 +6,10 @@
     }
   }
 }
-.map-flag.is-active {
-  filter: drop-shadow(#3DDC84 100px 100px 100px);
-}
 
-.map-flag.is-active circle,
-.map-flag.is-active path {
-  animation: pulse 1.5s infinite ease-in-out;
+.map-flag.is-active {
+  animation: pulse 1.2s infinite ease-in-out;
+  filter: drop-shadow(#3DDC84 45px 45px 45px);
 }
 
 @keyframes pulse {
@@ -21,7 +18,7 @@
   }
 
   50% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
 
   100% {

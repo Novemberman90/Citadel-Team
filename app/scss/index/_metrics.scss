@@ -29,13 +29,6 @@
     font-size: 14px;
   }
 
-  &__title {
-    @include RobotoCondensed-600;
-    font-size: 56px;
-    display: block;
-    margin: 0 auto 32px auto;
-  }
-
   &__list {
     display: flex;
     align-items: center;
@@ -286,7 +279,7 @@
 
 @media (max-width: 767px) {
   .metrics {
-    &__badge {
+    &__badge-box {
       margin-bottom: 22px;
     }
 
@@ -323,10 +316,6 @@
 
 @media (max-width: 576px) {
   .metrics {
-    &__badge {
-      margin-bottom: 18px;
-    }
-
     &__item-title {
       font-size: 20px;
     }

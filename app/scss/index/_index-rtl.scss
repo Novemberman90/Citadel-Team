@@ -17,9 +17,16 @@ html[dir="rtl"] {
   .faq__icon {
     transform: rotate(180deg);
   }
+  .faq__icon.faq__icon--open {
+    transform: rotate(270deg);
+  }
   .faq__button.active{
     .faq__icon {
       transform: rotate(270deg);
     }
+  }
+  .steps__item::before {
+    left: auto;
+    right: 32px;
   }
 }

@@ -8,7 +8,7 @@
     &__dropdown {
       position: absolute;
       top:0;
-      left: auto;
+      left: 0;
       right: 0;
       
 
@@ -56,6 +56,13 @@
         .icon {
           transform: rotate(180deg);
           fill: $light-900;
+        }
+        &:hover {
+          color: $light-900;
+
+          svg.icon {
+            fill: $light-900;
+          }
         }
       }
       &:hover {

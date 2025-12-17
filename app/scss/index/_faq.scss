@@ -72,6 +72,9 @@
     &__icon {
         transform: rotate(90deg);
         transition: transform 0.3s;
+     &--open {
+        transform: rotate(0);
+      }
     }
 }
 
