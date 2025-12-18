@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* Скрол меню */
-  const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
+/*   const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
   navLink.forEach(link => {
     link.addEventListener('click', (e)=>{
       e.preventDefault();
@@ -35,7 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
        }
     })
-  });
+  }); */
+    const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
+    navLink.forEach(link => {
+      link.addEventListener('click', (e)=>{
+        e.preventDefault();
+         const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
+         
+         if(!link.classList.contains('go-top')) {
+          scrollNavigation(targetId)
+          closeMenu();
+         } else {
+          window.scrollTo({
+            top: 0,
+            behavior:'smooth',
+            })
+         }
+      })
+    });
 
   const scrollNavigation = (targetId)=> {
     const targetElement = document.getElementById(targetId);
