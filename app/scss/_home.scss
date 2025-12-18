@@ -31,16 +31,19 @@
       }
     }
   }
+
   &__link {
     position: relative;
     transition: all .3s;
     padding-bottom: 1px;
+
     &:hover {
       color: $light-900;
     }
+
     &:active {
       color: $light-900;
-  
+
       &::before {
         position: absolute;
         content: '';
@@ -142,6 +145,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+
   &__btn {
     @include Inter-400;
     color: $light;
@@ -154,6 +158,7 @@
     width: 100%;
     text-align: left;
     transition: all .3s;
+
     &:hover {
       color: $light-900;
 
@@ -168,11 +173,13 @@
 
     &:active {
       color: $light-900;
+
       span {
         border-bottom: 1px solid $light-900;
         width: 100%;
       }
     }
+
     &:focus {
       filter: drop-shadow(#3DDC84 3px 3px 10px);
     }
@@ -294,21 +301,26 @@
   color: $light-900;
   font-size: 18px;
   position: relative;
-  padding: 6px 6px 3px 6px;
+  padding: 6px 1px 6px;
   border-radius: 6px;
   text-decoration: underline;
-  &:hover {
-    background: #132436;
-  }
-  &:active {
-   color: #0D783D;
-  }
-  &:focus {
-    filter: drop-shadow(#3DDC84 3px 3px 10px);
-  }
+  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
+
   &:visited {
-    background: transparent;
+    color: $light-900;
+  }
+
+  &:hover {
+    background-color: #132436;
+  }
+
+  &:active {
+    background-color: #132436;
     color: #0D783D;
+  }
+
+  &:focus {
+    text-shadow: 0 0 11px $light-900;
   }
 }
 

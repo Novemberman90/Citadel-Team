@@ -1,136 +1,160 @@
 .switcher-lang {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    position: relative;
-    width: 94px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  width: 94px;
 
-    &__dropdown {
-      position: absolute;
-      top:2px;
-      left: 0;
-      right: 0;
-      z-index: 5;
+  &__dropdown {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    z-index: 5;
 
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-5px); // чуть выше кнопки
-    
-      transition:
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px); // чуть выше кнопки
+
+    transition:
       opacity 0.3s ease,
       transform 0.3s ease,
       visibility 0.3s ease;
-      &--active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        height: auto;
-      }
-      &.blur-plate {
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      height: auto;
+    }
+
+    &.blur-plate {
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      padding: 66px 0 10px 0;
+
+      &::after {
         border-radius: 24px;
-        backdrop-filter: blur(16px);
-        padding: 66px 0 10px 0;
-        &::after {
-          border-radius: 24px;
-        }
       }
     }
-    &__btn {
-      min-width: 68px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid transparent;
-      padding: 10px 8px;
-      border-radius: 24px;
-      z-index: 6;
-      transition: all .3s;
-      .icon {
-        transition: all .3s;
-        transform: rotate(0);
-        fill: $light;
-      }
-      &--active {
-        border: 1px solid $light-900;
-        .icon {
-          transform: rotate(180deg);
-          fill: $light-900;
-        }
-        &:hover {
-          color: $light-900;
+  }
 
-          svg.icon {
-            fill: $light-900;
-          }
-        }
+  &__btn {
+    min-width: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid transparent;
+    padding: 10px 8px;
+    border-radius: 24px;
+    z-index: 6;
+    transition: all .3s;
+
+    .icon {
+      transition: all .3s;
+      transform: rotate(0);
+      fill: $light;
+    }
+
+    &--active {
+      border: 1px solid $light-900;
+
+      .icon {
+        transform: rotate(180deg);
+        fill: $light-900;
       }
+
       &:hover {
         color: $light-900;
-        .icon {
+
+        svg.icon {
           fill: $light-900;
         }
       }
-      &:active {
-        border-color: $light-900;
-        color: $light;
-        .icon {
-          fill: $light-900;
-        }
-      }
-      &:focus {
-        backdrop-filter: blur(16px);
-        box-shadow: 0px 0px 16px 0px #3DDC84BF;
-        .icon {
-          fill: $light;
-        }
+    }
+
+    &:hover {
+      color: $light-900;
+
+      .icon {
+        fill: $light-900;
       }
     }
-    &__link {
-        padding: 10px 20px;
-        color: $light;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 700;
-        border-radius: 80px;
-        span{
-          color: inherit;
-        }
-        transition: color 0.3s, box-shadow 0.3s, outline 0.3s;
-        &--active {
-          color: $light-900;
-        }
-        &:hover {
-            color: $light-900;
-        }
 
-        &:focus {
-            box-shadow: 0 0 16px $light-900-opacity-75;
-        }
+    &:active {
+      border-color: $light-900;
+      color: $light;
 
-        &:active {
-            outline: 1px solid $light-900;
-        }
+      .icon {
+        fill: $light-900;
+      }
     }
 
-    &__box {
-        display: flex;
-        align-items: center;
-        gap: 6px;
+    &:focus {
+      backdrop-filter: blur(16px);
+      box-shadow: 0px 0px 16px 0px #3DDC84BF;
+
+      .icon {
+        fill: $light;
+      }
     }
+  }
+
+  &__link {
+    padding: 10px 20px;
+    color: $light;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    border-radius: 80px;
+
+    span {
+      color: inherit;
+    }
+
+    transition: color 0.3s,
+    box-shadow 0.3s,
+    outline 0.3s;
+
+    &--active {
+      color: $light-900;
+    }
+
+    &:hover {
+      color: $light-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 16px $light-900-opacity-75;
+    }
+
+    &:active {
+      outline: 1px solid $light-900;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
 }
 
 @media (max-width: 576px) {
   .switcher-lang {
     width: 68px;
+
     &__box {
       span {
         display: none;
       }
     }
+
     &__link {
       justify-content: center;
+
       span {
         display: none;
       }

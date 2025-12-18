@@ -22,9 +22,11 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 777px;
+
     &.blur-plate {
       border-radius: 777px;
       padding: 8px;
+
       &::after {
         border-radius: 777px;
       }
@@ -37,9 +39,11 @@
     flex-wrap: wrap;
     margin-left: 12px;
   }
+
   &__cookie-img {
     width: 40px;
     height: 40px;
+
     &.blur-plate {
       padding: 8px;
     }
@@ -47,7 +51,7 @@
 
   &__title {
     font-size: 16px;
-    color:$light;
+    color: $light;
   }
 
   &__text {
@@ -61,11 +65,12 @@
   }
 
   &__accept {
-    padding: 12px 18px;
-    border-radius: 999px;
+    padding: 12px 20px;
+    font-size: 14px;
     @include Inter-700;
     color: $dark;
     cursor: pointer;
+
     &.blur-plate {
       padding: 6px;
     }
@@ -81,76 +86,78 @@
     align-items: center;
     justify-content: center;
     border: 1px solid transparent;
-    transition: all .3s;
+    transition: color 0.3s, box-shadow 0.3s, border-color 0.3s;
+
     &.blur-plate {
       padding: 6px;
-    }
-    &:hover {
-      border-color: $light-900;
 
-      .cookie__close-icon {
-        fill: $light-900;
+      &::after {
+        background: linear-gradient(27.35deg, rgba(61, 220, 132, 0) 60.32%, #3DDC84 94.79%), linear-gradient(200.43deg, rgba(255, 255, 255, 0) 54.44%, rgba(255, 255, 255, 0.6) 100%);
       }
+    }
+
+    &:hover {
+      color: $light-900;
+    }
+
+    &:focus {
+      box-shadow: 0 0 16px $light-900-opacity-75;
     }
 
     &:active {
       border-color: $light-900;
+
       .cookie__close-icon {
         fill: $light-900;
       }
     }
-
-    &:focus {
-      backdrop-filter: blur(16px);
-      box-shadow: 0px 0px 16px 0px #3DDC84BF;
-
-      .cookie__close-icon {
-        fill: $light;
-      }
-    }
-  }
-  &__close-icon {
-    width: 11px;
-    height: 11px;
-    fill: $light;
   }
 }
 
 @media (max-width: 1200px) {
   .cookie {
     max-width: 704px;
+
     &__text {
       font-size: 14px;
     }
   }
 }
+
 @media (max-width: 767px) {
   .cookie {
     max-width: 366px;
+
     &__text {
       font-size: 14px;
     }
+
     &__inner {
       border-radius: 24px;
 
       &.blur-plate {
         border-radius: 24px;
         padding: 16px;
-      &::after {
+
+        &::after {
           border-radius: 24px;
         }
       }
     }
+
     &__content {
       margin-right: 12px;
     }
+
     &__actions {
       flex-direction: column;
     }
+
     &__accept {
       width: 86px;
       height: 40px;
     }
+
     &__close {
       border-radius: 80px;
       width: 86px;
@@ -158,6 +165,7 @@
     }
   }
 }
+
 html[dir="rtl"] {
   .cookie__content {
     margin-left: 0;
