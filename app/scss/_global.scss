@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -144,7 +148,7 @@ body {
     overflow: hidden;
 }
 
-.cta {
+/* .cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -209,7 +213,70 @@ body {
         width: 89%;
         height: 73%;
     }
+} */
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: $dark;
+    font-weight: 700;
+    font-size: 18px;
+    background: linear-gradient(231.87deg,
+            rgba(255, 255, 255, 0.18) -30.13%,
+            rgba(255, 255, 255, 0.03) 57.05%,
+            rgba(255, 255, 255, 0.12) 137.89%);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border-radius: 80px;
+    padding: 20px 28px 20px 32px;
+    position: relative;
+    z-index: 2;
+    transition: box-shadow 0.3s;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 80px;
+        padding: 1px;
+        background: linear-gradient(10.35deg, rgba(61, 220, 132, 0) 60.32%, #3DDC84 94.79%), linear-gradient(200.43deg, rgba(255, 255, 255, 0) 65.44%, rgba(255, 255, 255, 0.6) 100%);
+        z-index: -2;
+        mask:
+            linear-gradient(#fff, #fff) content-box,
+            linear-gradient(#fff, #fff);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: 80px;
+        inset: 6px;
+        background-color: $light-900;
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+            0 4px 34px $light-900-opacity-34;
+        z-index: -1;
+        transition: box-shadow 0.3s, width 0.3s, height 0.3s;
+    }
+
+    &:hover::before {
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+            0 4px 34px $light-900-opacity-64;
+    }
+
+    &:focus {
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+            0 0 16px $light-900-opacity-75;
+    }
+
+    &:active::before {
+        width: 89%;
+        height: 73%;
+    }
 }
+
 
 .blur-plate {
     background: linear-gradient(231.87deg,
@@ -273,6 +340,15 @@ body {
 }
 
 @media(max-width: 576px) {
+  .top-wrapper {
+    &::before {
+      background-image: url('../images/hero-bg-mob.webp');
+      background-position: center center;
+      opacity: 1;
+      height: 939px;
+      top: -78px;
+    }
+  }
     .title {
         font-size: 36px;
     }

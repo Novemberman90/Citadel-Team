@@ -41,93 +41,106 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <nav class="menu">
+  <div class="wrapper">
+    <header class="header" id="header">
+      <div class="container">
         <div class="header__inner">
-          <a class="logo" href="#">
-            <img src="../images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+          <a class="logo" href="../ar/index.html">
+            <picture>
+              <source media="(max-width: 576px)" srcset="../images/header-logo-s-rtl.svg">
+              <img src="../images/logo-rtl.svg" alt="CitadelVPN Logo" width="153" height="46">
+            </picture>
           </a>
-          <ul class="menu">
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                يدعم
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                التسعير
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                سمات
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                مدونة
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                أخبار
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="user-menu">
-          <div class="switcher-lang">
-            <button class="switcher-lang__btn blur-plate" type="button">
-              <div class="switcher-lang__box">
-                <svg width="24" height="24">
-                  <use href="../images/sprite.svg#ar">
-                  </use>
-                </svg>
-                عر
-              </div>
-              <svg class="icon" width="11" height="6">
-                <use href="../images/sprite.svg#arrowBottom">
-                </use>
+          <!-- menu  -->
+          <nav class="menu">
+            <button class="menu__btn blur-plate" type="button">
+              <svg class="menu__btn-icon" width="22" height="22">
+                <use href="../images/sprite.svg#menuBtn"></use>
+              </svg>
+              <svg class="menu__btn-icon-close" width="11" height="11">
+                <use href="../images/sprite.svg#menuBtnClose"></use>
               </svg>
             </button>
-            <div class="switcher-lang__dropdown blur-plate">
-              <a class="switcher-lang__link" href="/about-us.html">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="../ar/index.html">
+                  يدعم
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="../ar/index.html#plan">
+                  التسعير
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="../ar/index.html">
+                  سمات
+                </a>
+              </li>
+        <!--   <li class="menu__item">
+                <a class="menu__link" href="#" data-scroll>
+                    مدونة
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="#" data-scroll>
+                    أخبار
+                </a>
+              </li> -->
+            </ul>
+          </nav>
+    
+          <!-- lang menu -->
+          <div class="user-menu">
+            <div class="switcher-lang">
+              <button class="switcher-lang__btn blur-plate" type="button">
                 <div class="switcher-lang__box">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#ar">
+                    </use>
+                  </svg>
+                  <span>عر</span>
+                </div>
+                <svg class="icon" width="11" height="6">
+                  <use href="../images/sprite.svg#arrowBottom">
+                  </use>
+                </svg>
+              </button>
+              <div class="switcher-lang__dropdown blur-plate">
+                <a class="switcher-lang__link switcher-lang__link--active" href="../about-us.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#en">
                     </use>
                   </svg>
-                  En
-                </div>
-              </a>
-              <a class="switcher-lang__link switcher-lang__link--active" href="../ar/about-us.html">
-                <svg width="24" height="24">
-                  <use href="../images/sprite.svg#ar">
-                  </use>
-                </svg>
-                عر
-              </a>
-              <a class="switcher-lang__link" href="../ru/about-us.html">
-                <svg width="24" height="24">
-                  <use href="../images/sprite.svg#ru">
-                  </use>
-                </svg>
-                Ру
-              </a>
+                  <span>En</span>
+                </a>
+                <a class="switcher-lang__link" href="../ar/about-us.html">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#ar">
+                    </use>
+                  </svg>
+                  <span>عر</span>
+                </a>
+                <a class="switcher-lang__link" href="../ru/about-us.html">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#ru">
+                    </use>
+                  </svg>
+                  <span>Ру</span>
+                </a>
+              </div>
             </div>
+            <a class="cta user-menu__cta" href="#">
+              افتح VPN
+              <svg class="icon" width="20" height="20">
+                <use href="../images/sprite.svg#telegramLight">
+                </use>
+              </svg>
+            </a>
           </div>
-          <a class="cta user-menu__cta" href="#">
-            Open VPN
-            <svg class="icon" width="20" height="20">
-              <use href="../images/sprite.svg#telegramLight">
-              </use>
-            </svg>
-          </a>
         </div>
-      </nav>
-    </div>
-  </header>
+      </div>
+    </header>
   <main class="main">
 
     <section class="home">
@@ -315,14 +328,77 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <nav class="footer__nav">
-          <a class="logo footer__logo" href="#">
-            <img src="../images/logo.svg" alt="CitadelVPN Logo" width="190" height="57">
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <a class="logo footer__logo" href="../ar/index.html">
+            <img src="../images/logo-rtl.svg" alt="CitadelVPN Logo" width="190" height="57">
           </a>
-          <ul class="menu">
+          <address class="footer__address">
+            <a class="footer__link" href="mailto:info@vpncitadel.com">
+              <div class="footer__icon blur-plate">
+                <svg width="22" height="17">
+                  <use href="../images/sprite.svg#email"></use>
+                </svg>
+              </div>
+              info@vpncitadel.com
+            </a>
+            <ul class="social">
+              <li class="social__item">
+                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#telegramDark"></use>
+                  </svg>
+                  <span class="visually-hidden">
+                    انتقل إلى قناة Citadel VPN على Telegram
+                  </span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#instagram"></use>
+                  </svg>
+                  <span class="visually-hidden">
+                  انتقل إلى صفحة Citadel VPN على Instagram
+                  </span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#x"></use>
+                  </svg>
+                  <span class="visually-hidden">
+                    انتقل إلى صفحة Citadel VPN على X
+                  </span>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#facebook"></use>
+                  </svg>
+                  <span class="visually-hidden">
+                  انتقل إلى صفحة Citadel VPN على Facebook
+                  </span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#tikTok"></use>
+                  </svg>
+                  <span class="visually-hidden">
+                    انتقل إلى حساب Citadel VPN على TikTok
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </address>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__menu">
             <li class="menu__item">
               <a class="menu__link" href="../ar/terms-and-conditions.html">
                 سياسة استرداد الأموال
@@ -344,70 +420,6 @@
               </a>
             </li>
           </ul>
-        </nav>
-        <div class="footer__info">
-          <address class="footer__address">
-            <a class="footer__link" href="mailto:info@vpncitadel.com">
-              <div class="footer__icon blur-plate">
-                <svg width="22" height="17">
-                  <use href="../images/sprite.svg#email"></use>
-                </svg>
-              </div>
-              info@vpncitadel.com
-            </a>
-            <ul class="social">
-              <li class="social__item">
-                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
-                  <svg width="24" height="24">
-                    <use href="../images/sprite.svg#telegramDark"></use>
-                  </svg>
-                  <span class="visually-hidden">
-                    Go to Citadel VPN Telegram channel
-                  </span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
-                  <svg width="24" height="24">
-                    <use href="../images/sprite.svg#instagram"></use>
-                  </svg>
-                  <span class="visually-hidden">
-                    Go to Citadel VPN Instagram page
-                  </span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
-                  <svg width="24" height="24">
-                    <use href="../images/sprite.svg#x"></use>
-                  </svg>
-                  <span class="visually-hidden">
-                    Go to Citadel VPN page on X
-                  </span>
-                </a>
-              </li>
-              <li class="footer__item">
-                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
-                  <svg width="24" height="24">
-                    <use href="../images/sprite.svg#facebook"></use>
-                  </svg>
-                  <span class="visually-hidden">
-                    Go to Citadel VPN Facebook page
-                  </span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link blur-plate" href="https://t.me/CitadelVPNBot">
-                  <svg width="24" height="24">
-                    <use href="../images/sprite.svg#tikTok"></use>
-                  </svg>
-                  <span class="visually-hidden">
-                    Go to Citadel VPN TikTok account
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </address>
           <ul class="footer__list-payments">
             <li class="footer__item">
               <svg width="57" height="35">
@@ -445,16 +457,41 @@
               </svg>
             </li>
           </ul>
-        </div>
+        </nav>
+        <span class="footer__copyright">
+          جميع الحقوق محفوظة © ٢٠٢٥ لـ Citadel VPN.
+        </span>
       </div>
-      <span class="footer__copyright">
-        Copyright © 2025 Citadel VPN. All rights reserved.
+    </footer>
+
+
+  <div class="cookie is-visible" id="cookie">
+    <div class="cookie__inner blur-plate">
+      <span class="cookie__cookie-img blur-plate">
+        <svg class="cookie__icon" width="24" height="24">
+          <use href="../images/sprite.svg#coockie"></use>
+        </svg>
       </span>
+      <div class="cookie__content">
+        <h4 class="cookie__title">إشعار ملفات تعريف.</h4>
+        <p class="cookie__text">
+          أفضل تجربة
+          <a class="terms-link" href="../ar/privacy-policy.html">حصولك على</a>
+          لضمان حصولك على أفضل تجربة ممكنة.
+        </p>
+      </div>
+  
+      <div class="cookie__actions">
+        <button class="cta cookie__accept">يقبل</button>
+        <button class="cookie__close blur-plate" aria-label="Close">
+          <svg class="cookie__close-icon" width="11" height="11">
+            <use href="../images/sprite.svg#menuBtnClose"></use>
+          </svg>
+        </button>
+      </div>
     </div>
-  </footer>
-
-
-
+  </div>
+  </div>
 
 
   <script src="../js/main.min.js"></script>

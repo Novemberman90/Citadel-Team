@@ -1,8 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ===== MENU =====
+    const MENUBTN = document.querySelector(".menu__btn");
+    const MENU = document.querySelector('.menu__list');
+    
+    MENUBTN.addEventListener("click", ()=>{
+      if(MENUBTN) {
+        openMenu();
+        document.body.classList.toggle('lock');
+      }
+    });
+  
+    const openMenu=()=>{
+      MENU.classList.toggle('menu__list--active');
+      MENU.classList.toggle('blur-plate');
+      MENUBTN.classList.toggle('menu__btn--active');
 
-  /* =========================
-     GEO IP MAP HIGHLIGHT
-  ========================= */
+    }
+    const closeMenu =()=>{
+      document.body.classList.remove('lock');
+      MENU.classList.remove('menu__list--active');
+      MENU.classList.remove('blur-plate');
+      MENUBTN.classList.remove('menu__btn--active');
+    }
+
+    /* Скрол меню */
+  const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
+  navLink.forEach(link => {
+    link.addEventListener('click', (e)=>{
+      e.preventDefault();
+       const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
+       
+       if(targetId) {
+        scrollNavigation(targetId);
+        closeMenu();
+       }
+    })
+  });
+
+  const scrollNavigation = (targetId)=> {
+    const targetElement = document.getElementById(targetId);
+  
+    if(!targetElement) return;
+
+    const headerHeght = document.querySelector('#header').offsetHeight;
+    const top = targetElement.getBoundingClientRect().top + window.scrollY - headerHeght;
+
+      window.scrollTo({
+        top: top,
+        behavior:'smooth',
+      })
+  }
+
+  /* EO IP MAP HIGHLIGHT */
 
   // підсвітка флага на карте
   fetch('https://ipwho.is/')
@@ -28,9 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('GeoIP error', err);
     });
 
-  /* =========================
-     FAQ ACCORDION
-  ========================= */
+  /*  FAQ ACCORDION  */
 
   const accordionButtons = document.querySelectorAll('[data-button]');
 
@@ -66,9 +113,7 @@ accordionButtons.forEach(button => {
 });
 
 
-  /* =========================
-     METRICS — NUMBERS
-  ========================= */
+  /* METRICS — NUMBERS */
 
   function animateNumbers(elements) {
     const duration = 2000;
@@ -102,9 +147,7 @@ accordionButtons.forEach(button => {
     });
   }
 
-  /* =========================
-     METRICS — CANVAS RING
-  ========================= */
+  /*  METRICS — CANVAS RING  */
 
   function drawAnimatedRing(canvas) {
     const ctx = canvas.getContext('2d');
@@ -149,9 +192,7 @@ accordionButtons.forEach(button => {
     animate();
   }
 
-  /* =========================
-     METRICS — OBSERVER
-  ========================= */
+  /* METRICS — OBSERVER */
 
   const metricsObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -177,9 +218,7 @@ accordionButtons.forEach(button => {
     metricsObserver.observe(el);
   });
 
-  /* =========================
-     LANGUAGE SWITCHER
-  ========================= */
+  /* LANGUAGE SWITCHER  */
 
   const dropdown = document.querySelector('.switcher-lang__dropdown');
   const langBtn = document.querySelector('.switcher-lang__btn');
@@ -197,9 +236,7 @@ accordionButtons.forEach(button => {
     });
   }
 
-  /* =========================
-     REVIEWS SLIDER (SWIPER)
-  ========================= */
+  /*  REVIEWS SLIDER (SWIPER)  */
 
   if (typeof Swiper !== 'undefined') {
     new Swiper('.reviews-slider', {
@@ -219,5 +256,25 @@ accordionButtons.forEach(button => {
       },
     });
   }
+
+
+  /* coockie */
+const cookie = document.getElementById('cookie');
+const acceptBtn = cookie.querySelector('.cookie__accept');
+const closeBtn = cookie.querySelector('.cookie__close');
+
+if (!localStorage.getItem('cookieAccepted')) {
+  requestAnimationFrame(() => {
+    cookie.classList.add('is-visible');
+  });
+}
+
+function hideCookie() {
+  localStorage.setItem('cookieAccepted', 'true');
+  cookie.classList.remove('is-visible');
+}
+
+acceptBtn.addEventListener('click', hideCookie);
+closeBtn.addEventListener('click', hideCookie);
 
 });

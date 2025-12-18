@@ -326,6 +326,7 @@
 
     &__list {
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     &__cards {
@@ -389,11 +390,6 @@
   .metrics {
     &__cards {
       gap: 12px 10px;
-    }
-
-    &__list {
-      gap: 0px 5px;
-      flex-wrap: wrap;
     }
   }
 

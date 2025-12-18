@@ -5,12 +5,15 @@ html[dir="rtl"] {
   .advantages__item {
     text-align: right;
   }
+  .advantages__info {
+    text-align: center;
+  }
   .steps {
     .title {
       text-align: right;
     }
     &__info {
-      text-align: right;
+      text-align: center;
     }
     &__list {
       justify-content: flex-start;
@@ -43,4 +46,44 @@ html[dir="rtl"] {
   .plan__list-item {
     text-align: right;
   }
+  .engagement {
+    &::after {
+      left: 0;
+      right: 108px;
+    }
+    &::before {
+     transform: scale3d(-1, 1, 1);
+    }
+    &__circles {
+      left: auto;
+      right: 125px;
+    }
+    
+  }
+  @media(max-width: 767px) {
+    .steps__info {
+      text-align: right;
+    }
+  }
+
+  @media(max-width: 1006px) {
+    .engagement {
+      &__circles {
+        left: auto;
+        right: 34%;
+      }
+    }
+  }
+    @media(max-width: 576px) {
+      .engagement {
+        &__circles {
+          left: auto;
+          right: 32%;
+        }
+  
+        &__cta {
+          font-size: 17px;
+        }
+      }
+    }
 }

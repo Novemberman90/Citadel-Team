@@ -37,7 +37,12 @@
         flex-wrap: wrap;
         gap: 16px 32px;
     }
-
+    &__menu {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     &__nav {
         display: flex;
         align-items: center;
@@ -47,11 +52,6 @@
         margin-bottom: 12px;
         flex-wrap: wrap;
         gap: 24px 100px;
-    }
-
-    &__menu {
-        justify-content: center;
-        flex-wrap: wrap;
     }
 
     &__link {
@@ -178,11 +178,11 @@
 @media(max-width: 576px) {
     .footer {
       &__copyright {
-          font-size: 14px;
-      }
-      .menu {
-        &__link {
-          font-size: 14px;
+        font-size: 14px;
+        .menu {
+          &__link {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -192,11 +192,13 @@
 html[dir="rtl"] {
   direction: rtl;
   text-align: right;
+
   .footer {
     .menu__item:nth-child(2n) {
       padding-left: 0;
       padding-right: 24px;
     }
+
     .menu__item:nth-child(2n+1) {
       text-align: left;
     }

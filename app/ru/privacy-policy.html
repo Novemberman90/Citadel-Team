@@ -41,438 +41,427 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <nav class="menu">
+  <div class="wrapper">
+
+    <header class="header" id="header">
+      <div class="container">
         <div class="header__inner">
-          <a class="logo" href="#">
-            <img src="../images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+          <a class="logo" href="../ru/index.html">
+            <picture>
+              <source media="(max-width: 576px)" srcset="../images/header-logo-s.svg">
+              <img src="../images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
+            </picture>
           </a>
-          <ul class="menu">
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                Особенности
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                Цены
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                Поддержка
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                Блог
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                Новости
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="user-menu">
-          <div class="switcher-lang">
-            <button class="switcher-lang__btn blur-plate" type="button">
-              <div class="switcher-lang__box">
-                <svg width="24" height="24">
-                  <use href="../images/sprite.svg#ru">
-                  </use>
-                </svg>
-                Ру
-              </div>
-              <svg class="icon" width="11" height="6">
-                <use href="../images/sprite.svg#arrowBottom">
-                </use>
+          <!-- menu  -->
+          <nav class="menu">
+            <button class="menu__btn blur-plate" type="button">
+              <svg class="menu__btn-icon" width="22" height="22">
+                <use href="../images/sprite.svg#menuBtn"></use>
+              </svg>
+              <svg class="menu__btn-icon-close" width="11" height="11">
+                <use href="../images/sprite.svg#menuBtnClose"></use>
               </svg>
             </button>
-            <div class="switcher-lang__dropdown blur-plate">
-              <a class="switcher-lang__link" href="/privacy-policy.html">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="../ru/index.html">
+                  Особенности
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="../ru/index.html#plan">
+                  Цены
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="../ru/index.html">
+                  Поддержка
+                </a>
+              </li>
+              <!--   <li class="menu__item">
+                        <a class="menu__link" href="#" data-scroll>
+                            Blog
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#" data-scroll>
+                            News
+                        </a>
+                      </li> -->
+            </ul>
+          </nav>
+    
+          <!-- lang menu -->
+          <div class="user-menu">
+            <div class="switcher-lang">
+              <button class="switcher-lang__btn blur-plate" type="button">
                 <div class="switcher-lang__box">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#ru">
+                    </use>
+                  </svg>
+                  <span>Ру</span>
+                </div>
+                <svg class="icon" width="11" height="6">
+                  <use href="../images/sprite.svg#arrowBottom">
+                  </use>
+                </svg>
+              </button>
+              <div class="switcher-lang__dropdown blur-plate">
+                <a class="switcher-lang__link switcher-lang__link--active" href="../privacy-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#en">
                     </use>
                   </svg>
-                  En
-                </div>
-              </a>
-              <a class="switcher-lang__link" href="../ar/privacy-policy.html">
-                <svg width="24" height="24">
-                  <use href="../images/sprite.svg#ar">
-                  </use>
-                </svg>
-                عر
-              </a>
-              <a class="switcher-lang__link switcher-lang__link--active" href="../ru/privacy-policy.html">
-                <svg width="24" height="24">
-                  <use href="../images/sprite.svg#ru">
-                  </use>
-                </svg>
-                Ру
-              </a>
+                  <span>En</span>
+                </a>
+                <a class="switcher-lang__link" href="../ar/privacy-policy.html">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#ar">
+                    </use>
+                  </svg>
+                  <span>عر</span>
+                </a>
+                <a class="switcher-lang__link" href="../ru/privacy-policy.html">
+                  <svg width="24" height="24">
+                    <use href="../images/sprite.svg#ru">
+                    </use>
+                  </svg>
+                  <span>Ру</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <a class="cta user-menu__cta" href="#">
-            Open VPN
-            <svg class="icon" width="20" height="20">
-              <use href="./images/sprite.svg#telegramLight">
-              </use>
-            </svg>
-          </a>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <main class="main">
-
-    <section class="home">
-      <div class="container">
-        <div class="top">
-          <div class="breadcrumbs">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="./index.html">
-                  Домашняя
-                </a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">
-                  Политика конфиденциальности
-                </a>
-              </li>
-            </ul>
+            <a class="cta user-menu__cta" href="#">
+              Open VPN
+              <svg class="icon" width="20" height="20">
+                <use href="../images/sprite.svg#telegramLight">
+                </use>
+              </svg>
+            </a>
           </div>
         </div>
-
-        <div class="home__inner">
-          <div class="home__tab-nav">
-            <h1 class="home__tab-nav-title">Условия и политика</h1>
-            <div class="tab-nav">
-              <a class="tab-nav__btn" href="./terms-and-conditions.html">
-                <span>Пользовательское соглашение</span>
-              </a>
-              <a class="tab-nav__btn tab-nav__btn--active" href="./privacy-policy.html" target="_blank"
-                rel="noopener noreferrer">
-                <span>Политика конфиденциальности</span>
-              </a>
-              <a class="tab-nav__btn" href="./refund-policy.html" target="_blank" rel="noopener noreferrer">
-                <span>Условия возврата средств</span>
-              </a>
-              <a class="tab-nav__btn" href="./about-us.html" target="_blank" rel="noopener noreferrer">
-                <span>О нас</span>
-              </a>
-            </div>
-          </div>
-          <div class="home__tabs-content tab">
-            <!-- Privacy Policy -->
-            <div class="tab__item" id="btn_2">
-              <div class="tab__inner">
-                <div class="privacy">
-                  <h2 class="privacy__main-title">
+      </div>
+    </header>
+    <main class="main">
+  
+      <section class="home">
+        <div class="container">
+          <div class="top">
+            <div class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="./index.html">
+                    Домашняя
+                  </a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="#">
                     Политика конфиденциальности
-                  </h2>
-
-                  <!-- 1. Introduction -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      1. Введение
-                    </h3>
-
-                    <p class="privacy__text">
-                      Citadel VPN обязуется защищать вашу конфиденциальность. В настоящей Политике конфиденциальности
-                      объясняется, какую
-                      информацию мы собираем, как мы ее используем и каковы ваши права в отношении этой информации. Наш
-                      руководящий принцип
-                      заключается в сборе только минимального объема данных, необходимого для работы VPN-сервиса
-                      мирового класса. Мы являемся
-                      строгим провайдером VPN, не ведущим журналы.
-                    </p>
-                  </section>
-
-                  <!-- 2. Information We Do Not Collect -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      2. Информация, которую мы не собираем
-                    </h3>
-
-                    <p class="privacy__text">
-                      Мы НЕ собираем, не регистрируем и не храним ничего из следующего:
-                    </p>
-
-                    <ul class="privacy__list">
-                      <li class="privacy__item">Ваш исходный IP-адрес.
-                      </li>
-                      <li class="privacy__item">Ваш исходящий IP-адрес VPN.</li>
-                      <li class="privacy__item">Вашу историю просмотров.</li>
-                      <li class="privacy__item">Направление вашего трафика.</li>
-                      <li class="privacy__item">Содержание ваших данных.
-                      </li>
-                      <li class="privacy__item">Ваши DNS-запросы.</li>
-                    </ul>
-                  </section>
-
-                  <!-- 3. Information We Collect -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      3. Какую информацию мы собираем
-                    </h3>
-
-                    <p class="privacy__text">
-                      Для предоставления наших Услуг мы собираем следующую минимальную информацию:
-                    </p>
-
-                    <!-- 3.1 Account Information -->
-                    <h4 class="privacy__subtitle">
-                      3.1. Информация об аккаунте
-                    </h4>
-
-                    <ul class="privacy__list">
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Адрес электронной почты:</span>
-                        <span class="privacy__text">
-                          Мы собираем ваш адрес электронной почты для создания и управления вашей учетной записью,
-                          обработки платежей и общения с
-                          вами.
-                        </span>
-                      </li>
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Платежная информация:</span>
-                        <span class="privacy__text">Мы используем сторонние платежные системы (например, Cryptomus) для
-                          обработки платежей. Мы не храним полную информацию о
-                          вашей кредитной карте.</span>
-                      </li>
-                    </ul>
-
-                    <!-- 3.2 Aggregated Usage Statistics -->
-                    <h4 class="privacy__subtitle privacy__subtitle--pt">
-                      3.2. Агрегированная статистика использования
-                    </h4>
-
-                    <ul class="privacy__list">
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Успешное подключение:</span>
-                        <span class="privacy__text">
-                          Мы собираем информацию о том, удалось ли вам установить VPN-соединение в определенный день (но
-                          не в определенное время).
-                        </span>
-                      </li>
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Передача данных:</span>
-                        <span class="privacy__text">
-                          Мы собираем общий объем данных, переданных данным пользователем, чтобы обеспечить справедливое
-                          использование и
-                          поддерживать качество обслуживания.
-                        </span>
-                      </li>
-                    </ul>
-
-                    <p class="privacy__text privacy__text--down">
-                      Эти данные являются обобщенными и не могут быть использованы для идентификации отдельных
-                      пользователей или их конкретных
-                      действий.
-                    </p>
-
-                    <!-- 3.3 Telegram Bot -->
-                    <h4 class="privacy__subtitle privacy__subtitle--pt">
-                      3.3. Telegram Бот
-                    </h4>
-
-                    <ul class="privacy__list">
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Наш бот в Telegram</span>
-                        <span class="privacy__text">
-                          может собирать ваш идентификатор пользователя Telegram, чтобы связать его с вашей учетной
-                          записью Citadel VPN. Это
-                          необходимо для предоставления Услуги через Telegram.
-                        </span>
-                      </li>
-                    </ul>
-                  </section>
-
-                  <!-- 4. How We Use Your Information -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      4. Как мы используем вашу информацию
-                    </h3>
-                    <p class="privacy__text">
-                      Мы используем собранную информацию для:
-                    </p>
-                    <ul class="privacy__list">
-                      <li class="privacy__item">Предоставление, эксплуатация и обслуживание наших Услуг</li>
-                      <li class="privacy__item">Обрабатывайте платежи и управляйте подпиской.</li>
-                      <li class="privacy__item">Общаться с вами, в том числе отправлять обновления, связанные с
-                        обслуживанием, и отвечать на ваши запросы в службу
-                        поддержки.</li>
-                      <li class="privacy__item">Предотвращение мошенничества и злоупотребления нашими Услугами.</li>
-                    </ul>
-                  </section>
-
-                  <!-- 5. How We Protect Your Information -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      5. Как мы защищаем вашу информацию
-                    </h3>
-
-                    <p class="privacy__text">
-                      Мы применяем различные меры безопасности для обеспечения безопасности вашей личной информации. Все
-                      платежные операции
-                      обрабатываются через шлюзового провайдера и не хранятся и не обрабатываются на наших серверах.
-                    </p>
-                  </section>
-
-                  <!-- 6. Data Retention -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      6. Хранение данных
-                    </h3>
-
-                    <p class="privacy__text">
-                      Мы храним информацию о вашей учетной записи до тех пор, пока она активна. Вы можете в любое время
-                      запросить удаление
-                      своей учетной записи и связанных с ней данных.
-                    </p>
-                  </section>
-
-                  <!-- 7. Third-Party Services -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      7. Сторонние сервисы
-                    </h3>
-
-                    <p class="privacy__text">
-                      Мы используем следующие сторонние сервисы:
-                    </p>
-
-                    <ul class="privacy__list">
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Платежные системы:</span>
-                        <span class="privacy__text">
-                          Cryptomus и др.
-                        </span>
-                      </li>
-                      <li class="privacy__item">
-                        <span class="privacy__text privacy__text--bold">Telegram:</span>
-                        <span class="privacy__text">Наш бот работает на платформе Telegram.</span>
-                      </li>
-                    </ul>
-
-                    <p class="privacy__text privacy__text--down">
-                      Мы не несем ответственности за политику конфиденциальности этих сторонних сервисов. Мы рекомендуем
-                      вам ознакомиться с их
-                      политикой конфиденциальности.
-                    </p>
-                  </section>
-
-                  <!-- 8. Your Rights -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      8. Ваши права
-                    </h3>
-                    <p class="privacy__text">
-                      Вы имеете право:
-                    </p>
-
-                    <ul class="privacy__list">
-                      <li class="privacy__item">Получить доступ к личным данным, которые мы храним о вас.</li>
-                      <li class="privacy__item">Запросить исправление неточных данных.</li>
-                      <li class="privacy__item">Запросить удаление своих персональных данных.</li>
-                      <li class="privacy__item">Возражать против обработки ваших данных.
-                      </li>
-                    </ul>
-
-                    <p class="privacy__text privacy__text--down">
-                      Чтобы воспользоваться этими правами, свяжитесь с нами по адресу: <a
-                        href="mailto:info@vpncitadel.com" class="privacy-link">
-                        info@vpncitadel.com
-                      </a>
-                    </p>
-                  </section>
-
-                  <!-- 9. Children's Privacy -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      9. Конфиденциальность детей
-                    </h3>
-
-                    <p class="privacy__text">
-                      Наши Услуги не предназначены для использования лицами младше 18 лет. Мы сознательно не собираем
-                      личную информацию от
-                      детей.
-                    </p>
-                  </section>
-
-                  <!-- 10. Changes To This Policy -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      10. Изменения в настоящей Политике
-                    </h3>
-
-                    <p class="privacy__text">
-                      Мы можем время от времени обновлять настоящую Политику конфиденциальности. Мы будем уведомлять вас
-                      о любых изменениях,
-                      публикуя новую политику на нашем веб-сайте.
-                    </p>
-                  </section>
-
-                  <!-- 11. Contact Us -->
-                  <section class="privacy__section">
-                    <h3 class="privacy__title">
-                      11. Свяжитесь с нами
-                    </h3>
-
-                    <p class="privacy__text">
-                      Если у вас есть какие-либо вопросы по поводу настоящей Политики конфиденциальности, пожалуйста,
-                      свяжитесь с нами по
-                      адресу: <a href="mailto:info@vpncitadel.com" class="terms-link">
-                        info@vpncitadel.com
-                      </a>
-                    </p>
-                  </section>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="home__inner">
+            <div class="home__tab-nav">
+              <h1 class="home__tab-nav-title">Условия и политика</h1>
+              <div class="tab-nav">
+                <a class="tab-nav__btn" href="./terms-and-conditions.html">
+                  <span>Пользовательское соглашение</span>
+                </a>
+                <a class="tab-nav__btn tab-nav__btn--active" href="./privacy-policy.html" target="_blank"
+                  rel="noopener noreferrer">
+                  <span>Политика конфиденциальности</span>
+                </a>
+                <a class="tab-nav__btn" href="./refund-policy.html" target="_blank" rel="noopener noreferrer">
+                  <span>Условия возврата средств</span>
+                </a>
+                <a class="tab-nav__btn" href="./about-us.html" target="_blank" rel="noopener noreferrer">
+                  <span>О нас</span>
+                </a>
+              </div>
+            </div>
+            <div class="home__tabs-content tab">
+              <!-- Privacy Policy -->
+              <div class="tab__item" id="btn_2">
+                <div class="tab__inner">
+                  <div class="privacy">
+                    <h2 class="privacy__main-title">
+                      Политика конфиденциальности
+                    </h2>
+  
+                    <!-- 1. Introduction -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        1. Введение
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Citadel VPN обязуется защищать вашу конфиденциальность. В настоящей Политике конфиденциальности
+                        объясняется, какую
+                        информацию мы собираем, как мы ее используем и каковы ваши права в отношении этой информации. Наш
+                        руководящий принцип
+                        заключается в сборе только минимального объема данных, необходимого для работы VPN-сервиса
+                        мирового класса. Мы являемся
+                        строгим провайдером VPN, не ведущим журналы.
+                      </p>
+                    </section>
+  
+                    <!-- 2. Information We Do Not Collect -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        2. Информация, которую мы не собираем
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Мы НЕ собираем, не регистрируем и не храним ничего из следующего:
+                      </p>
+  
+                      <ul class="privacy__list">
+                        <li class="privacy__item">Ваш исходный IP-адрес.
+                        </li>
+                        <li class="privacy__item">Ваш исходящий IP-адрес VPN.</li>
+                        <li class="privacy__item">Вашу историю просмотров.</li>
+                        <li class="privacy__item">Направление вашего трафика.</li>
+                        <li class="privacy__item">Содержание ваших данных.
+                        </li>
+                        <li class="privacy__item">Ваши DNS-запросы.</li>
+                      </ul>
+                    </section>
+  
+                    <!-- 3. Information We Collect -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        3. Какую информацию мы собираем
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Для предоставления наших Услуг мы собираем следующую минимальную информацию:
+                      </p>
+  
+                      <!-- 3.1 Account Information -->
+                      <h4 class="privacy__subtitle">
+                        3.1. Информация об аккаунте
+                      </h4>
+  
+                      <ul class="privacy__list">
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Адрес электронной почты:</span>
+                          <span class="privacy__text">
+                            Мы собираем ваш адрес электронной почты для создания и управления вашей учетной записью,
+                            обработки платежей и общения с
+                            вами.
+                          </span>
+                        </li>
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Платежная информация:</span>
+                          <span class="privacy__text">Мы используем сторонние платежные системы (например, Cryptomus) для
+                            обработки платежей. Мы не храним полную информацию о
+                            вашей кредитной карте.</span>
+                        </li>
+                      </ul>
+  
+                      <!-- 3.2 Aggregated Usage Statistics -->
+                      <h4 class="privacy__subtitle privacy__subtitle--pt">
+                        3.2. Агрегированная статистика использования
+                      </h4>
+  
+                      <ul class="privacy__list">
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Успешное подключение:</span>
+                          <span class="privacy__text">
+                            Мы собираем информацию о том, удалось ли вам установить VPN-соединение в определенный день (но
+                            не в определенное время).
+                          </span>
+                        </li>
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Передача данных:</span>
+                          <span class="privacy__text">
+                            Мы собираем общий объем данных, переданных данным пользователем, чтобы обеспечить справедливое
+                            использование и
+                            поддерживать качество обслуживания.
+                          </span>
+                        </li>
+                      </ul>
+  
+                      <p class="privacy__text privacy__text--down">
+                        Эти данные являются обобщенными и не могут быть использованы для идентификации отдельных
+                        пользователей или их конкретных
+                        действий.
+                      </p>
+  
+                      <!-- 3.3 Telegram Bot -->
+                      <h4 class="privacy__subtitle privacy__subtitle--pt">
+                        3.3. Telegram Бот
+                      </h4>
+  
+                      <ul class="privacy__list">
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Наш бот в Telegram</span>
+                          <span class="privacy__text">
+                            может собирать ваш идентификатор пользователя Telegram, чтобы связать его с вашей учетной
+                            записью Citadel VPN. Это
+                            необходимо для предоставления Услуги через Telegram.
+                          </span>
+                        </li>
+                      </ul>
+                    </section>
+  
+                    <!-- 4. How We Use Your Information -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        4. Как мы используем вашу информацию
+                      </h3>
+                      <p class="privacy__text">
+                        Мы используем собранную информацию для:
+                      </p>
+                      <ul class="privacy__list">
+                        <li class="privacy__item">Предоставление, эксплуатация и обслуживание наших Услуг</li>
+                        <li class="privacy__item">Обрабатывайте платежи и управляйте подпиской.</li>
+                        <li class="privacy__item">Общаться с вами, в том числе отправлять обновления, связанные с
+                          обслуживанием, и отвечать на ваши запросы в службу
+                          поддержки.</li>
+                        <li class="privacy__item">Предотвращение мошенничества и злоупотребления нашими Услугами.</li>
+                      </ul>
+                    </section>
+  
+                    <!-- 5. How We Protect Your Information -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        5. Как мы защищаем вашу информацию
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Мы применяем различные меры безопасности для обеспечения безопасности вашей личной информации. Все
+                        платежные операции
+                        обрабатываются через шлюзового провайдера и не хранятся и не обрабатываются на наших серверах.
+                      </p>
+                    </section>
+  
+                    <!-- 6. Data Retention -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        6. Хранение данных
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Мы храним информацию о вашей учетной записи до тех пор, пока она активна. Вы можете в любое время
+                        запросить удаление
+                        своей учетной записи и связанных с ней данных.
+                      </p>
+                    </section>
+  
+                    <!-- 7. Third-Party Services -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        7. Сторонние сервисы
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Мы используем следующие сторонние сервисы:
+                      </p>
+  
+                      <ul class="privacy__list">
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Платежные системы:</span>
+                          <span class="privacy__text">
+                            Cryptomus и др.
+                          </span>
+                        </li>
+                        <li class="privacy__item">
+                          <span class="privacy__text privacy__text--bold">Telegram:</span>
+                          <span class="privacy__text">Наш бот работает на платформе Telegram.</span>
+                        </li>
+                      </ul>
+  
+                      <p class="privacy__text privacy__text--down">
+                        Мы не несем ответственности за политику конфиденциальности этих сторонних сервисов. Мы рекомендуем
+                        вам ознакомиться с их
+                        политикой конфиденциальности.
+                      </p>
+                    </section>
+  
+                    <!-- 8. Your Rights -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        8. Ваши права
+                      </h3>
+                      <p class="privacy__text">
+                        Вы имеете право:
+                      </p>
+  
+                      <ul class="privacy__list">
+                        <li class="privacy__item">Получить доступ к личным данным, которые мы храним о вас.</li>
+                        <li class="privacy__item">Запросить исправление неточных данных.</li>
+                        <li class="privacy__item">Запросить удаление своих персональных данных.</li>
+                        <li class="privacy__item">Возражать против обработки ваших данных.
+                        </li>
+                      </ul>
+  
+                      <p class="privacy__text privacy__text--down">
+                        Чтобы воспользоваться этими правами, свяжитесь с нами по адресу: <a
+                          href="mailto:info@vpncitadel.com" class="privacy-link">
+                          info@vpncitadel.com
+                        </a>
+                      </p>
+                    </section>
+  
+                    <!-- 9. Children's Privacy -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        9. Конфиденциальность детей
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Наши Услуги не предназначены для использования лицами младше 18 лет. Мы сознательно не собираем
+                        личную информацию от
+                        детей.
+                      </p>
+                    </section>
+  
+                    <!-- 10. Changes To This Policy -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        10. Изменения в настоящей Политике
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Мы можем время от времени обновлять настоящую Политику конфиденциальности. Мы будем уведомлять вас
+                        о любых изменениях,
+                        публикуя новую политику на нашем веб-сайте.
+                      </p>
+                    </section>
+  
+                    <!-- 11. Contact Us -->
+                    <section class="privacy__section">
+                      <h3 class="privacy__title">
+                        11. Свяжитесь с нами
+                      </h3>
+  
+                      <p class="privacy__text">
+                        Если у вас есть какие-либо вопросы по поводу настоящей Политики конфиденциальности, пожалуйста,
+                        свяжитесь с нами по
+                        адресу: <a href="mailto:info@vpncitadel.com" class="terms-link">
+                          info@vpncitadel.com
+                        </a>
+                      </p>
+                    </section>
+                  </div>
+  
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <nav class="footer__nav">
-          <a class="logo footer__logo" href="#">
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <a class="logo footer__logo" href="./index.html">
             <img src="../images/logo.svg" alt="CitadelVPN Logo" width="190" height="57">
           </a>
-          <ul class="menu">
-            <li class="menu__item">
-              <a class="menu__link" href="../ru/terms-and-conditions.html">
-                Пользовательское соглашение
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="../ru/privacy-policy.html">
-                Политика конфиденциальности
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="../ru/refund-policy.html">
-                Условия возврата средств
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="../ru/about-us.html">
-                О нас
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="footer__info">
           <address class="footer__address">
             <a class="footer__link" href="mailto:info@vpncitadel.com">
               <div class="footer__icon blur-plate">
@@ -535,6 +524,30 @@
               </li>
             </ul>
           </address>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__menu">
+            <li class="menu__item">
+              <a class="menu__link" href="../ru/terms-and-conditions.html">
+                Пользовательское соглашение
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="../ru/privacy-policy.html">
+                Политика конфиденциальности
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="../ru/refund-policy.html">
+                Условия возврата средств
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="../ru/about-us.html">
+                О нас
+              </a>
+            </li>
+          </ul>
           <ul class="footer__list-payments">
             <li class="footer__item">
               <svg width="57" height="35">
@@ -572,15 +585,40 @@
               </svg>
             </li>
           </ul>
+        </nav>
+        <span class="footer__copyright">
+          Copyright © 2025 Citadel VPN. Все права защищены.
+        </span>
+      </div>
+    </footer>
+  
+      <div class="cookie is-visible" id="cookie">
+        <div class="cookie__inner blur-plate">
+          <span class="cookie__cookie-img blur-plate">
+            <svg class="cookie__icon" width="24" height="24">
+              <use href="../images/sprite.svg#coockie"></use>
+            </svg>
+          </span>
+          <div class="cookie__content">
+            <h4 class="cookie__title">Уведомление о файлах cookie.</h4>
+            <p class="cookie__text">
+              Наш веб-сайт использует
+              <a class="terms-link" href="../ru/privacy-policy.html">Политика файлов cookie</a>
+              чтобы обеспечить вам наилучший опыт.
+            </p>
+          </div>
+  
+          <div class="cookie__actions">
+            <button class="cta cookie__accept">Принять</button>
+            <button class="cookie__close blur-plate" aria-label="Close">
+              <svg class="cookie__close-icon" width="11" height="11">
+                <use href="../images/sprite.svg#menuBtnClose"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-      <span class="footer__copyright">
-        Copyright © 2025 Citadel VPN. All rights reserved.
-      </span>
-    </div>
-  </footer>
-
-
+  </div>
 
 
 

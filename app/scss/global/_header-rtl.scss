@@ -1,0 +1,21 @@
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+
+  .menu {
+    margin-left: 0;
+    margin-right: 40px;
+  }
+
+  .user-menu {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  @media (max-width: 880px) {
+    .menu {
+      transform: translateX(-200%);
+      margin-right: 12px;
+    }
+  }
+}

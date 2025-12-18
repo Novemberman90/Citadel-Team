@@ -7,7 +7,7 @@
 
     &__dropdown {
       position: absolute;
-      top:1px;
+      top:2px;
       left: 0;
       right: 0;
       z-index: 5;
@@ -94,6 +94,9 @@
         gap: 10px;
         font-weight: 700;
         border-radius: 80px;
+        span{
+          color: inherit;
+        }
         transition: color 0.3s, box-shadow 0.3s, outline 0.3s;
         &--active {
           color: $light-900;
@@ -116,4 +119,21 @@
         align-items: center;
         gap: 6px;
     }
+}
+
+@media (max-width: 576px) {
+  .switcher-lang {
+    width: 68px;
+    &__box {
+      span {
+        display: none;
+      }
+    }
+    &__link {
+      justify-content: center;
+      span {
+        display: none;
+      }
+    }
+  }
 }

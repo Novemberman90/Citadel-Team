@@ -40,41 +40,55 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id="header" data-i18n-section="header">
     <div class="container">
-      <nav class="menu">
-        <div class="header__inner">
-          <a class="logo" href="#">
+      <div class="header__inner">
+        <a class="logo" href="./index.html">
+          <picture>
+            <source media="(max-width: 576px)" srcset="./images/header-logo-s.svg">
             <img src="./images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
-          </a>
-          <ul class="menu">
+          </picture>
+        </a>
+        <!-- menu  -->
+        <nav class="menu">
+          <button class="menu__btn blur-plate" type="button">
+            <svg class="menu__btn-icon" width="22" height="22">
+              <use href="./images/sprite.svg#menuBtn"></use>
+            </svg>
+            <svg class="menu__btn-icon-close" width="11" height="11">
+              <use href="./images/sprite.svg#menuBtnClose"></use>
+            </svg>
+          </button>
+          <ul class="menu__list">
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="./index.html">
                 Features
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="../index.html#plan">
                 Pricing
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">
+              <a class="menu__link" href="./index.html">
                 Support
               </a>
             </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                Blog
-              </a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link" href="#">
-                News
-              </a>
-            </li>
+            <!--   <li class="menu__item">
+                  <a class="menu__link" href="#" data-scroll>
+                      Blog
+                  </a>
+              </li>
+              <li class="menu__item">
+                  <a class="menu__link" href="#" data-scroll>
+                      News
+                  </a>
+                </li> -->
           </ul>
-        </div>
+        </nav>
+  
+        <!-- lang menu -->
         <div class="user-menu">
           <div class="switcher-lang">
             <button class="switcher-lang__btn blur-plate" type="button">
@@ -83,7 +97,7 @@
                   <use href="./images/sprite.svg#en">
                   </use>
                 </svg>
-                En
+                <span>En</span>
               </div>
               <svg class="icon" width="11" height="6">
                 <use href="./images/sprite.svg#arrowBottom">
@@ -92,27 +106,25 @@
             </button>
             <div class="switcher-lang__dropdown blur-plate">
               <a class="switcher-lang__link switcher-lang__link--active" href="./privacy-policy.html">
-                <div class="switcher-lang__box">
-                  <svg width="24" height="24">
-                    <use href="./images/sprite.svg#en">
-                    </use>
-                  </svg>
-                  En
-                </div>
+                <svg width="24" height="24">
+                  <use href="./images/sprite.svg#en">
+                  </use>
+                </svg>
+                <span>En</span>
               </a>
               <a class="switcher-lang__link" href="./ar/privacy-policy.html">
                 <svg width="24" height="24">
                   <use href="./images/sprite.svg#ar">
                   </use>
                 </svg>
-                عر
+                <span>عر</span>
               </a>
               <a class="switcher-lang__link" href="./ru/privacy-policy.html">
                 <svg width="24" height="24">
                   <use href="./images/sprite.svg#ru">
                   </use>
                 </svg>
-                Ру
+                <span>Ру</span>
               </a>
             </div>
           </div>
@@ -124,7 +136,7 @@
             </svg>
           </a>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
   <main class="main">
@@ -579,6 +591,32 @@
     </div>
   </footer>
 
+  <div class="cookie is-visible" id="cookie">
+    <div class="cookie__inner blur-plate">
+      <span class="cookie__cookie-img blur-plate">
+        <svg class="cookie__icon" width="24" height="24">
+          <use href="./images/sprite.svg#coockie"></use>
+        </svg>
+      </span>
+      <div class="cookie__content">
+        <h4 class="cookie__title">Cookie Notice.</h4>
+        <p class="cookie__text">
+          Our website uses
+          <a class="terms-link" href="./privacy-policy.html">Cookie Policy</a>
+          to ensure you have the best possible experience.
+        </p>
+      </div>
+  
+      <div class="cookie__actions">
+        <button class="cta cookie__accept">Accept</button>
+        <button class="cookie__close blur-plate" aria-label="Close">
+          <svg class="cookie__close-icon" width="11" height="11">
+            <use href="./images/sprite.svg#menuBtnClose"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
 
 
