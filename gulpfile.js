@@ -32,7 +32,7 @@ function scripts() {
 }
 
 function htmlInclude() {
-    return src('app/html/pages/*.html')
+    return src('app/html/pages/**/*.html')
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
