@@ -81,14 +81,6 @@
         }
     }
 
-    &__cta::before {
-        width: 95%;
-    }
-
-    &__cta:active::before {
-        width: 91%;
-    }
-
     &__circles {
         position: absolute;
         top: 308px;

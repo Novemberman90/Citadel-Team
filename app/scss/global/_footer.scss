@@ -3,8 +3,9 @@
     border-radius: 32px 32px 0 0;
     position: relative;
     z-index: 1;
-
-    &::before {
+    background: linear-gradient(231.87deg, rgba(255, 255, 255, 0.18) -30.13%, rgba(255, 255, 255, 0.03) 57.05%, rgba(255, 255, 255, 0.12) 137.89%);
+    backdrop-filter: blur(16px);
+/*     &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -15,7 +16,7 @@
         background: linear-gradient(3deg, rgba(255, 255, 255, 0.3) -1%, rgba(255, 255, 255, 0.05) 42%, rgba(255, 255, 255, 0.2) 122%);
         z-index: -1;
         border-radius: 32px 32px 0 0;
-    }
+    } */
 
     &__inner {
         display: flex;

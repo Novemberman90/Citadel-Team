@@ -49,6 +49,15 @@
     gap: 10px;
     font-size: 14px;
     padding: 12px 12px 12px 20px;
+    transition: all .3s;
+  &::before {
+      inset: 6px;
+    }
+  &:active {
+      &::before {
+        inset: 8px;
+      }
+    }
   }
 }
 

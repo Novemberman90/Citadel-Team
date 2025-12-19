@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== MENU =====
     const MENUBTN = document.querySelector(".menu__btn");
     const MENU = document.querySelector('.menu__list');
-    
+    const goTop = document.querySelector('.go-top')
     MENUBTN.addEventListener("click", ()=>{
       if(MENUBTN) {
         openMenu();
@@ -24,18 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* Скрол меню */
-/*   const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
-  navLink.forEach(link => {
-    link.addEventListener('click', (e)=>{
-      e.preventDefault();
-       const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
-       
-       if(targetId) {
-        scrollNavigation(targetId);
-        closeMenu();
-       }
-    })
-  }); */
     const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
     navLink.forEach(link => {
       link.addEventListener('click', (e)=>{
@@ -67,6 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
         behavior:'smooth',
       })
   }
+
+  /* При скроле меняется хедер и активация кнопки НА ВЕРХ */
+let isScrolled = false;
+const headerScroll = () => {
+  const header = document.querySelector('.header');
+  const headerHeght = header.offsetHeight;
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+  if(scrollPosition > headerHeght) {
+    goTop.classList.add('go-top--active'); 
+  } else {
+    goTop.classList.remove('go-top--active'); 
+  } 
+  
+}
+window.addEventListener('scroll', headerScroll);
 
   /* EO IP MAP HIGHLIGHT */
 

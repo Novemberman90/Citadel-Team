@@ -197,6 +197,10 @@ html[dir="rtl"] {
       left: 107px;
       transform: scale3d(-1, 1,-1);
     }
+    &:before {
+      right: auto;
+      left: 174px;
+    }
     &__info {
       margin-right: 0;
       margin-left: auto;
@@ -206,6 +210,10 @@ html[dir="rtl"] {
       flex-direction: row-reverse;
       padding: 12px 52px;
       gap: 25px;
+    }
+    &__circles {
+      left: auto;
+      right: 71%;
     }
   }
 

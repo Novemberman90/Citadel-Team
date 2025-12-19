@@ -135,7 +135,52 @@ body {
         z-index: -1;
     }
 }
-
+.sub-middle-wrapper {
+  position: relative;
+  
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('../images/reviews-bg.webp');
+      background-position: center top;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      top: 120px;
+      left: 0;
+      z-index: -1;
+    }
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url('../images/app-bg.webp');
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+.bottom-wrapper {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    background-image: url('../images/bottom-wrapper-bg.webp');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -230,7 +275,7 @@ body {
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
     border-radius: 80px;
-    padding: 20px 34px 20px 40px;
+    padding: 20px 32px;
     position: relative;
     z-index: 2;
     transition: box-shadow 0.3s;
@@ -254,7 +299,7 @@ body {
         content: "";
         position: absolute;
         border-radius: 80px;
-        inset: 6px;
+        inset: 8px;
         background-color: $light-900;
         box-shadow: 0 -6px 10px $light-opacity-23 inset,
             0 4px 34px $light-900-opacity-34;
@@ -270,6 +315,12 @@ body {
     &:focus {
         box-shadow: 0 -6px 10px $light-opacity-23 inset,
             0 0 16px $light-900-opacity-75;
+    }
+    &:active {
+      &::before {
+        transition: all .3s;
+        inset: 10px;
+      }
     }
 }
 
@@ -325,35 +376,7 @@ body {
     fill: currentColor;
 }
 
-@media(max-width: 768px) {
-    .title {
-        font-size: 48px;
-    }
 
-    .section {
-        padding-bottom: 112px;
-    }
-}
-
-@media(max-width: 576px) {
-    .top-wrapper {
-        &::before {
-            background-image: url('../images/hero-bg-mob.webp');
-            background-position: center center;
-            opacity: 1;
-            height: 939px;
-            top: -78px;
-        }
-    }
-
-    .title {
-        font-size: 36px;
-    }
-
-    .section {
-        padding-bottom: 48px;
-    }
-}
 
 .fade {
     animation-name: fade;
@@ -378,11 +401,13 @@ body {
   border-radius: 20px;
   width: 48px;
   height: 48px;
-  position: absolute;
-  bottom: 100px;
+  position: fixed;
+  bottom: 200px;
   right: 32px;
   border: 1px solid transparent;
   transition: all .3s;
+  opacity: 0;
+  pointer-events: none;
   svg.icon {
     transform: rotate(180deg);
   }
@@ -416,5 +441,53 @@ body {
       transition: all .3s;
       fill: $light;
     }
+  }
+  &--active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+@media(max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .section {
+    padding-bottom: 112px;
+  }
+  .go-top {
+    bottom: 100px;
+  }
+}
+
+@media(max-width: 576px) {
+  .top-wrapper {
+    &::before {
+      background-image: url('../images/hero-bg-mob.webp');
+      background-position: center center;
+      opacity: 1;
+      height: 939px;
+      top: -78px;
+    }
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .section {
+    padding-bottom: 48px;
+  }
+
+  .go-top {
+    bottom: 50px;
+  }
+}
+
+html[dir="rtl"] {
+  .go-top {
+    right: auto;
+    left: 32px;
   }
 }
