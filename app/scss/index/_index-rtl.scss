@@ -76,7 +76,7 @@ html[dir="rtl"] {
           margin-right: auto;
           display: flex;
           align-items: center;
-          justify-content: end;
+          justify-content: flex-end;
         }
     
         &--latency {

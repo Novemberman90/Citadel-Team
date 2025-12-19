@@ -3,7 +3,7 @@
   left: 50%;
   bottom: 24px;
   transform: translateX(-50%);
-  max-width: 960px;
+  max-width: 976px;
   width: 100%;
   padding: 8px 0;
   z-index: 1000;
@@ -20,7 +20,6 @@
   &__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     border-radius: 777px;
 
     &.blur-plate {
@@ -38,6 +37,7 @@
     align-items: center;
     flex-wrap: wrap;
     margin-left: 12px;
+    margin-right: auto;
   }
 
   &__cookie-img {
@@ -116,8 +116,6 @@
 
 @media (max-width: 1200px) {
   .cookie {
-    max-width: 704px;
-
     &__text {
       font-size: 14px;
     }
@@ -126,7 +124,7 @@
 
 @media (max-width: 767px) {
   .cookie {
-    max-width: 366px;
+    max-width: 100%;
 
     &__text {
       font-size: 14px;
@@ -145,30 +143,35 @@
       }
     }
 
+
+  }
+}
+@media (max-width: 576px) {
+  .cookie {
     &__content {
-      margin-right: 12px;
-    }
-
-    &__actions {
-      flex-direction: column;
-    }
-
-    &__accept {
-      width: 86px;
-      height: 40px;
-    }
-
-    &__close {
-      border-radius: 80px;
-      width: 86px;
-      height: 32px;
-    }
+        margin-right: 12px;
+      }
+    
+      &__actions {
+        flex-direction: column;
+      }
+    
+      &__accept {
+        width: 86px;
+        height: 40px;
+      }
+    
+      &__close {
+        border-radius: 80px;
+        width: 86px;
+        height: 32px;
+      }
   }
 }
 
 html[dir="rtl"] {
   .cookie__content {
-    margin-left: 0;
+    margin-left: auto;
     margin-right: 12px;
   }
 }

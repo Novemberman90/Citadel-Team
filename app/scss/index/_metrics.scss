@@ -299,13 +299,13 @@
         margin-left: auto;
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: flex-end;
       }
       &--latency {
         margin-right: auto;
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: flex-start;
       }
 
       &--download {
@@ -374,6 +374,9 @@
 
     &__note {
       font-size: 10px;
+    }
+    &__value {
+      font-size: 18px;
     }
 
     &--upload,
