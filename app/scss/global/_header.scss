@@ -198,6 +198,16 @@
   }
 
 }
+@media (max-width: 385px) {
+  .header {
+    .logo {
+      max-width: 38px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
 
 
 
@@ -237,5 +247,5 @@ html[dir="rtl"] {
     }
   }
   
- }
+  }
 }
