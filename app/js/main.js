@@ -75,10 +75,11 @@ window.addEventListener('scroll', headerScroll);
   /* EO IP MAP HIGHLIGHT */
 
   // підсвітка флага на карте
-  fetch('https://ipwho.is/')
+ /*  fetch('https://ipwho.is/')
     .then(res => res.json())
     .then(data => {
       const countryCode = data.country_code; // Наприклад UA, PL, DE, US...
+      const code = data.country_code;
 
       // Вибираємо всі кола країни (бо їх 6 штук на одну)
       const flags = document.querySelectorAll(
@@ -90,13 +91,29 @@ window.addEventListener('scroll', headerScroll);
         flag.classList.add('is-active');
       });
 
+
+        if (['RU', 'BY', 'KZ', 'UA'].includes(code)) {
+          localStorage.setItem(LANG_KEY, 'ru');
+          //location.replace('/ru/index.html');
+          return;
+        }
+
+        if (['SA', 'AE', 'EG', 'QA', 'KW'].includes(code)) {
+          localStorage.setItem(LANG_KEY, 'ar');
+          //location.replace('/ar/index.html');
+          return;
+        }
+
+        // Европа и все остальные — EN
+        localStorage.setItem(LANG_KEY, 'en');
+
       console.log('GeoIP data:', data);
       console.log('Country:', data.country);
       console.log('Country code:', data.country_code);
     })
     .catch(err => {
       console.error('GeoIP error', err);
-    });
+    }); */
 
   /*  FAQ ACCORDION  */
 
@@ -305,5 +322,78 @@ const noCookie = ()=> {
 }
 acceptCookieBtn.addEventListener('click', acceptCookie);
 closeCookieBtn.addEventListener('click', noCookie);
+
+
+
+document.querySelectorAll('.switcher-lang__link').forEach(link => {
+  link.addEventListener('click', () => {
+    const lang = link.getAttribute('href').includes('/ru/')
+      ? 'ru'
+      : link.getAttribute('href').includes('/ar/')
+      ? 'ar'
+      : 'en';
+
+    localStorage.setItem('site_lang', lang);
+  });
+});
+
+
+/* Localization */
+
+const LANG_KEY = 'siteLang';
+
+fetch('https://ipwho.is/')
+  .then(res => res.json())
+  .then(data => {
+    const countryCode = data.country_code; // UA, PL, DE, US...
+    const savedLang = localStorage.getItem(LANG_KEY);
+    const path = location.pathname;
+
+    /*  1. Подсветка флагов на карте  */
+    const flags = document.querySelectorAll(
+      `.map-flag[data-country="${countryCode}"]`
+    );
+
+    flags.forEach(flag => {
+      flag.classList.add('is-active');
+    });
+
+      console.log('GeoIP data:', data);
+    console.log('Country:', data.country);
+    console.log('Country code:', data.country_code);
+
+    /* 2. Если язык уже выбран — НЕ редиректим */
+    if (savedLang) return;
+
+    /* 3. Определяем язык по стране  */
+    let targetLang = 'en';
+
+    if (['RU', 'BY', 'KZ', 'UA'].includes(countryCode)) {
+      targetLang = 'ru';
+    }
+
+    if (['SA', 'AE', 'EG', 'QA', 'KW'].includes(countryCode)) {
+      targetLang = 'ar';
+    }
+
+    localStorage.setItem(LANG_KEY, targetLang);
+
+    /* 4. Редирект ТОЛЬКО если мы не там  */
+    if (targetLang === 'ru' && !path.startsWith('/ru/')) {
+      location.replace('/ru/index.html');
+    }
+
+    if (targetLang === 'ar' && !path.startsWith('/ar/')) {
+      location.replace('/ar/index.html');
+    }
+
+    // EN — остаёмся на текущей странице
+  })
+  .catch(err => {
+    console.error('GeoIP error:', err);
+  });
+
+
+
 
 });

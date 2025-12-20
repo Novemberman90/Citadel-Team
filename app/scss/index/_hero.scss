@@ -152,6 +152,7 @@
 }
 @media(max-width: 880px) {
     .hero {
+      padding: 40px 0 64px;
       &::after {
         right: 15px;
       }
@@ -175,7 +176,6 @@
 }
 @media(max-width: 576px) {
   .hero {
-    padding: 40px 0 64px;
     &__info {
       max-width: 100%;
     }
