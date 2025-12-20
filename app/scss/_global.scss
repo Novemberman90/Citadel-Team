@@ -137,8 +137,7 @@ body {
 }
 .sub-middle-wrapper {
   position: relative;
-  
-    &::before {
+  &::before {
       position: absolute;
       content: '';
       background-image: url('../images/reviews-bg.webp');
@@ -147,9 +146,10 @@ body {
       background-repeat: no-repeat;
       width: 100%;
       height: 100%;
-      top: 120px;
+      top: -42px;
       left: 0;
       z-index: -1;
+      opacity: .8;
     }
   &::after {
     position: absolute;
@@ -160,7 +160,7 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    bottom: 0;
+    bottom: -42px;
     left: 0;
     z-index: -1;
   }
