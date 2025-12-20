@@ -149,7 +149,6 @@ body {
       top: -42px;
       left: 0;
       z-index: -1;
-      opacity: .8;
     }
   &::after {
     position: absolute;
@@ -456,9 +455,6 @@ body {
 
   .section {
     padding-bottom: 112px;
-  }
-  .go-top {
-    bottom: 150px;
   }
 }
 
