@@ -77,14 +77,14 @@
                 </svg>
               </button>
               <div class="switcher-lang__dropdown blur-plate">
-                <a class="switcher-lang__link switcher-lang__link--active" href="../index.html">
+                <a class="switcher-lang__link" href="../index.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#en">
                     </use>
                   </svg>
                   <span>En</span>
                 </a>
-                <a class="switcher-lang__link" href="../ar/index.html">
+                <a class="switcher-lang__link switcher-lang__link--active" href="../ar/index.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#ar">
                     </use>
@@ -100,7 +100,7 @@
                 </a>
               </div>
             </div>
-            <a class="cta user-menu__cta" href="https://t.me/CitadelVPNBot" target="_blank">
+            <a class="cta user-menu__cta" href="#">
               افتح VPN
               <svg class="icon" width="20" height="20">
                 <use href="../images/sprite.svg#telegramLight">
@@ -398,258 +398,282 @@
             اختر خطتك
           </h2>
           <ul class="plan__list">
-            <li class="plan__item blur-plate">
-              <h3 class="plan__title">
-                الفترة التجريبية
-              </h3>
-              <span class="plan__period">
-                شهر واحد
-              </span>
-              <ul class="plan__list-features">
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  نطاق ترددي غير محدود
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  التشفير من الدرجة العسكرية
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  الوصول إلى كافة الخادم
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم العملاء على مدار الساعة طوال أيام
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  لا توجد سياسة سجلات
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم الأجهزة المتعددة
-                </li>
-              </ul>
-              <a class="plan__cta cta" href="https://t.me/CitadelVPNBot" target="_blank">
-                ابدأ الآن
-              </a>
-            </li>
-            <li class="plan__item blur-plate">
-              <h3 class="plan__title">
-                ابدأ الآن
-              </h3>
-              <span class="plan__period">
-                شهر واحد
-              </span>
-              <ul class="plan__list-features">
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  نطاق ترددي غير محدود
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  التشفير من الدرجة العسكرية
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  الوصول إلى كافة الخادم
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم العملاء على مدار الساعة طوال أيام
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  لا توجد سياسة سجلات
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم الأجهزة المتعددة
-                </li>
-              </ul>
-              <a class="plan__cta cta" href="https://t.me/CitadelVPNBot" target="_blank">
-                ابدأ الآن
-              </a>
-            </li>
-            <li class="plan__item blur-plate plan__item--featured">
-              <h3 class="plan__title">
-                نصف سنوي
-              </h3>
-              <span class="plan__period">
-                نصف سنوي
-                <span class="plan__savings blur-plate">
-                  وفر 3 دولارات
+            <li class="plan__item-wrapper">
+              <div class="plan__item blur-plate">
+                <h3 class="plan__title">
+                  الفترة التجريبية
+                </h3>
+                <h4 class="plan__price">
+                  Free
+                </h4>
+                <span class="plan__period">
+                  شهر واحد
                 </span>
-              </span>
-              <ul class="plan__list-features">
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  نطاق ترددي غير محدود
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  التشفير من الدرجة العسكرية
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  الوصول إلى كافة الخادم
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم العملاء على مدار الساعة طوال أيام
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  لا توجد سياسة سجلات
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم الأجهزة المتعددة
-                </li>
-              </ul>
-              <a class="plan__cta cta" href="https://t.me/CitadelVPNBot" target="_blank">
-                ابدأ الآن
-              </a>
-              <span class="plan__popular">
-                الأكثر شعبية
-              </span>
+                <ul class="plan__list-features">
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    نطاق ترددي غير محدود
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    التشفير من الدرجة العسكرية
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    الوصول إلى كافة الخادم
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم العملاء على مدار الساعة طوال أيام
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    لا توجد سياسة سجلات
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم الأجهزة المتعددة
+                  </li>
+                </ul>
+                <a class="plan__cta cta" href="https://t.me/CitadelVPNBot">
+                  ابدأ الآن
+                </a>
+                <div class="plan__circle"></div>
+              </div>
             </li>
-            <li class="plan__item blur-plate">
-              <h3 class="plan__title">
-                سنوي
-              </h3>
-              <span class="plan__period">
-                12 شهرا
-                <span class="plan__savings blur-plate">
-                  وفر 10 دولارات
+            <li class="plan__item-wrapper plan__item-wrapper--monthly">
+              <div class="plan__item blur-plate">
+                <h3 class="plan__title">
+                  ابدأ الآن
+                </h3>
+                <h4 class="plan__price">
+                  $10
+                </h4>
+                <span class="plan__period">
+                  شهر واحد
                 </span>
-              </span>
-              <ul class="plan__list-features">
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  نطاق ترددي غير محدود
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  التشفير من الدرجة العسكرية
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  الوصول إلى كافة الخادم
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم العملاء على مدار الساعة طوال أيام
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  لا توجد سياسة سجلات
-                </li>
-                <li class="plan__list-item">
-                  <div class="plan__icon blur-plate">
-                    <svg width="15" height="15">
-                      <use href="../images/sprite.svg#checked"></use>
-                    </svg>
-                  </div>
-                  دعم الأجهزة المتعددة
-                </li>
-              </ul>
-              <a class="plan__cta cta" href="https://t.me/CitadelVPNBot" target="_blank">
-                ابدأ الآن
-              </a>
+                <ul class="plan__list-features">
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    نطاق ترددي غير محدود
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    التشفير من الدرجة العسكرية
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    الوصول إلى كافة الخادم
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم العملاء على مدار الساعة طوال أيام
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    لا توجد سياسة سجلات
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم الأجهزة المتعددة
+                  </li>
+                </ul>
+                <a class="plan__cta cta" href="https://t.me/CitadelVPNBot">
+                  ابدأ الآن
+                </a>
+                <div class="plan__circle"></div>
+              </div>
+            </li>
+            <li class="plan__item-wrapper plan__item-wrapper--semiannual" id="plan">
+              <div class="plan__item plan__item--featured blur-plate">
+                <h3 class="plan__title">
+                  نصف سنوي
+                </h3>
+                <h4 class="plan__price">
+                  $20
+                </h4>
+                <span class="plan__period">
+                  نصف سنوي
+                  <span class="plan__savings blur-plate">
+                    وفر 3 دولارات
+                  </span>
+                </span>
+                <ul class="plan__list-features">
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    نطاق ترددي غير محدود
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    التشفير من الدرجة العسكرية
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    الوصول إلى كافة الخادم
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم العملاء على مدار الساعة طوال أيام
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    لا توجد سياسة سجلات
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم الأجهزة المتعددة
+                  </li>
+                </ul>
+                <a class="plan__cta cta" href="https://t.me/CitadelVPNBot">
+                  ابدأ الآن
+                </a>
+                <span class="plan__popular">
+                  الأكثر شعبية
+                </span>
+                <div class="plan__circle"></div>
+              </div>
+            </li>
+            <li class="plan__item-wrapper plan__item-wrapper--annual">
+              <div class="plan__item blur-plate">
+                <h3 class="plan__title">
+                  سنوي
+                </h3>
+                <h4 class="plan__price">
+                  $30
+                </h4>
+                <span class="plan__period">
+                  12 شهرا
+                  <span class="plan__savings blur-plate">
+                    وفر 10 دولارات
+                  </span>
+                </span>
+                <ul class="plan__list-features">
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    نطاق ترددي غير محدود
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    التشفير من الدرجة العسكرية
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    الوصول إلى كافة الخادم
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم العملاء على مدار الساعة طوال أيام
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    لا توجد سياسة سجلات
+                  </li>
+                  <li class="plan__list-item">
+                    <div class="plan__icon blur-plate">
+                      <svg width="15" height="15">
+                        <use href="../images/sprite.svg#checked"></use>
+                      </svg>
+                    </div>
+                    دعم الأجهزة المتعددة
+                  </li>
+                </ul>
+                <a class="plan__cta cta" href="https://t.me/CitadelVPNBot">
+                  ابدأ الآن
+                </a>
+                <div class="plan__circle"></div>
+              </div>
             </li>
           </ul>
         </div>
@@ -1314,16 +1338,21 @@
       </div>
     </footer>
 
-@@include('../../components/cookieBanner.html', {
-  "extraDots": "..",
-  "cookieNotice": "إشعار ملفات تعريف الارتباط.",
-  "cookieTextLeft": "يستخدم موقعنا الإلكتروني",
-  "cookieLink": "سياسة الكوكيز",
-  "cookieTextRight": "لضمان حصولك على أفضل تجربة ممكنة.",
-  "accept": "قبول",
-  "accessibility": "إغلاق إشعار ملفات تعريف الارتباط"
-})
+    @@include('../../components/cookieBanner.html', {
+    "extraDots": "..",
+    "cookieNotice": "إشعار ملفات تعريف الارتباط.",
+    "cookieTextLeft": "يستخدم موقعنا الإلكتروني",
+    "cookieLink": "سياسة الكوكيز",
+    "cookieTextRight": "لضمان حصولك على أفضل تجربة ممكنة.",
+    "accept": "قبول",
+    "accessibility": "إغلاق إشعار ملفات تعريف الارتباط"
+    })
   </div>
+  <a class="go-top blur-plate" href="#header">
+    <svg class="icon" width="16" height="16">
+      <use href="../images/sprite.svg#arrowBottom"></use>
+    </svg>
+  </a>
   <script src="../js/main.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>

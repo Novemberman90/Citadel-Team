@@ -36,7 +36,7 @@
     &__inner {
         padding: 120px 0;
         text-align: center;
-        max-width: 360px;
+        max-width: 436px;
         width: 100%;
         margin-left: auto;
     }
@@ -66,9 +66,10 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 12px;
+
         svg {
-          width: 32px;
-          height: 32px;
+            width: 32px;
+            height: 32px;
         }
     }
 
@@ -79,14 +80,6 @@
         &::after {
             border-radius: 20px;
         }
-    }
-
-    &__cta::before {
-        width: 95%;
-    }
-
-    &__cta:active::before {
-        width: 91%;
     }
 
     &__circles {

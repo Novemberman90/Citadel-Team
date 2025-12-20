@@ -17,6 +17,7 @@
         <div class="header__inner">
           <a class="logo" href="../ru/index.html">
             <picture>
+              <source media="(max-width: 385px)" srcset="../images/header-logo-xs.svg">
               <source media="(max-width: 576px)" srcset="../images/header-logo-s.svg">
               <img src="../images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
             </picture>
@@ -77,7 +78,7 @@
                 </svg>
               </button>
               <div class="switcher-lang__dropdown blur-plate">
-                <a class="switcher-lang__link switcher-lang__link--active" href="../refund-policy.html">
+                <a class="switcher-lang__link " href="../refund-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#en">
                     </use>
@@ -91,7 +92,7 @@
                   </svg>
                   <span>عر</span>
                 </a>
-                <a class="switcher-lang__link" href="../ru/refund-policy.html">
+                <a class="switcher-lang__link switcher-lang__link--active" href="../ru/refund-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#ru">
                     </use>
@@ -101,7 +102,7 @@
               </div>
             </div>
             <a class="cta user-menu__cta" href="#">
-              Открыть VPN
+              Open VPN
               <svg class="icon" width="20" height="20">
                 <use href="../images/sprite.svg#telegramLight">
                 </use>
@@ -139,14 +140,14 @@
                 <a class="tab-nav__btn " href="./terms-and-conditions.html">
                   <span>Пользовательское соглашение</span>
                 </a>
-                <a class="tab-nav__btn" href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">
+                <a class="tab-nav__btn" href="./privacy-policy.html" rel="noopener noreferrer">
                   <span>Политика конфиденциальности</span>
                 </a>
-                <a class="tab-nav__btn tab-nav__btn--active" href="./refund-policy.html" target="_blank"
+                <a class="tab-nav__btn tab-nav__btn--active" href="./refund-policy.html"
                   rel="noopener noreferrer">
                   <span>Условия возврата средств</span>
                 </a>
-                <a class="tab-nav__btn" href="./about-us.html" target="_blank" rel="noopener noreferrer">
+                <a class="tab-nav__btn" href="./about-us.html" rel="noopener noreferrer">
                   <span>О нас</span>
                 </a>
               </div>
@@ -338,17 +339,17 @@
           <ul class="footer__menu">
             <li class="menu__item">
               <a class="menu__link" href="../ru/terms-and-conditions.html">
-                Пользовательское соглашение
+           Соглашение
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="../ru/privacy-policy.html">
-                Политика конфиденциальности
+               Конфиденциальность
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="../ru/refund-policy.html">
-                Условия возврата средств
+                Возврат
               </a>
             </li>
             <li class="menu__item">
@@ -401,7 +402,7 @@
       </div>
     </footer>
 
-@@include('../../components/cookieBanner.html', {
+    @@include('../../components/cookieBanner.html', {
     "extraDots": "..",
     "cookieNotice": "Уведомление о файлах cookie.",
     "cookieTextLeft": "Наш веб-сайт использует",
@@ -409,7 +410,7 @@
     "cookieTextRight": "чтобы обеспечить вам наилучший опыт.",
     "accept": "Принять",
     "accessibility": "Закрыть баннер cookie"
-})
+    })
   </div>
 
 

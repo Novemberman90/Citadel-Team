@@ -2,12 +2,15 @@ html[dir="rtl"] {
   direction: rtl;
   text-align: right;
   
-  .advantages__item {
-    text-align: right;
+  .advantages {
+    &__item {
+      text-align: right;
+    }
+    &__info {
+      text-align: center;
+    }
   }
-  .advantages__info {
-    text-align: center;
-  }
+
   .steps {
     .title {
       text-align: right;
@@ -46,6 +49,11 @@ html[dir="rtl"] {
   .plan__list-item {
     text-align: right;
   }
+  .apps {
+    &__title {
+      text-align: right;
+    }
+  }
   .engagement {
     &::after {
       left: 0;
@@ -58,11 +66,36 @@ html[dir="rtl"] {
       left: auto;
       right: 125px;
     }
-    
+    &__cta {
+      flex-direction: row-reverse;
+    }
+  }
+  @media (max-width: 1215px) {
+    .apps {
+      &__title {
+        text-align: center;
+      }
+    }
   }
   @media(max-width: 767px) {
     .steps__info {
       text-align: right;
+    }
+    .metrics {
+      &__cards-item {
+        &--upload {
+          margin-left: 0;
+          margin-right: auto;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+    
+        &--latency {
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
     }
   }
 

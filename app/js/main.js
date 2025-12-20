@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== MENU =====
   const MENUBTN = document.querySelector(".menu__btn");
   const MENU = document.querySelector('.menu__list');
-
+  const goTop = document.querySelector('.go-top')
   MENUBTN.addEventListener("click", () => {
     if (MENUBTN) {
       openMenu();
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     MENUBTN.classList.remove('menu__btn--active');
   }
 
+  /* Скрол меню */
   const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
   navLink.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -55,44 +56,78 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Fixed header on scroll
-const header = document.getElementById('header');
-const scrollThreshold = 150;
+  /* При скроле меняется хедер и активация кнопки НА ВЕРХ */
+  let isScrolled = false;
+  const headerScroll = () => {
+    const header = document.querySelector('.header');
+    const headerHeght = header.offsetHeight;
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY >= scrollThreshold) {
-    header.classList.add('is-fixed');
-  } else {
-    header.classList.remove('is-fixed');
+    if (scrollPosition > headerHeght) {
+      goTop.classList.add('go-top--active');
+    } else {
+      goTop.classList.remove('go-top--active');
+    }
+
   }
-});
-
+  window.addEventListener('scroll', headerScroll);
 
   /* EO IP MAP HIGHLIGHT */
 
   // підсвітка флага на карте
-  fetch('https://ipwho.is/')
-    .then(res => res.json())
-    .then(data => {
-      const countryCode = data.country_code; // Наприклад UA, PL, DE, US...
+  /*  fetch('https://ipwho.is/')
+     .then(res => res.json())
+     .then(data => {
+       const countryCode = data.country_code; // Наприклад UA, PL, DE, US...
+       const code = data.country_code;
+ 
+       // Вибираємо всі кола країни (бо їх 6 штук на одну)
+       const flags = document.querySelectorAll(
+         `.map-flag[data-country="${countryCode}"]`
+       );
+ 
+       // Додаємо клас is-active кожному колу
+       flags.forEach(flag => {
+         flag.classList.add('is-active');
+       });
+ 
+ 
+         if (['RU', 'BY', 'KZ', 'UA'].includes(code)) {
+           localStorage.setItem(LANG_KEY, 'ru');
+           //location.replace('/ru/index.html');
+           return;
+         }
+ 
+         if (['SA', 'AE', 'EG', 'QA', 'KW'].includes(code)) {
+           localStorage.setItem(LANG_KEY, 'ar');
+           //location.replace('/ar/index.html');
+           return;
+         }
+ 
+         // Европа и все остальные — EN
+         localStorage.setItem(LANG_KEY, 'en');
+ 
+       console.log('GeoIP data:', data);
+       console.log('Country:', data.country);
+       console.log('Country code:', data.country_code);
+     })
+     .catch(err => {
+       console.error('GeoIP error', err);
+     }); */
 
-      // Вибираємо всі кола країни (бо їх 6 штук на одну)
-      const flags = document.querySelectorAll(
-        `.map-flag[data-country="${countryCode}"]`
-      );
+  // Fixed header on scroll
+  const header = document.getElementById('header');
+  const scrollThreshold = 150;
 
-      // Додаємо клас is-active кожному колу
-      flags.forEach(flag => {
-        flag.classList.add('is-active');
-      });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= scrollThreshold) {
+      header.classList.add('is-fixed');
+    } else {
+      header.classList.remove('is-fixed');
+    }
+  });
 
-      console.log('GeoIP data:', data);
-      console.log('Country:', data.country);
-      console.log('Country code:', data.country_code);
-    })
-    .catch(err => {
-      console.error('GeoIP error', err);
-    });
+  /*  FAQ ACCORDION  */
 
   /*  FAQ ACCORDION  */
   const accordionButtons = document.querySelectorAll('[data-button]');
@@ -278,23 +313,101 @@ window.addEventListener('scroll', () => {
   }
 
 
-  /* coockie */
+  /* cookie  */
   const cookie = document.getElementById('cookie');
-  const acceptBtn = cookie.querySelector('.cookie__accept');
-  const closeBtn = cookie.querySelector('.cookie__close');
+  const acceptCookieBtn = cookie.querySelector('.cookie__accept');
+  const closeCookieBtn = cookie.querySelector('.cookie__close');
 
-  if (!localStorage.getItem('cookieAccepted')) {
-    requestAnimationFrame(() => {
+  const COOKIE_KEY = 'cookieConsent';
+  // еси пользователь уже делал выбор, тогда ничего не делаю
+  if (localStorage.getItem(COOKIE_KEY) === null) {
+    setTimeout(() => {
       cookie.classList.add('is-visible');
-    });
+    }, 4000);
   }
 
-  function hideCookie() {
-    localStorage.setItem('cookieAccepted', 'true');
+  // если пользватель согласился
+  const acceptCookie = () => {
+    localStorage.setItem(COOKIE_KEY, 'true');
+    cookie.classList.remove('is-visible');
+  };
+
+  // если пользваотель отказался
+  const noCookie = () => {
+    localStorage.setItem(COOKIE_KEY, 'false');
     cookie.classList.remove('is-visible');
   }
+  acceptCookieBtn.addEventListener('click', acceptCookie);
+  closeCookieBtn.addEventListener('click', noCookie);
 
-  acceptBtn.addEventListener('click', hideCookie);
-  closeBtn.addEventListener('click', hideCookie);
+
+
+  document.querySelectorAll('.switcher-lang__link').forEach(link => {
+    link.addEventListener('click', () => {
+      const lang = link.getAttribute('href').includes('/ru/')
+        ? 'ru'
+        : link.getAttribute('href').includes('/ar/')
+          ? 'ar'
+          : 'en';
+
+      localStorage.setItem('site_lang', lang);
+    });
+  });
+
+
+  /* Localization */
+
+  const LANG_KEY = 'siteLang';
+
+  fetch('https://ipwho.is/')
+    .then(res => res.json())
+    .then(data => {
+      const countryCode = data.country_code; // UA, PL, DE, US...
+      const savedLang = localStorage.getItem(LANG_KEY);
+      const path = location.pathname;
+
+      /*  1. Подсветка флагов на карте  */
+      const flags = document.querySelectorAll(
+        `.map-flag[data-country="${countryCode}"]`
+      );
+
+      flags.forEach(flag => {
+        flag.classList.add('is-active');
+      });
+
+      console.log('GeoIP data:', data);
+      console.log('Country:', data.country);
+      console.log('Country code:', data.country_code);
+
+      /* 2. Если язык уже выбран — НЕ редиректим */
+      if (savedLang) return;
+
+      /* 3. Определяем язык по стране  */
+      let targetLang = 'en';
+
+      if (['RU', 'BY', 'KZ', 'UA'].includes(countryCode)) {
+        targetLang = 'ru';
+      }
+
+      if (['SA', 'AE', 'EG', 'QA', 'KW'].includes(countryCode)) {
+        targetLang = 'ar';
+      }
+
+      localStorage.setItem(LANG_KEY, targetLang);
+
+      /* 4. Редирект ТОЛЬКО если мы не там  */
+      if (targetLang === 'ru' && !path.startsWith('/ru/')) {
+        location.replace('/ru/index.html');
+      }
+
+      if (targetLang === 'ar' && !path.startsWith('/ar/')) {
+        location.replace('/ar/index.html');
+      }
+
+      // EN — остаёмся на текущей странице
+    })
+    .catch(err => {
+      console.error('GeoIP error:', err);
+    });
 
 });

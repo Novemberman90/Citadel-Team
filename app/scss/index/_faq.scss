@@ -1,4 +1,6 @@
 .faq {
+    padding-bottom: 80px;
+
     &__title {
         text-align: left;
     }
@@ -72,14 +74,23 @@
     &__icon {
         transform: rotate(90deg);
         transition: transform 0.3s;
-     &--open {
-        transform: rotate(0);
-      }
+
+        &--open {
+            transform: rotate(0);
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    .faq {
+        padding-bottom: 43px;
     }
 }
 
 @media(max-width: 576px) {
     .faq {
+        padding-bottom: 93px;
+
         &__subtitle {
             font-size: 20px;
         }

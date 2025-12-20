@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('../../components/head.html', {
-  "title": "Политика конфиденциальности — Citadel VPN",
-  "metaDescription": "Ознакомьтесь с Политикой конфиденциальности Citadel VPN: как мы собираем, используем и защищаем информацию.",
-  "twitterTitle": "Политика конфиденциальности — Citadel VPN",
-  "twitterDescription": "Как Citadel VPN собирает, использует и защищает вашу информацию.",
-  "canonical": "https://vpncitadel.com/ru/privacy-policy/",
-  "extraDots": ".."
+"title": "Политика конфиденциальности — Citadel VPN",
+"metaDescription": "Ознакомьтесь с Политикой конфиденциальности Citadel VPN: как мы собираем, используем и защищаем информацию.",
+"twitterTitle": "Политика конфиденциальности — Citadel VPN",
+"twitterDescription": "Как Citadel VPN собирает, использует и защищает вашу информацию.",
+"canonical": "https://vpncitadel.com/ru/privacy-policy/",
+"extraDots": ".."
 })
 
 <body>
@@ -17,6 +17,7 @@
         <div class="header__inner">
           <a class="logo" href="../ru/index.html">
             <picture>
+              <source media="(max-width: 385px)" srcset="../images/header-logo-xs.svg">
               <source media="(max-width: 576px)" srcset="../images/header-logo-s.svg">
               <img src="../images/logo.svg" alt="CitadelVPN Logo" width="153" height="46">
             </picture>
@@ -59,7 +60,7 @@
                       </li> -->
             </ul>
           </nav>
-    
+
           <!-- lang menu -->
           <div class="user-menu">
             <div class="switcher-lang">
@@ -77,7 +78,7 @@
                 </svg>
               </button>
               <div class="switcher-lang__dropdown blur-plate">
-                <a class="switcher-lang__link switcher-lang__link--active" href="../privacy-policy.html">
+                <a class="switcher-lang__link " href="../privacy-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#en">
                     </use>
@@ -91,7 +92,7 @@
                   </svg>
                   <span>عر</span>
                 </a>
-                <a class="switcher-lang__link" href="../ru/privacy-policy.html">
+                <a class="switcher-lang__link switcher-lang__link--active" href="../ru/privacy-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#ru">
                     </use>
@@ -101,7 +102,7 @@
               </div>
             </div>
             <a class="cta user-menu__cta" href="#">
-              Открыть VPN
+              Open VPN
               <svg class="icon" width="20" height="20">
                 <use href="../images/sprite.svg#telegramLight">
                 </use>
@@ -112,7 +113,7 @@
       </div>
     </header>
     <main class="main">
-  
+
       <section class="home">
         <div class="container">
           <div class="top">
@@ -131,7 +132,7 @@
               </ul>
             </div>
           </div>
-  
+
           <div class="home__inner">
             <div class="home__tab-nav">
               <h1 class="home__tab-nav-title">Условия и политика</h1>
@@ -139,14 +140,14 @@
                 <a class="tab-nav__btn" href="./terms-and-conditions.html">
                   <span>Пользовательское соглашение</span>
                 </a>
-                <a class="tab-nav__btn tab-nav__btn--active" href="./privacy-policy.html" target="_blank"
+                <a class="tab-nav__btn tab-nav__btn--active" href="./privacy-policy.html"
                   rel="noopener noreferrer">
                   <span>Политика конфиденциальности</span>
                 </a>
-                <a class="tab-nav__btn" href="./refund-policy.html" target="_blank" rel="noopener noreferrer">
+                <a class="tab-nav__btn" href="./refund-policy.html" rel="noopener noreferrer">
                   <span>Условия возврата средств</span>
                 </a>
-                <a class="tab-nav__btn" href="./about-us.html" target="_blank" rel="noopener noreferrer">
+                <a class="tab-nav__btn" href="./about-us.html" rel="noopener noreferrer">
                   <span>О нас</span>
                 </a>
               </div>
@@ -159,34 +160,35 @@
                     <h2 class="privacy__main-title">
                       Политика конфиденциальности
                     </h2>
-  
+
                     <!-- 1. Introduction -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         1. Введение
                       </h3>
-  
+
                       <p class="privacy__text">
                         Citadel VPN обязуется защищать вашу конфиденциальность. В настоящей Политике конфиденциальности
                         объясняется, какую
-                        информацию мы собираем, как мы ее используем и каковы ваши права в отношении этой информации. Наш
+                        информацию мы собираем, как мы ее используем и каковы ваши права в отношении этой информации.
+                        Наш
                         руководящий принцип
                         заключается в сборе только минимального объема данных, необходимого для работы VPN-сервиса
                         мирового класса. Мы являемся
                         строгим провайдером VPN, не ведущим журналы.
                       </p>
                     </section>
-  
+
                     <!-- 2. Information We Do Not Collect -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         2. Информация, которую мы не собираем
                       </h3>
-  
+
                       <p class="privacy__text">
                         Мы НЕ собираем, не регистрируем и не храним ничего из следующего:
                       </p>
-  
+
                       <ul class="privacy__list">
                         <li class="privacy__item">Ваш исходный IP-адрес.
                         </li>
@@ -198,22 +200,22 @@
                         <li class="privacy__item">Ваши DNS-запросы.</li>
                       </ul>
                     </section>
-  
+
                     <!-- 3. Information We Collect -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         3. Какую информацию мы собираем
                       </h3>
-  
+
                       <p class="privacy__text">
                         Для предоставления наших Услуг мы собираем следующую минимальную информацию:
                       </p>
-  
+
                       <!-- 3.1 Account Information -->
                       <h4 class="privacy__subtitle">
                         3.1. Информация об аккаунте
                       </h4>
-  
+
                       <ul class="privacy__list">
                         <li class="privacy__item">
                           <span class="privacy__text privacy__text--bold">Адрес электронной почты:</span>
@@ -225,46 +227,49 @@
                         </li>
                         <li class="privacy__item">
                           <span class="privacy__text privacy__text--bold">Платежная информация:</span>
-                          <span class="privacy__text">Мы используем сторонние платежные системы (например, Cryptomus) для
+                          <span class="privacy__text">Мы используем сторонние платежные системы (например, Cryptomus)
+                            для
                             обработки платежей. Мы не храним полную информацию о
                             вашей кредитной карте.</span>
                         </li>
                       </ul>
-  
+
                       <!-- 3.2 Aggregated Usage Statistics -->
                       <h4 class="privacy__subtitle privacy__subtitle--pt">
                         3.2. Агрегированная статистика использования
                       </h4>
-  
+
                       <ul class="privacy__list">
                         <li class="privacy__item">
                           <span class="privacy__text privacy__text--bold">Успешное подключение:</span>
                           <span class="privacy__text">
-                            Мы собираем информацию о том, удалось ли вам установить VPN-соединение в определенный день (но
+                            Мы собираем информацию о том, удалось ли вам установить VPN-соединение в определенный день
+                            (но
                             не в определенное время).
                           </span>
                         </li>
                         <li class="privacy__item">
                           <span class="privacy__text privacy__text--bold">Передача данных:</span>
                           <span class="privacy__text">
-                            Мы собираем общий объем данных, переданных данным пользователем, чтобы обеспечить справедливое
+                            Мы собираем общий объем данных, переданных данным пользователем, чтобы обеспечить
+                            справедливое
                             использование и
                             поддерживать качество обслуживания.
                           </span>
                         </li>
                       </ul>
-  
+
                       <p class="privacy__text privacy__text--down">
                         Эти данные являются обобщенными и не могут быть использованы для идентификации отдельных
                         пользователей или их конкретных
                         действий.
                       </p>
-  
+
                       <!-- 3.3 Telegram Bot -->
                       <h4 class="privacy__subtitle privacy__subtitle--pt">
                         3.3. Telegram Бот
                       </h4>
-  
+
                       <ul class="privacy__list">
                         <li class="privacy__item">
                           <span class="privacy__text privacy__text--bold">Наш бот в Telegram</span>
@@ -276,7 +281,7 @@
                         </li>
                       </ul>
                     </section>
-  
+
                     <!-- 4. How We Use Your Information -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
@@ -294,43 +299,45 @@
                         <li class="privacy__item">Предотвращение мошенничества и злоупотребления нашими Услугами.</li>
                       </ul>
                     </section>
-  
+
                     <!-- 5. How We Protect Your Information -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         5. Как мы защищаем вашу информацию
                       </h3>
-  
+
                       <p class="privacy__text">
-                        Мы применяем различные меры безопасности для обеспечения безопасности вашей личной информации. Все
+                        Мы применяем различные меры безопасности для обеспечения безопасности вашей личной информации.
+                        Все
                         платежные операции
                         обрабатываются через шлюзового провайдера и не хранятся и не обрабатываются на наших серверах.
                       </p>
                     </section>
-  
+
                     <!-- 6. Data Retention -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         6. Хранение данных
                       </h3>
-  
+
                       <p class="privacy__text">
-                        Мы храним информацию о вашей учетной записи до тех пор, пока она активна. Вы можете в любое время
+                        Мы храним информацию о вашей учетной записи до тех пор, пока она активна. Вы можете в любое
+                        время
                         запросить удаление
                         своей учетной записи и связанных с ней данных.
                       </p>
                     </section>
-  
+
                     <!-- 7. Third-Party Services -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         7. Сторонние сервисы
                       </h3>
-  
+
                       <p class="privacy__text">
                         Мы используем следующие сторонние сервисы:
                       </p>
-  
+
                       <ul class="privacy__list">
                         <li class="privacy__item">
                           <span class="privacy__text privacy__text--bold">Платежные системы:</span>
@@ -343,14 +350,15 @@
                           <span class="privacy__text">Наш бот работает на платформе Telegram.</span>
                         </li>
                       </ul>
-  
+
                       <p class="privacy__text privacy__text--down">
-                        Мы не несем ответственности за политику конфиденциальности этих сторонних сервисов. Мы рекомендуем
+                        Мы не несем ответственности за политику конфиденциальности этих сторонних сервисов. Мы
+                        рекомендуем
                         вам ознакомиться с их
                         политикой конфиденциальности.
                       </p>
                     </section>
-  
+
                     <!-- 8. Your Rights -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
@@ -359,7 +367,7 @@
                       <p class="privacy__text">
                         Вы имеете право:
                       </p>
-  
+
                       <ul class="privacy__list">
                         <li class="privacy__item">Получить доступ к личным данным, которые мы храним о вас.</li>
                         <li class="privacy__item">Запросить исправление неточных данных.</li>
@@ -367,7 +375,7 @@
                         <li class="privacy__item">Возражать против обработки ваших данных.
                         </li>
                       </ul>
-  
+
                       <p class="privacy__text privacy__text--down">
                         Чтобы воспользоваться этими правами, свяжитесь с нами по адресу: <a
                           href="mailto:info@vpncitadel.com" class="privacy-link">
@@ -375,39 +383,40 @@
                         </a>
                       </p>
                     </section>
-  
+
                     <!-- 9. Children's Privacy -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         9. Конфиденциальность детей
                       </h3>
-  
+
                       <p class="privacy__text">
                         Наши Услуги не предназначены для использования лицами младше 18 лет. Мы сознательно не собираем
                         личную информацию от
                         детей.
                       </p>
                     </section>
-  
+
                     <!-- 10. Changes To This Policy -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         10. Изменения в настоящей Политике
                       </h3>
-  
+
                       <p class="privacy__text">
-                        Мы можем время от времени обновлять настоящую Политику конфиденциальности. Мы будем уведомлять вас
+                        Мы можем время от времени обновлять настоящую Политику конфиденциальности. Мы будем уведомлять
+                        вас
                         о любых изменениях,
                         публикуя новую политику на нашем веб-сайте.
                       </p>
                     </section>
-  
+
                     <!-- 11. Contact Us -->
                     <section class="privacy__section">
                       <h3 class="privacy__title">
                         11. Свяжитесь с нами
                       </h3>
-  
+
                       <p class="privacy__text">
                         Если у вас есть какие-либо вопросы по поводу настоящей Политики конфиденциальности, пожалуйста,
                         свяжитесь с нами по
@@ -417,7 +426,7 @@
                       </p>
                     </section>
                   </div>
-  
+
                 </div>
               </div>
             </div>
@@ -498,17 +507,17 @@
           <ul class="footer__menu">
             <li class="menu__item">
               <a class="menu__link" href="../ru/terms-and-conditions.html">
-                Пользовательское соглашение
+           Соглашение
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="../ru/privacy-policy.html">
-                Политика конфиденциальности
+               Конфиденциальность
               </a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="../ru/refund-policy.html">
-                Условия возврата средств
+                Возврат
               </a>
             </li>
             <li class="menu__item">
@@ -560,8 +569,8 @@
         </span>
       </div>
     </footer>
-  
-@@include('../../components/cookieBanner.html', {
+
+    @@include('../../components/cookieBanner.html', {
     "extraDots": "..",
     "cookieNotice": "Уведомление о файлах cookie.",
     "cookieTextLeft": "Наш веб-сайт использует",
@@ -569,7 +578,7 @@
     "cookieTextRight": "чтобы обеспечить вам наилучший опыт.",
     "accept": "Принять",
     "accessibility": "Закрыть баннер cookie"
-})
+    })
   </div>
 
 

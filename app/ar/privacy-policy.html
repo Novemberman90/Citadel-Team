@@ -54,11 +54,12 @@
 
 <body>
   <div class="wrapper">
-    <header class="header" id="header">
+ <header class="header" id="header">
       <div class="container">
         <div class="header__inner">
           <a class="logo" href="../ar/index.html">
             <picture>
+              <source media="(max-width: 385px)" srcset="../images/header-logo-xs.svg">
               <source media="(max-width: 576px)" srcset="../images/header-logo-s-rtl.svg">
               <img src="../images/logo-rtl.svg" alt="CitadelVPN Logo" width="153" height="46">
             </picture>
@@ -66,10 +67,10 @@
           <!-- menu  -->
           <nav class="menu">
             <button class="menu__btn blur-plate" type="button">
-              <svg class="menu__btn-icon icon" width="22" height="22">
+              <svg class="menu__btn-icon" width="22" height="22">
                 <use href="../images/sprite.svg#menuBtn"></use>
               </svg>
-              <svg class="menu__btn-icon-close icon" width="11" height="11">
+              <svg class="menu__btn-icon-close" width="11" height="11">
                 <use href="../images/sprite.svg#menuBtnClose"></use>
               </svg>
             </button>
@@ -119,14 +120,14 @@
                 </svg>
               </button>
               <div class="switcher-lang__dropdown blur-plate">
-                <a class="switcher-lang__link switcher-lang__link--active" href="../privacy-policy.html">
+                <a class="switcher-lang__link " href="../privacy-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#en">
                     </use>
                   </svg>
                   <span>En</span>
                 </a>
-                <a class="switcher-lang__link" href="../ar/privacy-policy.html">
+                <a class="switcher-lang__link switcher-lang__link--active" href="../ar/privacy-policy.html">
                   <svg width="24" height="24">
                     <use href="../images/sprite.svg#ar">
                     </use>
@@ -181,14 +182,14 @@
               <a class="tab-nav__btn" href="./terms-and-conditions.html">
                 <span>الشروط والأحكام</span>
               </a>
-              <a class="tab-nav__btn tab-nav__btn--active" href="./privacy-policy.html" target="_blank"
+              <a class="tab-nav__btn tab-nav__btn--active" href="./privacy-policy.html"
                 rel="noopener noreferrer">
                 <span>سياسة الخصوصية</span>
               </a>
-              <a class="tab-nav__btn" href="./refund-policy.html" target="_blank" rel="noopener noreferrer">
+              <a class="tab-nav__btn" href="./refund-policy.html" rel="noopener noreferrer">
                 <span>سياسة استرداد الأموال</span>
               </a>
-              <a class="tab-nav__btn" href="./about-us.html" target="_blank" rel="noopener noreferrer">
+              <a class="tab-nav__btn" href="./about-us.html" rel="noopener noreferrer">
                 <span>معلومات عنا</span>
               </a>
             </div>

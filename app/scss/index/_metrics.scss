@@ -295,10 +295,25 @@
         order: 2;
         width: 45%;
       }
+      &--upload {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      &--latency {
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
 
       &--download {
         order: 1;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
@@ -359,6 +374,9 @@
 
     &__note {
       font-size: 10px;
+    }
+    &__value {
+      font-size: 18px;
     }
 
     &--upload,

@@ -109,7 +109,11 @@
     gap: 10px;
     font-weight: 700;
     border-radius: 80px;
-
+    svg {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+    }
     span {
       color: inherit;
     }

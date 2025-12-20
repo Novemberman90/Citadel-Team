@@ -132,71 +132,60 @@
     font-size: 18px;
     margin-bottom: 32px;
   }
-
 }
 
 @media(max-width: 1054px) {
-  .hero {
+    .hero {
 
-    &::after {
-      width: 448px;
-      height: 638px;
-      top: 6px;
-      right: 81px;
-    }
+        &::after {
+            width: 448px;
+            height: 638px;
+            top: 40px;
+            right: 81px;
+        }
 
-    &__title {
-      font-size: 64px;
+        &__title {
+            font-size: 64px;
+        }
     }
-  }
 }
-
 @media(max-width: 880px) {
-  .hero {
-    &::after {
-      right: 15px;
+    .hero {
+      padding: 40px 0 64px;
+      &::after {
+        right: 15px;
+      }
+      &__info {
+        max-width: 344px;
+      }
+      &__subtitle {
+        text-wrap: balance;
+      }
     }
-
-    &__info {
-      max-width: 344px;
-    }
-
-    &__subtitle {
-      text-wrap: balance;
-    }
-  }
 }
-
 @media(max-width: 728px) {
   .hero {
     &:after {
       display: none;
     }
-
     &:before {
       display: none;
     }
   }
 }
-
 @media(max-width: 576px) {
   .hero {
-    padding: 40px 0 64px;
-
     &__info {
       max-width: 100%;
     }
-
     &__title {
       font-size: 48px;
     }
-
     &__subtitle {
       font-size: 16px;
     }
   }
 }
-
 html[dir="rtl"] {
   direction: rtl;
   text-align: right;
@@ -205,9 +194,12 @@ html[dir="rtl"] {
     &::after {
       right: auto;
       left: 107px;
-      transform: scale3d(-1, 1, -1);
+      transform: scale3d(-1, 1,-1);
     }
-
+    &:before {
+      right: auto;
+      left: 174px;
+    }
     &__info {
       margin-right: 0;
       margin-left: auto;
@@ -218,11 +210,14 @@ html[dir="rtl"] {
       padding: 12px 52px;
       gap: 25px;
     }
+    &__circles {
+      left: auto;
+      right: 71%;
+    }
   }
 
-
-  @media(max-width: 1054px) {
-    .hero {
+  @media(max-width: 1054px){
+      .hero {
       &::after {
         right: auto;
         left: 81px;
@@ -242,8 +237,8 @@ html[dir="rtl"] {
     }
   }
 
-  @media(max-width: 880px) {
-    .hero {
+  @media(max-width: 880px){
+      .hero {
       &::after {
         right: auto;
         left: 15px;

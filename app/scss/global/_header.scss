@@ -5,9 +5,9 @@
   max-width: 1188px;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-12px);
+  transform: translateX(-50%) translateY(0);
   z-index: 1000;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.3s;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.3s, padding 0.5s;
 
   &::after {
     content: "";
@@ -32,7 +32,7 @@
   }
 
   &.is-fixed {
-    margin-top: 5px;
+    margin-top: 10px;
     transform: translateX(-50%) translateY(0);
 
     &::after {
@@ -90,12 +90,32 @@
     gap: 10px;
     font-size: 14px;
     padding: 12px 12px 12px 20px;
+    transition: all .3s;
+
+    &::before {
+      inset: 6px;
+    }
+
+    &:hover {
+      transition: all .3s;
+
+      &:before {
+        inset: 6px 8px;
+      }
+    }
+
+    &:active {
+      transition: all .3s;
+
+      &::before {
+        inset: 8px 8px;
+      }
+    }
   }
 }
 
 @media (max-width: 880px) {
-
-  .header__inner {
+  .header {
     &__logo {
       order: 1;
     }
@@ -113,12 +133,18 @@
 
       &__list {
         position: absolute;
+        top: 77px;
+        right: 15px;
+
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        transition: all .3s;
-        transform: translateX(200%);
-        top: 77px;
+
+        opacity: 0;
+        transform: translateX(50px);
+
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        pointer-events: none;
 
         &.blur-plate {
           border-radius: 24px;
@@ -132,11 +158,11 @@
         }
 
         &--active {
-          padding: 24px;
-          position: absolute;
-          right: 15px;
+          opacity: 1;
           transform: translateX(0);
-          transition: all .4s;
+          pointer-events: auto;
+          z-index: 20;
+          transition: transform 0.4s ease, opacity 0.4s ease;
         }
       }
 
@@ -198,28 +224,42 @@
 
 @media (max-width: 576px) {
   .header {
+
     .logo {
       max-width: 108px;
       width: 100%;
       height: auto;
     }
-  }
 
-  .user-menu {
-    gap: 8px;
+    .menu {
+      margin-left: 8px;
+    }
 
-    &__cta {
-      padding: 14px 18px;
+    .user-menu {
+      gap: 8px;
 
-      .icon {
-        display: none;
+      &__cta {
+        padding: 14px 18px;
+
+        .icon {
+          display: none;
+        }
       }
     }
   }
 
 }
 
+@media (max-width: 385px) {
+  .header {
+    .logo {
+      max-width: 38px;
+      width: 100%;
+      height: auto;
+    }
+  }
 
+}
 
 html[dir="rtl"] {
   direction: rtl;
@@ -254,7 +294,7 @@ html[dir="rtl"] {
     .header {
       .menu {
         margin-left: 0;
-        margin-right: 8px
+        margin-right: 8px;
       }
     }
 
