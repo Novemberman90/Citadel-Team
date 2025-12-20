@@ -1,72 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ===== MENU =====
-    const MENUBTN = document.querySelector(".menu__btn");
-    const MENU = document.querySelector('.menu__list');
-    
-    MENUBTN.addEventListener("click", ()=>{
-      if(MENUBTN) {
-        openMenu();
-        document.body.classList.toggle('lock');
-      }
-    });
-  
-    const openMenu=()=>{
-      MENU.classList.toggle('menu__list--active');
-      MENU.classList.toggle('blur-plate');
-      MENUBTN.classList.toggle('menu__btn--active');
+  // ===== MENU =====
+  const MENUBTN = document.querySelector(".menu__btn");
+  const MENU = document.querySelector('.menu__list');
 
+  MENUBTN.addEventListener("click", () => {
+    if (MENUBTN) {
+      openMenu();
+      document.body.classList.toggle('lock');
     }
-    const closeMenu =()=>{
-      document.body.classList.remove('lock');
-      MENU.classList.remove('menu__list--active');
-      MENU.classList.remove('blur-plate');
-      MENUBTN.classList.remove('menu__btn--active');
-    }
+  });
 
-    /* Скрол меню */
-/*   const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
+  const openMenu = () => {
+    MENU.classList.toggle('menu__list--active');
+    MENU.classList.toggle('blur-plate');
+    MENUBTN.classList.toggle('menu__btn--active');
+
+  }
+  const closeMenu = () => {
+    document.body.classList.remove('lock');
+    MENU.classList.remove('menu__list--active');
+    MENU.classList.remove('blur-plate');
+    MENUBTN.classList.remove('menu__btn--active');
+  }
+
+  const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
   navLink.forEach(link => {
-    link.addEventListener('click', (e)=>{
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-       const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
-       
-       if(targetId) {
-        scrollNavigation(targetId);
-        closeMenu();
-       }
-    })
-  }); */
-    const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
-    navLink.forEach(link => {
-      link.addEventListener('click', (e)=>{
-        e.preventDefault();
-         const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
-         
-         if(!link.classList.contains('go-top')) {
-          scrollNavigation(targetId)
-          closeMenu();
-         } else {
-          window.scrollTo({
-            top: 0,
-            behavior:'smooth',
-            })
-         }
-      })
-    });
+      const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
 
-  const scrollNavigation = (targetId)=> {
+      if (!link.classList.contains('go-top')) {
+        scrollNavigation(targetId)
+        closeMenu();
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }
+    })
+  });
+
+  const scrollNavigation = (targetId) => {
     const targetElement = document.getElementById(targetId);
-  
-    if(!targetElement) return;
+
+    if (!targetElement) return;
 
     const headerHeght = document.querySelector('#header').offsetHeight;
     const top = targetElement.getBoundingClientRect().top + window.scrollY - headerHeght;
 
-      window.scrollTo({
-        top: top,
-        behavior:'smooth',
-      })
+    window.scrollTo({
+      top: top,
+      behavior: 'smooth',
+    })
   }
+
+  // Fixed header on scroll
+const header = document.getElementById('header');
+const scrollThreshold = 150;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= scrollThreshold) {
+    header.classList.add('is-fixed');
+  } else {
+    header.classList.remove('is-fixed');
+  }
+});
+
 
   /* EO IP MAP HIGHLIGHT */
 
@@ -95,40 +95,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   /*  FAQ ACCORDION  */
-
   const accordionButtons = document.querySelectorAll('[data-button]');
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq__item');
+      if (!item) return;
 
-accordionButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.closest('.faq__item');
-    if (!item) return;
+      const subtitle = item.querySelector('.faq__subtitle');
+      const answer = item.querySelector('.faq__answer');
+      const icon = item.querySelector('.faq__icon');
 
-    const inner = item.querySelector('.faq__inner');
-    const answer = item.querySelector('.faq__answer');
-    const icon = item.querySelector('.faq__icon');
+      if (!subtitle || !answer || !icon) return;
 
-    if (!inner || !answer || !icon) return;
+      const isOpen = item.classList.contains('is-open');
 
-    const isOpen = item.classList.contains('is-open');
+      // Закриваємо всі відкриті
+      document.querySelectorAll('.faq__item.is-open').forEach(openItem => {
+        openItem.classList.remove('is-open');
 
-    document.querySelectorAll('.faq__item.is-open').forEach(openItem => {
-      openItem.classList.remove('is-open');
+        const a = openItem.querySelector('.faq__answer');
+        const i = openItem.querySelector('.faq__icon');
+        const s = openItem.querySelector('.faq__subtitle');
 
-      const a = openItem.querySelector('.faq__answer');
-      const i = openItem.querySelector('.faq__icon');
+        if (a) a.style.maxHeight = null;
+        if (i) i.classList.remove('faq__icon--open');
+        if (s) s.style.marginBottom = null; // або '0px'
+      });
 
-      if (a) a.style.maxHeight = null;
-      if (i) i.classList.remove('faq__icon--open');
+      // Якщо клікнули по вже відкритому — ми його вже закрили вище
+      if (isOpen) return;
+
+      // Відкриваємо поточний
+      item.classList.add('is-open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      icon.classList.add('faq__icon--open');
+      subtitle.style.marginBottom = '12px';
     });
-
-    if (isOpen) return;
-
-    item.classList.add('is-open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-    icon.classList.add('faq__icon--open');
   });
-});
-
 
   /* METRICS — NUMBERS */
 
@@ -276,22 +279,22 @@ accordionButtons.forEach(button => {
 
 
   /* coockie */
-const cookie = document.getElementById('cookie');
-const acceptBtn = cookie.querySelector('.cookie__accept');
-const closeBtn = cookie.querySelector('.cookie__close');
+  const cookie = document.getElementById('cookie');
+  const acceptBtn = cookie.querySelector('.cookie__accept');
+  const closeBtn = cookie.querySelector('.cookie__close');
 
-if (!localStorage.getItem('cookieAccepted')) {
-  requestAnimationFrame(() => {
-    cookie.classList.add('is-visible');
-  });
-}
+  if (!localStorage.getItem('cookieAccepted')) {
+    requestAnimationFrame(() => {
+      cookie.classList.add('is-visible');
+    });
+  }
 
-function hideCookie() {
-  localStorage.setItem('cookieAccepted', 'true');
-  cookie.classList.remove('is-visible');
-}
+  function hideCookie() {
+    localStorage.setItem('cookieAccepted', 'true');
+    cookie.classList.remove('is-visible');
+  }
 
-acceptBtn.addEventListener('click', hideCookie);
-closeBtn.addEventListener('click', hideCookie);
+  acceptBtn.addEventListener('click', hideCookie);
+  closeBtn.addEventListener('click', hideCookie);
 
 });

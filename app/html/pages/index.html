@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 @@include('../components/head.html', {
 "title": "Citadel VPN — Fast & Secure Internet Access",
 "metaDescription": "Citadel VPN provides high-speed, private, and safe Internet access anywhere in the world.",
@@ -1313,32 +1314,15 @@
             </div>
         </footer>
 
-        <div class="cookie is-visible" id="cookie">
-            <div class="cookie__inner blur-plate">
-                <span class="cookie__cookie-img blur-plate">
-                    <svg class="cookie__icon" width="24" height="24">
-                        <use href="./images/sprite.svg#coockie"></use>
-                    </svg>
-                </span>
-                <div class="cookie__content">
-                    <h4 class="cookie__title">Cookie Notice.</h4>
-                    <p class="cookie__text">
-                        Our website uses
-                        <a class="terms-link" href="./privacy-policy.html">Cookie Policy</a>
-                        to ensure you have the best possible experience.
-                    </p>
-                </div>
-
-                <div class="cookie__actions">
-                    <button class="cta cookie__accept">Accept</button>
-                    <button class="cookie__close blur-plate icon" aria-label="Close">
-                        <svg class="cookie__close-icon" width="11" height="11">
-                            <use href="./images/sprite.svg#menuBtnClose"></use>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
+@@include('../components/cookieBanner.html', {
+    "extraDots": ".",
+    "cookieNotice": "Cookie Notice.",
+    "cookieTextLeft": "Our website uses",
+    "cookieTextRight": "to ensure you have the best possible experience.",
+    "cookieLink": "Cookie Policy",
+    "accept": "Accept",
+    "accessibility": "close cookie notice"
+})
 
         <a class="go-top blur-plate" href="#header">
             <svg class="icon" width="16" height="16">

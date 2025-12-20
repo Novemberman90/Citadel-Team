@@ -304,14 +304,14 @@
   padding: 6px 1px 6px;
   border-radius: 6px;
   text-decoration: underline;
-  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
+  transition: opacity 0.3s, background-color 0.3s, color 0.3s, text-shadow 0.3s;
 
   &:visited {
     color: $light-900;
   }
 
   &:hover {
-    background-color: #132436;
+    opacity: 0.7;
   }
 
   &:active {

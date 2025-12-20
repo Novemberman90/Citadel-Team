@@ -24,10 +24,10 @@
           <!-- menu  -->
           <nav class="menu">
             <button class="menu__btn blur-plate" type="button">
-              <svg class="menu__btn-icon" width="22" height="22">
+              <svg class="menu__btn-icon icon" width="22" height="22">
                 <use href="../images/sprite.svg#menuBtn"></use>
               </svg>
-              <svg class="menu__btn-icon-close" width="11" height="11">
+              <svg class="menu__btn-icon-close icon" width="11" height="11">
                 <use href="../images/sprite.svg#menuBtnClose"></use>
               </svg>
             </button>
@@ -101,7 +101,7 @@
               </div>
             </div>
             <a class="cta user-menu__cta" href="#">
-              Open VPN
+              Открыть VPN
               <svg class="icon" width="20" height="20">
                 <use href="../images/sprite.svg#telegramLight">
                 </use>
@@ -401,32 +401,15 @@
       </div>
     </footer>
 
-    <div class="cookie is-visible" id="cookie">
-      <div class="cookie__inner blur-plate">
-        <span class="cookie__cookie-img blur-plate">
-          <svg class="cookie__icon" width="24" height="24">
-            <use href="../images/sprite.svg#coockie"></use>
-          </svg>
-        </span>
-        <div class="cookie__content">
-          <h4 class="cookie__title">Уведомление о файлах cookie.</h4>
-          <p class="cookie__text">
-            Наш веб-сайт использует
-            <a class="terms-link" href="../ru/privacy-policy.html">Политика файлов cookie</a>
-            чтобы обеспечить вам наилучший опыт.
-          </p>
-        </div>
-
-        <div class="cookie__actions">
-          <button class="cta cookie__accept">Принять</button>
-          <button class="cookie__close blur-plate" aria-label="Close">
-            <svg class="cookie__close-icon" width="11" height="11">
-              <use href="../images/sprite.svg#menuBtnClose"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
+@@include('../../components/cookieBanner.html', {
+    "extraDots": "..",
+    "cookieNotice": "Уведомление о файлах cookie.",
+    "cookieTextLeft": "Наш веб-сайт использует",
+    "cookieLink": "Политика файлов cookie",
+    "cookieTextRight": "чтобы обеспечить вам наилучший опыт.",
+    "accept": "Принять",
+    "accessibility": "Закрыть баннер cookie"
+})
   </div>
 
 

@@ -1,192 +1,202 @@
 .hero {
-    padding: 58px 0 80px;
-    max-width: 1188px;
-    margin: 0 auto;
-    position: relative;
-  
-    &::after {
-        content: "";
-        position: absolute;
-        top: -30px;
-        right: 107px;
-        width: 558px;
-        height: 772px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-image: url('../images/robot-hero.png');
+  padding: 58px 0 80px;
+  max-width: 1188px;
+  margin: 0 auto;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 107px;
+    width: 558px;
+    height: 772px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../images/robot-hero.png');
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 174px;
+    top: 172px;
+    width: 384px;
+    height: 384px;
+    border-radius: 50%;
+    background-color: $light-900;
+    filter: blur(120px);
+  }
+
+  .hero__circles {
+    position: absolute;
+    top: 70%;
+    left: 71%;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .hero__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    animation: heroWave 3s ease-out infinite;
+  }
+
+  .hero__circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+
+    background: linear-gradient(65deg,
+        rgba(61, 220, 132, 0) 30%,
+        rgba(61, 220, 132, 1) 85%);
+
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .hero__circle--small {
+    width: 596px;
+    height: 415px;
+    animation-delay: 0s;
+  }
+
+  .hero__circle--medium {
+    width: 743px;
+    height: 553px;
+    animation-delay: 0.5s;
+  }
+
+  .hero__circle--large {
+    width: 894px;
+    height: 679px;
+    animation-delay: 1s;
+  }
+
+  @keyframes heroWave {
+    0% {
+      transform: translate(-50%, -50%) rotate(-20deg) scale(0.85);
+      opacity: 0;
     }
 
-    &::before {
-        content: "";
-        position: absolute;
-        right: 174px;
-        top: 172px;
-        width: 384px;
-        height: 384px;
-        border-radius: 50%;
-        background-color: $light-900;
-        filter: blur(120px);
+    25% {
+      opacity: 0.45;
+      /* раніше досягає піку видимості */
     }
 
-    .hero__circles {
-        position: absolute;
-        top: 70%;
-        left: 71%;
-        width: 1px;
-        height: 1px;
-        pointer-events: none;
+    60% {
+      opacity: 0.15;
+      /* раніше починає зникати */
     }
 
-    .hero__circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-20deg);
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.05);
-        opacity: 0;
-        animation: heroWave 3s ease-out infinite;
+    100% {
+      transform: translate(-50%, -50%) rotate(-20deg) scale(1.0);
+      opacity: 0;
     }
+  }
 
-    .hero__circle::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 1.5px;
+  &__info {
+    max-width: 440px;
+    width: 100%;
+    margin-right: auto;
+  }
 
-        background: linear-gradient(65deg,
-                rgba(61, 220, 132, 0) 30%,
-                rgba(61, 220, 132, 1) 85%);
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px 6px 12px;
+    margin-bottom: 12px;
+  }
 
-        mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-    }
+  &__title {
+    font-size: 72px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-family: "Roboto Condensed", sans-serif;
+  }
 
-    .hero__circle--small {
-        width: 596px;
-        height: 415px;
-        animation-delay: 0s;
-    }
-
-    .hero__circle--medium {
-        width: 743px;
-        height: 553px;
-        animation-delay: 0.5s;
-    }
-
-    .hero__circle--large {
-        width: 894px;
-        height: 679px;
-        animation-delay: 1s;
-    }
-
-    @keyframes heroWave {
-        0% {
-            transform: translate(-50%, -50%) rotate(-20deg) scale(0.85);
-            opacity: 0;
-        }
-
-        25% {
-            opacity: 0.45;
-            /* раніше досягає піку видимості */
-        }
-
-        60% {
-            opacity: 0.15;
-            /* раніше починає зникати */
-        }
-
-        100% {
-            transform: translate(-50%, -50%) rotate(-20deg) scale(1.0);
-            opacity: 0;
-        }
-    }
-
-    &__info {
-        max-width: 440px;
-        width: 100%;
-        margin-right: auto;
-    }
-
-    &__badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 6px 8px 6px 12px;
-        margin-bottom: 12px;
-    }
-
-    &__title {
-        font-size: 72px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        font-family: "Roboto Condensed", sans-serif;
-    }
-
-    &__subtitle {
-        font-size: 18px;
-        margin-bottom: 32px;
-    }
+  &__subtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
 
 }
 
 @media(max-width: 1054px) {
-    .hero {
+  .hero {
 
-        &::after {
-            width: 448px;
-            height: 638px;
-            top: 40px;
-            right: 81px;
-        }
-
-        &__title {
-            font-size: 64px;
-        }
+    &::after {
+      width: 448px;
+      height: 638px;
+      top: 6px;
+      right: 81px;
     }
+
+    &__title {
+      font-size: 64px;
+    }
+  }
 }
+
 @media(max-width: 880px) {
-    .hero {
-      &::after {
-        right: 15px;
-      }
-      &__info {
-        max-width: 344px;
-      }
-      &__subtitle {
-        text-wrap: balance;
-      }
+  .hero {
+    &::after {
+      right: 15px;
     }
+
+    &__info {
+      max-width: 344px;
+    }
+
+    &__subtitle {
+      text-wrap: balance;
+    }
+  }
 }
+
 @media(max-width: 728px) {
   .hero {
     &:after {
       display: none;
     }
+
     &:before {
       display: none;
     }
   }
 }
+
 @media(max-width: 576px) {
   .hero {
     padding: 40px 0 64px;
+
     &__info {
       max-width: 100%;
     }
+
     &__title {
       font-size: 48px;
     }
+
     &__subtitle {
       font-size: 16px;
     }
   }
 }
+
 html[dir="rtl"] {
   direction: rtl;
   text-align: right;
@@ -195,8 +205,9 @@ html[dir="rtl"] {
     &::after {
       right: auto;
       left: 107px;
-      transform: scale3d(-1, 1,-1);
+      transform: scale3d(-1, 1, -1);
     }
+
     &__info {
       margin-right: 0;
       margin-left: auto;
@@ -210,14 +221,15 @@ html[dir="rtl"] {
   }
 
 
-  @media(max-width: 1054px){
-      .hero {
+  @media(max-width: 1054px) {
+    .hero {
       &::after {
         right: auto;
         left: 81px;
       }
     }
   }
+
   @media(max-width: 728px) {
     .hero {
       &:after {
@@ -229,14 +241,16 @@ html[dir="rtl"] {
       }
     }
   }
-  @media(max-width: 880px){
-      .hero {
+
+  @media(max-width: 880px) {
+    .hero {
       &::after {
         right: auto;
         left: 15px;
       }
     }
   }
+
   @media(max-width: 660px) {
     .hero {
       &:after {
