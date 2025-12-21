@@ -96,20 +96,18 @@
     &::before {
       inset: 6px;
     }
-
-    &:hover {
-      transition: all .3s;
-
-      &:before {
-        inset: 6px 8px;
-      }
-    }
-
     &:active {
       transition: all .3s;
 
       &::before {
-        inset: 8px 8px;
+        inset: 6px 8px;
+      }
+    }
+    &:focus {
+      transition: all .3s;
+
+      &::before {
+        inset: 6px 8px;
       }
     }
   }

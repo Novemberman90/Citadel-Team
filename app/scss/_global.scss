@@ -251,10 +251,13 @@ body {
     transition: box-shadow 0.3s, width 0.3s, height 0.3s, inset 0.3s;
   }
 
-  &:hover::before {
-    box-shadow: 0 -6px 10px $light-opacity-23 inset,
-      0 4px 34px $light-900-opacity-64;
-    inset: 8px 9px;
+  &:hover {
+    transition: all .3s;
+    transform:scale(1.05);
+    &::before {
+      box-shadow: 0 -6px 10px $light-opacity-23 inset,
+        0 4px 34px $light-900-opacity-64;
+    }
   }
 
   &:focus {
