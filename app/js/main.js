@@ -1,149 +1,130 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== MENU =====
-  const MENUBTN = document.querySelector(".menu__btn");
+
+  /* ================= MENU ================= */
+
+  const MENUBTN = document.querySelector('.menu__btn');
   const MENU = document.querySelector('.menu__list');
-  MENUBTN.addEventListener("click", () => {
-    if (MENUBTN) {
-      openMenu();
-      document.body.classList.toggle('lock');
-    }
-  });
 
   const openMenu = () => {
+    if (!MENU || !MENUBTN) return;
     MENU.classList.toggle('menu__list--active');
     MENU.classList.toggle('blur-plate');
     MENUBTN.classList.toggle('menu__btn--active');
+  };
 
-  }
   const closeMenu = () => {
+    if (!MENU || !MENUBTN) return;
     document.body.classList.remove('lock');
     MENU.classList.remove('menu__list--active');
     MENU.classList.remove('blur-plate');
     MENUBTN.classList.remove('menu__btn--active');
+  };
+
+  if (MENUBTN && MENU) {
+    MENUBTN.addEventListener('click', () => {
+      openMenu();
+      document.body.classList.toggle('lock');
+    });
   }
 
-  /* Скрол меню */
-  const navLink = document.querySelectorAll('a[href^="#"], [data-scroll]');
-  navLink.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.dataset.scroll || link.getAttribute('href').substring(1);
+  /* ================= SCROLL NAV ================= */
 
-      if (!link.classList.contains('go-top')) {
-        scrollNavigation(targetId)
-        closeMenu();
-      } else {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        })
+  const navLinks = document.querySelectorAll('a[href^="#"], [data-scroll]');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      if (link.classList.contains('go-top')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
       }
-    })
+
+      const targetId =
+        link.dataset.scroll ||
+        link.getAttribute('href')?.substring(1);
+
+      if (!targetId) return;
+
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const header = document.getElementById('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      const top =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        (headerHeight + 80);
+
+      window.scrollTo({ top, behavior: 'smooth' });
+      closeMenu();
+    });
   });
 
-  const scrollNavigation = (targetId) => {
-    const targetElement = document.getElementById(targetId);
+  /* ================= HEADER + GO TOP ================= */
 
-    if (!targetElement) return;
-
-    const headerHeght = document.querySelector('#header').offsetHeight;
-    const top = targetElement.getBoundingClientRect().top + window.scrollY - (headerHeght + 80);
-
-    window.scrollTo({
-      top: top,
-      behavior: 'smooth',
-    })
-  }
-
-  /* При скроле меняется хедер и активация кнопки НА ВЕРХ */
- /*  let isScrolled = false;
-  const headerScroll = () => {
-    const header = document.querySelector('.header');
-    const headerHeght = header.offsetHeight;
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollPosition > headerHeght) {
-      goTop.classList.add('go-top--active');
-    } else {
-      goTop.classList.remove('go-top--active');
-    }
-
-  }
-  window.addEventListener('scroll', headerScroll);
-
-
-  // Fixed header on scroll
   const header = document.getElementById('header');
-  const scrollThreshold = 150;
+  const goTop = document.querySelector('.go-top');
+  const SCROLL_FIXED_THRESHOLD = 50;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY >= scrollThreshold) {
-      header.classList.add('is-fixed');
-    } else {
-      header.classList.remove('is-fixed');
-    }
-  }); */
-  const header = document.getElementById('header');
-const goTop = document.querySelector('.go-top');
+  if (header || goTop) {
+    const headerScroll = () => {
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-const SCROLL_FIXED_THRESHOLD = 150;
+      if (header) {
+        if (scrollPosition >= SCROLL_FIXED_THRESHOLD) {
+          header.classList.add('is-fixed');
+        } else {
+          header.classList.remove('is-fixed');
+        }
+      }
 
-const headerScroll = () => {
-  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  const headerHeight = header.offsetHeight;
+      if (goTop && header) {
+        if (scrollPosition > header.offsetHeight) {
+          goTop.classList.add('go-top--active');
+        } else {
+          goTop.classList.remove('go-top--active');
+        }
+      }
+    };
 
-  // Кнопка "вверх"
-  if (scrollPosition > headerHeight) {
-    goTop.classList.add('go-top--active');
-  } else {
-    goTop.classList.remove('go-top--active');
+    window.addEventListener('scroll', headerScroll);
   }
 
-  // Фиксированный header
-  if (scrollPosition >= SCROLL_FIXED_THRESHOLD) {
-    header.classList.add('is-fixed');
-  } else {
-    header.classList.remove('is-fixed');
-  }
-};
+  /* ================= FAQ ACCORDION ================= */
 
-window.addEventListener('scroll', headerScroll);
-
-
-  /*  FAQ ACCORDION  */
-
-  /*  FAQ ACCORDION  */
   const accordionButtons = document.querySelectorAll('[data-button]');
+
   accordionButtons.forEach(button => {
     button.addEventListener('click', () => {
       const item = button.closest('.faq__item');
       if (!item) return;
 
-      const subtitle = item.querySelector('.faq__subtitle');
       const answer = item.querySelector('.faq__answer');
       const icon = item.querySelector('.faq__icon');
+      const subtitle = item.querySelector('.faq__subtitle');
 
-      if (!subtitle || !answer || !icon) return;
+      if (!answer || !icon || !subtitle) return;
 
       const isOpen = item.classList.contains('is-open');
 
-      // Закриваємо всі відкриті
       document.querySelectorAll('.faq__item.is-open').forEach(openItem => {
+        if (openItem === item) return;
         openItem.classList.remove('is-open');
-
-        const a = openItem.querySelector('.faq__answer');
-        const i = openItem.querySelector('.faq__icon');
-        const s = openItem.querySelector('.faq__subtitle');
-
-        if (a) a.style.maxHeight = null;
-        if (i) i.classList.remove('faq__icon--open');
-        if (s) s.style.marginBottom = null; // або '0px'
+        openItem.querySelector('.faq__answer')?.style.removeProperty('max-height');
+        openItem.querySelector('.faq__icon')?.classList.remove('faq__icon--open');
+        openItem.querySelector('.faq__subtitle')?.style.removeProperty('margin-bottom');
       });
 
-      // Якщо клікнули по вже відкритому — ми його вже закрили вище
-      if (isOpen) return;
+      if (isOpen) {
+        item.classList.remove('is-open');
+        answer.style.removeProperty('max-height');
+        icon.classList.remove('faq__icon--open');
+        subtitle.style.removeProperty('margin-bottom');
+        return;
+      }
 
-      // Відкриваємо поточний
       item.classList.add('is-open');
       answer.style.maxHeight = answer.scrollHeight + 'px';
       icon.classList.add('faq__icon--open');
@@ -151,46 +132,42 @@ window.addEventListener('scroll', headerScroll);
     });
   });
 
-  /* METRICS — NUMBERS */
+  /* ================= METRICS ================= */
 
-  function animateNumbers(elements) {
+  const animateNumbers = elements => {
     const duration = 2000;
 
     elements.forEach(item => {
       const value = item.dataset.countNum;
+      if (!value) return;
+
       const target = parseFloat(value);
       if (isNaN(target)) return;
 
-      const hasDecimal = value.includes('.');
-      const decimals = hasDecimal ? value.split('.')[1].length : 0;
-
+      const decimals = value.includes('.') ? value.split('.')[1].length : 0;
       let start = null;
 
-      function step(timestamp) {
+      const step = timestamp => {
         if (!start) start = timestamp;
-
         const progress = Math.min((timestamp - start) / duration, 1);
         const current = target * progress;
 
-        item.textContent = hasDecimal
-          ? current.toFixed(decimals)
-          : Math.floor(current);
+        item.textContent =
+          decimals > 0 ? current.toFixed(decimals) : Math.floor(current);
 
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      }
+        if (progress < 1) requestAnimationFrame(step);
+      };
 
       requestAnimationFrame(step);
     });
-  }
+  };
 
-  /*  METRICS — CANVAS RING  */
-
-  function drawAnimatedRing(canvas) {
+  const drawAnimatedRing = canvas => {
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-    const percent = Number(canvas.dataset.progress) / 100;
+    const percent = Number(canvas.dataset.progress || 0) / 100;
     const color = canvas.dataset.color || '#3DDC84';
 
     const size = canvas.clientWidth;
@@ -198,7 +175,6 @@ window.addEventListener('scroll', headerScroll);
 
     canvas.width = size * dpr;
     canvas.height = size * dpr;
-
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const center = size / 2;
@@ -206,57 +182,74 @@ window.addEventListener('scroll', headerScroll);
     const radius = center - lineWidth / 2;
 
     let current = 0;
-    const speed = 0.015;
 
-    function animate() {
+    const animate = () => {
       ctx.clearRect(0, 0, size, size);
-
-      const start = -Math.PI / 2;
-      const end = start + Math.PI * 2 * current;
-
       ctx.beginPath();
       ctx.strokeStyle = color;
       ctx.lineWidth = lineWidth;
-      ctx.lineCap = percent === 1 ? 'butt' : 'round';
-      ctx.arc(center, center, radius, start, end);
+      ctx.lineCap = 'round';
+      ctx.arc(
+        center,
+        center,
+        radius,
+        -Math.PI / 2,
+        -Math.PI / 2 + Math.PI * 2 * current
+      );
       ctx.stroke();
 
       if (current < percent) {
-        current += speed;
+        current += 0.015;
         requestAnimationFrame(animate);
       }
-    }
+    };
 
     animate();
-  }
+  };
 
-  /* METRICS — OBSERVER */
-
-  const metricsObserver = new IntersectionObserver((entries, obs) => {
+  const metricsObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
 
-      const block = entry.target;
+      entry.target
+        .querySelectorAll('.metric-canvas')
+        .forEach(drawAnimatedRing);
 
-      const canvases = block.querySelectorAll('.metric-canvas');
-      canvases.forEach(canvas => {
-        drawAnimatedRing(canvas);
-      });
-
-      const numbers = block.querySelectorAll('[data-activeNum]');
-      if (numbers.length) {
-        animateNumbers(numbers);
-      }
-
-      obs.unobserve(block);
+      animateNumbers(entry.target.querySelectorAll('[data-activeNum]'));
+      metricsObserver.unobserve(entry.target);
     });
   }, { threshold: 0.4 });
 
-  document.querySelectorAll('.metric-card, .metrics').forEach(el => {
-    metricsObserver.observe(el);
-  });
+  document
+    .querySelectorAll('.metric-card, .metrics')
+    .forEach(el => metricsObserver.observe(el));
 
-  /* LANGUAGE SWITCHER  */
+  /* ================= REVIEWS SLIDER (ORIGINAL, НЕ ЧІПАЄМО) ================= */
+
+  if (typeof Swiper !== 'undefined') {
+    const reviewsSlider = document.querySelector('.reviews-slider');
+
+    if (reviewsSlider) {
+      new Swiper(reviewsSlider, {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: '.reviews__nav--next',
+          prevEl: '.reviews__nav--prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        breakpoints: {
+          320: { slidesPerView: 1.2, spaceBetween: 16 },
+          767: { slidesPerView: 2, spaceBetween: 24 },
+          1180: { slidesPerView: 3, spaceBetween: 24 },
+        },
+      });
+    }
+  }
+
+  /* ================= LANGUAGE SWITCHER ================= */
 
   const dropdown = document.querySelector('.switcher-lang__dropdown');
   const langBtn = document.querySelector('.switcher-lang__btn');
@@ -274,123 +267,66 @@ window.addEventListener('scroll', headerScroll);
     });
   }
 
-  /*  REVIEWS SLIDER (SWIPER)  */
+  document.querySelectorAll('.switcher-lang__link').forEach(link => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      const lang = href.includes('/ru/')
+        ? 'ru'
+        : href.includes('/ar/')
+        ? 'ar'
+        : 'en';
+      localStorage.setItem('siteLang', lang);
+    });
+  });
 
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.reviews-slider', {
-      slidesPerView: 3,
-      spaceBetween: 24,
-      navigation: {
-        nextEl: '.reviews__nav--next',
-        prevEl: '.reviews__nav--prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      breakpoints: {
-        320: { slidesPerView: 1.2, spaceBetween: 16 },
-        767: { slidesPerView: 2, spaceBetween: 24 },
-        1180: { slidesPerView: 3, spaceBetween: 24 },
-      },
+  /* ================= COOKIE ================= */
+
+  const cookie = document.getElementById('cookie');
+  if (cookie) {
+    const acceptBtn = cookie.querySelector('.cookie__accept');
+    const closeBtn = cookie.querySelector('.cookie__close');
+    const COOKIE_KEY = 'cookieConsent';
+
+    if (localStorage.getItem(COOKIE_KEY) === null) {
+      setTimeout(() => cookie.classList.add('is-visible'), 4000);
+    }
+
+    acceptBtn?.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'true');
+      cookie.classList.remove('is-visible');
+    });
+
+    closeBtn?.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'false');
+      cookie.classList.remove('is-visible');
     });
   }
 
-
-  /* cookie  */
-const cookie = document.getElementById('cookie');
-const acceptCookieBtn = cookie.querySelector('.cookie__accept');
-const closeCookieBtn = cookie.querySelector('.cookie__close');
-
-const COOKIE_KEY = 'cookieConsent';
-// еси пользователь уже делал выбор, тогда ничего не делаю
-if(localStorage.getItem(COOKIE_KEY) === null ) {
-  setTimeout(() => {
-    cookie.classList.add('is-visible');
-  }, 4000);
-}
-
-// если пользватель согласился
-const acceptCookie = ()=> {
-  localStorage.setItem(COOKIE_KEY, 'true');
-  cookie.classList.remove('is-visible');
-};
-
-// если пользваотель отказался
-const noCookie = ()=> {
-  localStorage.setItem(COOKIE_KEY, 'false');
-  cookie.classList.remove('is-visible');
-}
-acceptCookieBtn.addEventListener('click', acceptCookie);
-closeCookieBtn.addEventListener('click', noCookie);
-
-
-
-document.querySelectorAll('.switcher-lang__link').forEach(link => {
-  link.addEventListener('click', () => {
-    const lang = link.getAttribute('href').includes('/ru/')
-      ? 'ru'
-      : link.getAttribute('href').includes('/ar/')
-      ? 'ar'
-      : 'en';
-
-    localStorage.setItem('site_lang', lang);
-  });
-});
-
-
-  /* Localization */
+  /* ================= GEO ================= */
 
   const LANG_KEY = 'siteLang';
 
   fetch('https://ipwho.is/')
     .then(res => res.json())
     .then(data => {
-      const countryCode = data.country_code; // UA, PL, DE, US...
+      if (!data?.country_code) return;
+
       const savedLang = localStorage.getItem(LANG_KEY);
-      const path = location.pathname;
-
-      /*  1. Подсветка флагов на карте  */
-      const flags = document.querySelectorAll(
-        `.map-flag[data-country="${countryCode}"]`
-      );
-
-      flags.forEach(flag => {
-        flag.classList.add('is-active');
-      });
-
-      console.log('GeoIP data:', data);
-      console.log('Country:', data.country);
-      console.log('Country code:', data.country_code);
-
-      /* 2. Если язык уже выбран — НЕ редиректим */
       if (savedLang) return;
 
-      /* 3. Определяем язык по стране  */
       let targetLang = 'en';
 
-      if (['RU', 'BY', 'KZ', 'UA'].includes(countryCode)) {
-        targetLang = 'ru';
-      }
-
-      if (['SA', 'AE', 'EG', 'QA', 'KW'].includes(countryCode)) {
-        targetLang = 'ar';
-      }
+      if (['RU', 'BY', 'KZ', 'UA'].includes(data.country_code)) targetLang = 'ru';
+      if (['SA', 'AE', 'EG', 'QA', 'KW'].includes(data.country_code)) targetLang = 'ar';
 
       localStorage.setItem(LANG_KEY, targetLang);
 
-      /* 4. Редирект ТОЛЬКО если мы не там  */
-      if (targetLang === 'ru' && !path.startsWith('/ru/')) {
+      if (targetLang === 'ru' && !location.pathname.startsWith('/ru/')) {
         location.replace('/ru/index.html');
       }
-
-      if (targetLang === 'ar' && !path.startsWith('/ar/')) {
+      if (targetLang === 'ar' && !location.pathname.startsWith('/ar/')) {
         location.replace('/ar/index.html');
       }
-
-      // EN — остаёмся на текущей странице
     })
-    .catch(err => {
-      console.error('GeoIP error:', err);
-    });
-
+    .catch(() => {});
 });
