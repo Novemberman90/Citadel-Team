@@ -62,10 +62,6 @@ html[dir="rtl"] {
     &::before {
      transform: scale3d(-1, 1, 1);
     }
-    &__circles {
-      left: auto;
-      right: 125px;
-    }
     &__cta {
       flex-direction: row-reverse;
     }
@@ -99,21 +95,8 @@ html[dir="rtl"] {
     }
   }
 
-  @media(max-width: 1006px) {
-    .engagement {
-      &__circles {
-        left: auto;
-        right: 34%;
-      }
-    }
-  }
     @media(max-width: 576px) {
       .engagement {
-        &__circles {
-          left: auto;
-          right: 32%;
-        }
-  
         &__cta {
           font-size: 17px;
         }
