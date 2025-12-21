@@ -222,9 +222,10 @@ body {
   padding: 20px 32px;
   position: relative;
   z-index: 2;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, inset .3s;
 
   &::after {
+    transition: inset 0.3s;
     content: "";
     position: absolute;
     inset: 0;
@@ -240,6 +241,8 @@ body {
   }
 
   &::before {
+    transition: inset 0.3s;
+    will-change: inset;
     content: "";
     position: absolute;
     border-radius: 80px;
@@ -252,11 +255,16 @@ body {
   }
 
   &:hover {
-    transition: all .3s;
-    transform:scale(1.05);
+    
     &::before {
       box-shadow: 0 -6px 10px $light-opacity-23 inset,
         0 4px 34px $light-900-opacity-64;
+        inset: 6px 6px;
+      
+    }
+    &::after {
+      will-change: inset;
+      inset: -2px;
     }
   }
 
@@ -264,19 +272,28 @@ body {
     box-shadow: 0 -6px 10px $light-opacity-23 inset,
       0 0 16px $light-900-opacity-75;
 
+    
     &::before {
-      transition: all .3s;
-      inset: 10px 12px;
+      inset: 8px 8px;
+    }
+    &::after {
+      will-change: inset;
+      inset: -2px;
     }
   }
 
   &:active {
+  
     &::before {
-      transition: all .3s;
-      inset: 10px 12px;
+      inset: 8px;
+    }
+    &::after {
+      will-change: inset;
+      inset: -2px;
     }
   }
 }
+
 
 .blur-plate {
   background: linear-gradient(231.87deg,

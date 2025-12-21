@@ -91,25 +91,53 @@
     gap: 10px;
     font-size: 14px;
     padding: 12px 12px 12px 20px;
-    transition: all .3s;
-
+    transition: inset 0.3s;
     &::before {
+      
       inset: 6px;
     }
-    &:active {
-      transition: all .3s;
-
+    &:hover {
+      
       &::before {
-        inset: 6px 8px;
+        box-shadow: 0 -6px 10px $light-opacity-23 inset,
+          0 4px 34px $light-900-opacity-64;
+        inset: 4px 4px;
+  
+      }
+    
+      &::after {
+        will-change: inset;
+        inset: -2px;
       }
     }
+      
     &:focus {
-      transition: all .3s;
-
+      box-shadow: 0 -6px 10px $light-opacity-23 inset,
+        0 0 16px $light-900-opacity-75;
+  
+  
       &::before {
-        inset: 6px 8px;
+        inset: 6px 6px;
+      }
+  
+      &::after {
+        will-change: inset;
+        inset: -2px;
       }
     }
+    
+    &:active {
+  
+      &::before {
+        inset: 6px 6px;
+      }
+  
+      &::after {
+        will-change: inset;
+        inset: -2px;
+      }
+    }
+  
   }
 }
 
