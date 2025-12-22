@@ -96,8 +96,19 @@ body {
 
 .middle-wrapper {
   position: relative;
+  &__bg {
+    position: absolute;
+    z-index: -2;
+    top: 167px;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    height: auto;
+  }
 
-  &::before {
+/*   &::before {
     background-image: url(../images/sand-bg.webp);
     background-position: center bottom;
     background-size: cover;
@@ -105,14 +116,14 @@ body {
     position: absolute;
     content: '';
     z-index: -2;
-    top: 0;
+    top: 167px;
     left: 0;
     width: 100%;
     max-height: 100vh;
     height: 100%;
-  }
+  } */
 
-/*   &::after {
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -143,7 +154,7 @@ body {
         rgba(13, 27, 42, 0) 40%);
    
     z-index: -1;
-  } */
+  }
 }
 
 
