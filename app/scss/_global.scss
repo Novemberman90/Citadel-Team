@@ -150,8 +150,23 @@ body {
 
 .sub-middle-wrapper {
   position: relative;
-
-    &::before {
+  &__top {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: -1;
+  }
+  &__app {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    z-index: -1;
+  }
+/*     &::before {
       position: absolute;
       content: "";
       background-image: url(../images/reviews-bg.webp);
@@ -163,8 +178,8 @@ body {
       top: 42px;
       left: 0;
       z-index: -1;
-    }
-  &::after {
+    } */
+/*   &::after {
     position: absolute;
     content: '';
     background-image: url('../images/app-bg.webp');
@@ -176,7 +191,7 @@ body {
     bottom: 80px;
     left: 0;
     z-index: -1;
-  }
+  } */
 }
 
 .bottom-wrapper {
