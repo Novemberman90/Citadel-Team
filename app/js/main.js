@@ -94,43 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ================= FAQ ACCORDION ================= */
 
-/*   const accordionButtons = document.querySelectorAll('[data-button]');
-
-  accordionButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.closest('.faq__item');
-      if (!item) return;
-
-      const answer = item.querySelector('.faq__answer');
-      const icon = item.querySelector('.faq__icon');
-      const subtitle = item.querySelector('.faq__subtitle');
-
-      if (!answer || !icon || !subtitle) return;
-
-      const isOpen = item.classList.contains('is-open');
-
-      document.querySelectorAll('.faq__inner.is-open').forEach(openItem => {
-        if (openItem === item) return;
-        openItem.classList.remove('is-open');
-        openItem.querySelector('.faq__answer')?.style.removeProperty('max-height');
-        openItem.querySelector('.faq__icon')?.classList.remove('faq__icon--open');
-        //openItem.querySelector('.faq__subtitle')?.style.removeProperty('margin-bottom');
-      });
-
-      if (isOpen) {
-        item.classList.remove('is-open');
-        answer.style.removeProperty('max-height');
-        icon.classList.remove('faq__icon--open');
-       // subtitle.style.removeProperty('margin-bottom');
-        return;
-      }
-
-      item.classList.add('is-open');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-      icon.classList.add('faq__icon--open');
-      //subtitle.style.marginBottom = '12px';
-    });
-  }); */
 
 const accordeons = document.querySelectorAll("[data-accordion]");
 
