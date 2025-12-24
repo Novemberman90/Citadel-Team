@@ -9,7 +9,12 @@
   }
 }
 
+.map-flag {
+  visibility: hidden;
+}
+
 .map-flag.is-active {
+  visibility: visible;
   animation: ripple 2.6s infinite ease-out;
   transform-origin: center;
   transform-box: fill-box;
