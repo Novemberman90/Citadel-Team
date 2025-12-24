@@ -16,6 +16,18 @@ body {
     overflow: hidden;
   }
 }
+ a,button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none
+ }
+ button:focus-visible,
+ a:focus-visible {
+   outline: none;
+ }
+ button:focus-visible,
+ a:focus-visible {
+   outline: none;
+ }
  
 .main {
   padding-top: 78px;
@@ -123,7 +135,7 @@ body {
     width: 100%;
     height: auto;
     position: absolute;
-    bottom: 80px;
+    bottom: -80px;
     left: 0;
     z-index: -1;
   }
