@@ -6,13 +6,33 @@ $light-900-opacity-64: #3ddc84a3;
 $light-900-opacity-34: #3ddc8457;
 $dark: #0D1B2A;
 
-@mixin Inter-400 {
+/* @mixin Inter-400 {
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
 @mixin Inter-700 {
   font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+@mixin RobotoCondensed-600 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 600;
+}
+
+@mixin RobotoCondensed-300 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+} */
+
+@mixin Inter-400 {
+  font-family: "Inter_18pt-Regular", sans-serif;
+  font-weight: 400;
+}
+
+@mixin Inter-700 {
+  font-family: "Inter_18pt-Bold", sans-serif;
   font-weight: 700;
 }
 

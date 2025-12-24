@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  //font-family: "Inter", sans-serif;
+  @include Inter-400;
   font-size: 16px;
   color: $light;
   font-weight: 400;
@@ -52,10 +53,11 @@ body {
 .title {
   text-align: center;
   font-size: 56px;
-  font-weight: 600;
   line-height: 1.16;
   letter-spacing: 1px;
-  font-family: "Roboto Condensed", sans-serif;
+  //  font-weight: 600;
+ // font-family: "Roboto Condensed", sans-serif;
+ @include RobotoCondensed-600;
   margin-bottom: 32px;
 }
 

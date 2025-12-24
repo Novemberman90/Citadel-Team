@@ -123,9 +123,10 @@
 
   &__title {
     font-size: 72px;
-    font-weight: 600;
     margin-bottom: 12px;
-    font-family: "Roboto Condensed", sans-serif;
+    @include RobotoCondensed-600;
+   // font-weight: 600;
+   // font-family: "Roboto Condensed", sans-serif;
   }
 
   &__subtitle {

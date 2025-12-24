@@ -1,0 +1,40 @@
+
+@font-face {
+  font-family: 'Inter_18pt-Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Inter_18pt-Regular'),
+    url('../fonts/Inter_18pt-Regular.woff2') format('woff2'),
+    url('../fonts/Inter_18pt-Regular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter_18pt-Bold';
+  font-weight: 700;
+  font-style: normal;
+  src: local('Inter_18pt-Bold'),
+    url('../fonts/Inter_18pt-Bold.woff2') format('woff2'),
+    url('../fonts/Inter_18pt-Bold.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RobotoCondensed-SemiBold';
+  font-weight: 600;
+  font-style: normal;
+  src: local('RobotoCondensed-SemiBold'),
+    url('../fonts/RobotoCondensed-SemiBold.woff2') format('woff2'),
+    url('../fonts/RobotoCondensed-SemiBold.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RobotoCondensed-Light';
+  font-weight: 300;
+  font-style: normal;
+  src: local('RobotoCondensed-Light'),
+    url('../fonts/RobotoCondensed-Light.woff2') format('woff2'),
+    url('../fonts/RobotoCondensed-Light.woff') format('woff');
+  font-display: swap;
+}
+
+
+

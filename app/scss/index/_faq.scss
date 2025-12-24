@@ -63,8 +63,9 @@
 
     &__subtitle {
         font-size: 24px;
-        font-weight: 600;
-        font-family: "Roboto Condensed", sans-serif;
+        @include RobotoCondensed-600;
+       // font-weight: 600;
+       // font-family: "Roboto Condensed", sans-serif;
         transition: margin-bottom 0.3s, color 0.3s;
     }
 
