@@ -56,18 +56,6 @@ html[dir="rtl"] {
       flex-direction: row-reverse;
     }
   }
-  .engagement {
-    &::after {
-      left: 0;
-      right: 108px;
-    }
-    &::before {
-     transform: scale3d(-1, 1, 1);
-    }
-    &__cta {
-      flex-direction: row-reverse;
-    }
-  }
   
   @media (max-width: 1215px) {
     .apps {
@@ -94,14 +82,6 @@ html[dir="rtl"] {
           margin-left: auto;
           margin-right: 0;
         }
-      }
-    }
-  }
-
-  @media(max-width: 576px) {
-    .engagement {
-      &__cta {
-        font-size: 17px;
       }
     }
   }

@@ -6,7 +6,15 @@
       width: 100%;
       height: auto;
     }
+    svg.country {
+      position: absolute;
+      width: 40px ;
+      height: 40px ;
+    }
   }
+}
+.countryes {
+  position: relative;
 }
 
 .map-flag {
