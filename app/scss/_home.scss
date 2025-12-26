@@ -63,6 +63,7 @@
 
 .home {
   padding-bottom: 120px;
+
   &::before {
     position: absolute;
     content: "";
@@ -380,5 +381,17 @@
 
   .terms-link {
     font-size: 16px;
+  }
+}
+
+@media(max-width: 576px) {
+
+  .terms,
+  .privacy,
+  .refund,
+  .aboutUs {
+    &__main-title {
+      font-size: 32px;
+    }
   }
 }
