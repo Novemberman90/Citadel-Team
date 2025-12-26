@@ -177,7 +177,7 @@ accordeons.forEach(item => {
 
   // ВАЖНО: проверка класса родителя
   const isDownload = canvas.closest('.metrics__cards-item--download');
-  const lineWidth = isDownload ? 16 : 10;
+  const lineWidth = isDownload ? 14 : 10;
 
   const radius = center - lineWidth / 2;
 
