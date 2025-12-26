@@ -1,5 +1,5 @@
 .map {
-
+  padding-bottom: 80px;
   &__inner {
     svg {
       display: block;
@@ -11,7 +11,7 @@
 }
 
 .map-flag {
-  visibility: hidden;
+ visibility: hidden;
  transform-box: fill-box;
  transform-origin: center;
  transition: transform 0.3s ease;
@@ -51,12 +51,20 @@
 }
 
 @media (max-width: 992px) {
+  .map {
+    padding-bottom: 112px;
+  }
   .map-flag {
     transform: scale(1.62);
 
     &~g {
       transform: scale(1.62);
     }
+  }
+}
+@media (max-width: 576px) {
+  .map {
+    padding-bottom: 48px;
   }
 }
 @media (max-width: 440px) {
